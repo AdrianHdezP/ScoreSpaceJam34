@@ -4358,7 +4358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cadd5af442dd8a42ae2e65b124e130d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acelerationInput: {fileID: -3162385326559260288, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  acelerationInput: {fileID: -6396398280585223630, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   steringInput: {fileID: -737962710453807491, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   maxSpeed: 20
   acelerationFactor: 10

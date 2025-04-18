@@ -3899,7 +3899,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tabulacion
+  m_Text: 
 --- !u!222 &799838655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4376,7 +4376,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interact
+  m_Text: 
 --- !u!222 &841219383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5551,7 +5551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: E
+  m_Text: 
 --- !u!222 &1172113487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6383,7 +6383,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pause
+  m_Text: 
 --- !u!222 &1286704694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7234,7 +7234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move
+  m_Text: 
 --- !u!222 &1475251560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7827,7 +7827,7 @@ MonoBehaviour:
   unselectedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
   holder: {fileID: 1657589709}
-  toggleMenu: {fileID: -7104493755617081962, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  toggleMenu: {fileID: -8804596032359099750, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   toggleMenuValue: 0
   pressed: 0
 --- !u!1001 &1698849842
@@ -9326,7 +9326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: W/A/S/D
+  m_Text: 
 --- !u!222 &2052879629
 CanvasRenderer:
   m_ObjectHideFlags: 0
