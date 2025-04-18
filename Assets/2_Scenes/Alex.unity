@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 37738851}
   - component: {fileID: 37738852}
   - component: {fileID: 37738855}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 37738850}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 322650945}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 37738850}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.256, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.347, z: 0}
   m_LocalScale: {x: 0.1524, y: 0.1524, z: 0.1524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,14 +390,14 @@ HingeJoint2D:
   m_GameObject: {fileID: 44612351}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 37738851}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 1.5898483e-10, y: 0.49999997}
-  m_ConnectedAnchor: {x: 0, y: -0.49081394}
+  m_ConnectedAnchor: {x: 0, y: -0.49081412}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -471,7 +471,7 @@ Transform:
   m_GameObject: {fileID: 44612351}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.40700006, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.49800006, z: 0}
   m_LocalScale: {x: 0.1524, y: 0.1524, z: 0.1524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 224483473}
   - component: {fileID: 224483475}
   - component: {fileID: 224483474}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Chain1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +926,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 224483472}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1667451348}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 224483472}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.707, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.798, z: 0}
   m_LocalScale: {x: 0.1524, y: 0.1524, z: 0.1524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3524,7 +3524,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 0.5
+  m_LinearDamping: 5
   m_AngularDamping: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -3602,7 +3602,7 @@ Transform:
   m_GameObject: {fileID: 768111747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -1.2689998, z: 0}
+  m_LocalPosition: {x: -0.002, y: -1.3599998, z: 0}
   m_LocalScale: {x: 0.36522663, y: 0.36522663, z: 0.36522663}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6609,7 +6609,7 @@ GameObject:
   - component: {fileID: 1385985084}
   - component: {fileID: 1385985086}
   - component: {fileID: 1385985085}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Chain1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6688,7 +6688,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 1385985083}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 224483473}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -6769,7 +6769,7 @@ Transform:
   m_GameObject: {fileID: 1385985083}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.85800004, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.949, z: 0}
   m_LocalScale: {x: 0.1524, y: 0.1524, z: 0.1524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7684,14 +7684,14 @@ HingeJoint2D:
   m_GameObject: {fileID: 1667451347}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 44612352}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 1.5898483e-10, y: 0.49999997}
-  m_ConnectedAnchor: {x: 0, y: -0.47768977}
+  m_ConnectedAnchor: {x: 0, y: -0.47768956}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -7765,7 +7765,7 @@ Transform:
   m_GameObject: {fileID: 1667451347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.556, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.64699996, z: 0}
   m_LocalScale: {x: 0.1524, y: 0.1524, z: 0.1524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8753,7 +8753,7 @@ GameObject:
   - component: {fileID: 1925344518}
   - component: {fileID: 1925344520}
   - component: {fileID: 1925344519}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Chain1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8832,7 +8832,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 1925344517}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1385985084}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -8913,7 +8913,7 @@ Transform:
   m_GameObject: {fileID: 1925344517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -1.0090001, z: 0}
+  m_LocalPosition: {x: -0.002, y: -1.1, z: 0}
   m_LocalScale: {x: 0.1524, y: 0.1524, z: 0.1524}
   m_ConstrainProportionsScale: 0
   m_Children: []
