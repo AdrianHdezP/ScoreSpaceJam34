@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         //Create an apply force
         Vector2 engineForceVector = transform.up * acelerationInputValue * acelerationFactor;
-        rb.AddForce(engineForceVector, ForceMode2D.Force);
+        rb.AddForce(engineForceVector * rb.mass, ForceMode2D.Force);
     }
 
     private void ManageDrag()
