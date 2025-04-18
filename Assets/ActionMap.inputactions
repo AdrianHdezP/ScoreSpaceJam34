@@ -6,36 +6,27 @@
             "id": "8e11a806-753d-41d8-af38-51876e9ea8b1",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Aceleration",
                     "type": "Value",
-                    "id": "9d8fcbff-87d1-43ef-857e-931c84d5bd72",
-                    "expectedControlType": "Vector2",
+                    "id": "be397da8-5a12-4c91-b4e4-86f85e0e36a2",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
+                    "name": "Stering",
                     "type": "Value",
-                    "id": "ddab72da-d325-4b4c-a484-abe4f6bdf113",
-                    "expectedControlType": "Vector2",
+                    "id": "b6338f23-6567-4191-94fd-84bdabb7f446",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "2bd60403-0923-469e-a3a4-7338b04f6bbc",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
                     "name": "Pause",
                     "type": "Button",
-                    "id": "7417c893-153f-4f95-9242-6cff646b9d6d",
+                    "id": "8091d608-c7fa-481e-9cf3-7048c7e48f6c",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -45,117 +36,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "fe58f6b8-88b0-42a8-86a4-99f59376ac5c",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "WASD",
-                    "id": "076f1159-4d00-4240-9bb2-d48719a9446e",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "b560f8cd-3a2a-425f-b404-daa491858c5d",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "f79a6ed1-9a19-4fd2-b37f-50052393b62e",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "3f392b14-78a0-49d0-b99e-e1aa0dd94b15",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "7688f62b-0428-4d34-933e-b0b7fc783faf",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "d540edf6-bfaa-4b08-b8d5-925398a2debe",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7c03e976-d9da-4d96-9bcd-622e98b0f3c3",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "de604efe-a9ca-4fa6-9d4a-4b0053d61efc",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "50a5adae-36bc-4b42-ac08-266d143e2c62",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d892bd58-ec86-45f2-92a2-ef6566bd3e43",
+                    "id": "5d80cb1e-d2cc-4533-819e-55fae5d44f68",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
@@ -163,6 +44,72 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "6fc51056-0c9f-4867-b5f5-d5429204f8b8",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stering",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "39ef679c-df5d-4ae3-b1be-b5fe15afe9cc",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "a974804d-636c-4e69-8ed4-82a976fa5886",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "d125b6aa-964a-4ebe-97e0-4b7919aacea9",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aceleration",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "033fed57-77bc-45a7-8b26-18d2df033bbe",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "50228ab9-79e0-44f6-8d0f-869457bbac75",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
