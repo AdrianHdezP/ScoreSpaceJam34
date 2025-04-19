@@ -6,6 +6,7 @@ public class Damageable : MonoBehaviour
     public bool burning;
     public bool destroyOnDeath;
     public int health;
+    public float knockbackForce = 1;
     public UnityEvent OnDeath;
     float t;
 
@@ -40,7 +41,7 @@ public class Damageable : MonoBehaviour
     public void RecieveDamage(int damage, Vector2 impactForce, bool playerInteraction)
     {
         health -= damage;
-        rb.AddForce(impactForce * rb.mass, ForceMode2D.Impulse);
+        rb.AddForce(impactForce * rb.mass * knockbackForce, ForceMode2D.Impulse);
 
         if (health <= 0)
         {
