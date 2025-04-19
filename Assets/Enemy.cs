@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
+    [SerializeField] float detectionRange;
+    [SerializeField] float aggroTimer;
 
     [Header("ATTACK")]
     [SerializeField] int chargeDamage;
@@ -17,13 +19,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] float chargeDistance;
     [SerializeField] float prechargeTime;
     [SerializeField] float chargeknockback;
+    [SerializeField] float stoppingDistance;
     [SerializeField] LayerMask activationLayer;
-
 
     Vector2 chargeStartPos;
     float chargeCooldownT;
     float prechargeT;
     bool isCharging;
+    float chargingT;
+
     bool isPrecharging;
 
     bool isAggro;
@@ -35,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     PlayerController player;
     EnemyManager manager;
+    Transform wayPoint;
 
     private void Awake()
     {
@@ -58,16 +63,27 @@ public class Enemy : MonoBehaviour
         {
             agent.SetDestination(player.transform.position);
 
-            if (distanceToPlayer > manager.detectionRange)
+            if (distanceToPlayer > detectionRange)
             {
                 aggroT -= Time.deltaTime;
             }
             else
             {
-                aggroT = manager.aggroTimer;
+                aggroT = aggroTimer;
             }
+
+            ChargeManager();
+        }
+        else
+        {
+            MoveToWayPoint();
         }
 
+        if (!isAggro && distanceToPlayer < detectionRange)
+        {
+            isAggro = true;
+            aggroT = aggroTimer;
+        }
 
         if (isAggro && aggroT < 0)
         {
@@ -77,10 +93,13 @@ public class Enemy : MonoBehaviour
         {
             isAggro = true;
         }
+
+        if (isCharging || isPrecharging) LookAtPlayer();
+        else LookAtDirection();
     }
     private void FixedUpdate()
     {
-        if (player && Vector2.Distance(transform.position, player.transform.position) > agent.stoppingDistance)
+        if (player && distanceToPlayer > stoppingDistance && !isCharging && !isPrecharging)
         {
             rb.AddForce(agent.desiredVelocity * rb.mass * moveSpeed);
         }
@@ -102,7 +121,7 @@ public class Enemy : MonoBehaviour
 
     void ChargeManager()
     {
-        if (!isCharging)
+        if (!isCharging && chargeCooldownT <= 0)
         {
             if (!isPrecharging && distanceToPlayer < chargeDistance * 0.85f)
             {
@@ -120,6 +139,18 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
+        else if (isCharging)
+        {
+            if (Vector2.Distance(chargeStartPos, transform.position) > chargeDistance)
+            {
+                isCharging = false;
+            }
+
+            if (chargingT < 2) chargingT += Time.deltaTime;
+            else isCharging = false;
+        }
+
+        if (chargeCooldownT > 0 && !isCharging) chargeCooldownT -= Time.deltaTime;
     }
     void StartCharge()
     {
@@ -130,56 +161,27 @@ public class Enemy : MonoBehaviour
 
         chargeCooldownT = chargeCooldown;
         isCharging = true;
+        isPrecharging = false;
+        chargingT = 0;
     }
 
     void LookAtPlayer()
     {
-        transform.rotation = Quaternion.LookRotation(directionToPlayer, Vector3.forward);
+        transform.up = directionToPlayer;
     }
-
     void LookAtDirection()
     {
-        transform.rotation = Quaternion.LookRotation(moveDirection, Vector3.forward);
+        if (moveDirection != Vector2.zero) transform.up = moveDirection;
     }
 
-    //  void RecieveDamageVisual()
-    //  {
-    //      StartCoroutine(LerpColor(Color.red, 20, 0.1f));
-    //  }
-    //  IEnumerator LerpColor(Color hitColor, float lerpSpeed, float hitDuration)
-    //  {
-    //      float t = 0;
-    //
-    //      while (t <= 1)
-    //      {
-    //          t += Time.deltaTime * lerpSpeed;
-    //
-    //          for (int i = 0; i < renderers.Length; i++)
-    //          {
-    //              renderers[i].color = Color.Lerp(startColors[i], hitColor, t);
-    //          }
-    //
-    //          yield return null;
-    //      }
-    //
-    //      t = 0;
-    //      while (t < hitDuration)
-    //      {
-    //          t += Time.deltaTime;
-    //          yield return null;
-    //      }
-    //
-    //      t = 0;
-    //      while (t <= 1)
-    //      {
-    //          t += Time.deltaTime * lerpSpeed;
-    //
-    //          for (int i = 0; i < renderers.Length; i++)
-    //          {
-    //              renderers[i].color = Color.Lerp(hitColor, startColors[i], t);
-    //          }
-    //
-    //          yield return null;
-    //      }
-    //  }
+    void MoveToWayPoint()
+    {
+        if (!wayPoint || Vector2.Distance(transform.position, wayPoint.position) < stoppingDistance + 2f)  wayPoint = manager.meleeWayPoints[Random.Range(0, manager.meleeWayPoints.Length)];
+
+        if (wayPoint)
+        {
+            agent.SetDestination(wayPoint.position);
+        }
+    }
+   
 }

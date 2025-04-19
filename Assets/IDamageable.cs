@@ -10,6 +10,7 @@ public class Damageable : MonoBehaviour
     float t;
 
     float tickT = 0;
+    Rigidbody2D rb;
 
     public void BurningEffect(float duration)
     {
@@ -39,7 +40,7 @@ public class Damageable : MonoBehaviour
     public void RecieveDamage(int damage, Vector2 impactForce)
     {
         health -= damage;
-        //RecieveDamageVisual();
+        rb.AddForce(impactForce * rb.mass, ForceMode2D.Impulse);
 
         if (health <= 0)
         {
@@ -49,6 +50,10 @@ public class Damageable : MonoBehaviour
     }
 
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
         ApplyBurningEffect();
