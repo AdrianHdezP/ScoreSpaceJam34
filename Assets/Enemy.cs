@@ -8,12 +8,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
+
+
+    bool isAggro;
     PlayerController player;
+    EnemyManager manager;
 
     private void Awake()
     {
         player = FindFirstObjectByType<PlayerController>();
-
+        manager = FindFirstObjectByType<EnemyManager>();
     }
 
     private void Start()
@@ -24,7 +28,12 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         agent.transform.localPosition = Vector3.zero;
-        agent.SetDestination(player.transform.position);
+
+        if (isAggro)
+        {
+            agent.SetDestination(player.transform.position);
+        }
+
     }
 
     private void FixedUpdate()
