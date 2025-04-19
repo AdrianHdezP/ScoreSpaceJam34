@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public enum State {PickUpPending, InDelivery}
@@ -6,10 +7,13 @@ public class DeliveryManager : MonoBehaviour
 {
     private State currentState;
 
+    [Header("Canvas")]
+    [SerializeField] private TextMeshProUGUI currentObjectiveTMP;
+
     [Header("Setup")]
     [SerializeField] private Transform pickUpTransform;
     [SerializeField] private Transform[] costumers;
-    private Transform currentObjective;
+    public Transform currentObjective;
     private bool isPickUpComplete = false;
     private bool isDeliveryComplete = false;
 
@@ -17,6 +21,7 @@ public class DeliveryManager : MonoBehaviour
     private void Awake()
     {
         currentState = State.PickUpPending;
+        currentObjective = pickUpTransform;
     }
 
     private void Start()
@@ -37,6 +42,7 @@ public class DeliveryManager : MonoBehaviour
         if (currentState == State.PickUpPending)
         {
             currentObjective = pickUpTransform;
+            //currentObjectiveTMP.text = "";
 
             if (isPickUpComplete)
             {
