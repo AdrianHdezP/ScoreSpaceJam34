@@ -37,17 +37,17 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private CarSetup carSetup;
     [SerializeField] private CarSetup driftingCarSetup;
-
-    Quaternion modelRot;
-
+    private Quaternion modelRot;
     private float maxSpeed;
     private float acelerationForce;
     private float steringForce;
     private float drift;
     private float rotationAngle;
     private float velocityVsUp;
-    private bool isBracking;
-    private float bracckingTime;
+    private bool isBreacking;
+    private float breacckingTime;
+
+    [HideInInspector] public bool decelerate;
 
     private void Awake()
     {
@@ -75,8 +75,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         AssignInputs();
-        HandleBrake();
 
+        if (decelerate)
+            maxSpeed = maxSpeed / 2;
+
+        HandleBrake();
         VisualControl();
     }
 
@@ -158,13 +161,13 @@ public class PlayerController : MonoBehaviour
 
     private void HandleBrake()
     {
-        if (brakeInputValue > 0 && !isBracking)
+        if (brakeInputValue > 0 && !isBreacking)
         {
-            isBracking = true;
+            isBreacking = true;
         }
-        else if (brakeInputValue <= 0 && isBracking)
+        else if (brakeInputValue <= 0 && isBreacking)
         {
-            isBracking = false;
+            isBreacking = false;
 
             maxSpeed = maxSpeed + ball.combo * 5f;
             rb.AddForce(transform.up * rb.mass * ball.combo * 5f , ForceMode2D.Impulse);
@@ -175,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
     private void LerpValues()
     {
-        if (isBracking)
+        if (isBreacking)
         {
             maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
             drift = Mathf.MoveTowards(drift, driftingCarSetup.drifForce, driftingCarSetup.drifForceLerp * Time.deltaTime);

@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] float stoppingDistance;
     [SerializeField] LayerMask activationLayer;
 
+
+    [HideInInspector] public bool decelerate;
+
+    private float initialMoveSpeed;
     Vector2 chargeStartPos;
     float chargeCooldownT;
     float prechargeT;
@@ -57,6 +61,8 @@ public class Enemy : MonoBehaviour
     {
       //  agent.updateRotation = false;
       //  agent.updateUpAxis = false;
+
+        initialMoveSpeed = moveSpeed;
     }
     private void Update()
     {
@@ -64,6 +70,11 @@ public class Enemy : MonoBehaviour
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         directionToPlayer = (player.transform.position - transform.position).normalized;
         moveDirection = rb.linearVelocity.normalized;
+
+        if (decelerate)
+            moveSpeed -= 0.5f;
+        else
+            moveSpeed = initialMoveSpeed;
 
         if (isAggro)
         {

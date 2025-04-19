@@ -8,8 +8,8 @@ public class DeliveryManager : MonoBehaviour
 {
     private PointManager pointsManger;
 
-    private State currentState;
-    private DeliveryType currentDeliveryType;
+    public State currentState {  get; private set; }
+    public DeliveryType currentDeliveryType {  get; private set; }
 
     [Header("Canvas")]
     [SerializeField] private TextMeshProUGUI currentObjectiveTMP;
@@ -34,6 +34,7 @@ public class DeliveryManager : MonoBehaviour
     private void Start()
     {
         DisableCostumer();
+        RandomEffect();
     }
 
     public Vector2 ReturnCurrentObjective() => currentObjective.position;
@@ -84,8 +85,12 @@ public class DeliveryManager : MonoBehaviour
         nextObjective.gameObject.SetActive(true);
         currentObjective = nextObjective;
         currentObjectiveTMP.text = ReturnRandomName(costumerNames);
+        RandomEffect();
+    }
 
-        int randomChoice = Random.Range(0, 2);
+    private void RandomEffect()
+    {
+        int randomChoice = Random.Range(0, 3);
 
         if (randomChoice == 0)
             currentDeliveryType = DeliveryType.Fire;

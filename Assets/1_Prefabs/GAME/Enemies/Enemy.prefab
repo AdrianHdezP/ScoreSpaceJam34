@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4808457349092888792}
   rb: {fileID: 1182072284028663074}
-  moveSpeed: 0.55
+  moveSpeed: 2
   detectionRange: 9
   aggroTimer: 10
   chargeDamage: 5
@@ -271,6 +271,7 @@ MonoBehaviour:
   activationLayer:
     serializedVersion: 2
     m_Bits: 769
+  decelerate: 0
 --- !u!114 &2577620040236458151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,9 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burning: 0
   destroyOnDeath: 1
+  burning: 0
   health: 10
+  knockbackForce: 1
   OnDeath:
     m_PersistentCalls:
       m_Calls:
