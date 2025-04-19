@@ -20,10 +20,11 @@ public class CarSetup
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private BallController ball;
 
     [Header("Visuals")]
-    [SerializeField] private Transform frontRightWheel;
-    [SerializeField] private Transform frontLeftWheel;
+    [SerializeField] private Transform model;
+    [SerializeField] private Animator modelAnim;
 
     [Header("Setup")]
     [SerializeField] private InputActionReference acelerationInput;
@@ -36,7 +37,9 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private CarSetup carSetup;
     [SerializeField] private CarSetup driftingCarSetup;
-    
+
+    Quaternion modelRot;
+
     private float maxSpeed;
     private float acelerationForce;
     private float steringForce;
@@ -48,7 +51,10 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-       rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        ball = FindFirstObjectByType<BallController>();
+
+        modelRot = model.localRotation;
     }
 
     private void Start()
@@ -70,6 +76,8 @@ public class PlayerController : MonoBehaviour
     {
         AssignInputs();
         HandleBrake();
+
+        VisualControl();
     }
 
     private void FixedUpdate()
@@ -117,9 +125,6 @@ public class PlayerController : MonoBehaviour
 
         rotationAngle -= steringInputValue * steringForce * minSpeed;
         rb.MoveRotation(rotationAngle);
-
-        frontRightWheel.localRotation = Quaternion.AngleAxis(steringInputValue * steringForce * 4, -Vector3.forward);
-        frontLeftWheel.localRotation = Quaternion.AngleAxis(steringInputValue * steringForce * 4, -Vector3.forward);
     }
 
     private void KillOrthogonalVelocity()
@@ -130,7 +135,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = forwardVelocity + rightVelocity * drift;
     }
 
-    private float GetLateralvelocity() => Vector2.Dot(transform.right, rb.linearVelocity);
+    public float GetLateralvelocity() => Vector2.Dot(transform.right, rb.linearVelocity);
 
     public bool IsTireScreeching(out float lateralVelocity, out bool isBracking)
     {
@@ -160,6 +165,9 @@ public class PlayerController : MonoBehaviour
         else if (brakeInputValue <= 0 && isBracking)
         {
             isBracking = false;
+
+            maxSpeed = maxSpeed + ball.combo * 5f;
+            rb.AddForce(transform.up * rb.mass * ball.combo * 5f , ForceMode2D.Impulse);
         }
 
         LerpValues();
@@ -181,5 +189,14 @@ public class PlayerController : MonoBehaviour
             steringForce = Mathf.MoveTowards(steringForce, carSetup.steringForce, carSetup.steringForceLerp * Time.deltaTime);
             acelerationForce = Mathf.MoveTowards(acelerationForce, carSetup.acelerationForce, carSetup.acelerationForceLerp * Time.deltaTime);
         }                 
+    }
+
+    void VisualControl()
+    {
+        float angle = Mathf.Clamp(GetLateralvelocity() * 15f, -35, 35);
+        model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
+
+        if (acelerationInputValue != 0) modelAnim.SetBool("Move", true);
+        else modelAnim.SetBool("Move", false);
     }
 }
