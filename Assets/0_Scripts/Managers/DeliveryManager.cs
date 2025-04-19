@@ -2,12 +2,14 @@ using TMPro;
 using UnityEngine;
 
 public enum State {PickUpPending, InDelivery}
+public enum DeliveryType {Fire, Slime, Protection}
 
 public class DeliveryManager : MonoBehaviour
 {
     private PointManager pointsManger;
 
     private State currentState;
+    private DeliveryType currentDeliveryType;
 
     [Header("Canvas")]
     [SerializeField] private TextMeshProUGUI currentObjectiveTMP;
@@ -82,6 +84,15 @@ public class DeliveryManager : MonoBehaviour
         nextObjective.gameObject.SetActive(true);
         currentObjective = nextObjective;
         currentObjectiveTMP.text = ReturnRandomName(costumerNames);
+
+        int randomChoice = Random.Range(0, 2);
+
+        if (randomChoice == 0)
+            currentDeliveryType = DeliveryType.Fire;
+        if (randomChoice == 1)
+            currentDeliveryType = DeliveryType.Slime;
+        if (randomChoice == 2)
+            currentDeliveryType = DeliveryType.Protection;
     }
 
     private Transform ReturnRandomCostumerTransform(Transform[] myTransforms) => myTransforms[Random.Range(0,myTransforms.Length)];
