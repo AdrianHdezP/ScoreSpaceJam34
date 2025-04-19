@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyRanged : MonoBehaviour
 {
+    [SerializeField] NavMeshAgent agent;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float detectionRange;
     [SerializeField] float aggroTimer;
+    [SerializeField] float moveSpeed;
 
     [Header("ATTACK")]
+    [SerializeField] float stoppingDistance;
     [SerializeField] float fireTime;
     [SerializeField] Transform arrowSpawnPoint;
     [SerializeField] Arrow arrowPrefab;
@@ -18,9 +22,11 @@ public class EnemyRanged : MonoBehaviour
 
     float distanceToPlayer;
     Vector2 directionToPlayer;
+    Vector2 moveDirection;
 
     PlayerController player;
     EnemyManager manager;
+    Transform wayPoint;
 
     private void Awake()
     {
@@ -41,8 +47,10 @@ public class EnemyRanged : MonoBehaviour
     }
     private void Update()
     {
+        agent.transform.localPosition = Vector3.zero;
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         directionToPlayer = (player.transform.position - transform.position).normalized;
+        moveDirection = rb.linearVelocity.normalized;
 
         if (isAggro)
         {
@@ -56,6 +64,10 @@ public class EnemyRanged : MonoBehaviour
             }
 
             ControlWeapon();
+        }
+        else
+        {
+            MoveToWayPoint();
         }
 
         if (!isAggro && distanceToPlayer < detectionRange)
@@ -74,11 +86,7 @@ public class EnemyRanged : MonoBehaviour
         }
 
         if (isAggro) LookAtPlayer();
-    }
-
-    void LookAtPlayer()
-    {
-        transform.up = directionToPlayer;
+        else LookAtDirection();
     }
 
     void ControlWeapon()
@@ -98,5 +106,24 @@ public class EnemyRanged : MonoBehaviour
     {
         Arrow arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
         arrow.shooter = this;
+    }
+
+    void LookAtPlayer()
+    {
+        transform.up = directionToPlayer;
+    }
+    void LookAtDirection()
+    {
+        if (moveDirection != Vector2.zero) transform.up = moveDirection;
+    }
+
+    void MoveToWayPoint()
+    {
+        if (!wayPoint || Vector2.Distance(transform.position, wayPoint.position) < stoppingDistance + 2f) wayPoint = manager.meleeWayPoints[Random.Range(0, manager.meleeWayPoints.Length)];
+
+        if (wayPoint)
+        {
+            agent.SetDestination(wayPoint.position);
+        }
     }
 }
