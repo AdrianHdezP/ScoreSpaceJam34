@@ -1,8 +1,7 @@
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 
-public class ExplosiveBarrel : MonoBehaviour, IDamageable
+public class ExplosiveBarrel : MonoBehaviour
 {
     [SerializeField] float detonationTimer;
     [SerializeField] float explosionRange;
@@ -28,7 +27,6 @@ public class ExplosiveBarrel : MonoBehaviour, IDamageable
         if (activated)
         {
             t += Time.deltaTime;
-
             if (t >= detonationTimer) Explode();
         }
     }
@@ -40,25 +38,24 @@ public class ExplosiveBarrel : MonoBehaviour, IDamageable
         }
     }
 
-    public void RecieveDamage(int damage, Vector2 impactForce)
-    {
-        activated = true;
-        rb.AddForce(impactForce * rb.mass * impulseMultiplier, ForceMode2D.Impulse);
-    } 
     void Explode()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRange);
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.TryGetComponent(out IDamageable damageable))
+            if (collider.TryGetComponent(out Damageable damageable))
             {
                 damageable.RecieveDamage(10, (collider.transform.position - transform.position).normalized * explosionImpulse);
             }
         }
 
         Instantiate(particlePrefab, transform.position, Quaternion.identity);
-
         Destroy(gameObject);
+    }
+
+    public void Activate()
+    {
+        activated = true;
     }
 }

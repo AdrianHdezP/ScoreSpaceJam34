@@ -30,7 +30,7 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out IDamageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
+        if (collision.gameObject.TryGetComponent(out Damageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
         {
             damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude);
         }

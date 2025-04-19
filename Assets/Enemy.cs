@@ -3,28 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour , IDamageable
+public class Enemy : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] int health;
     [SerializeField] float moveSpeed;
-
-    PlayerHealth playerHealth;
-
-    public void RecieveDamage(int damage, Vector2 impactForce)
-    {
-        health -= damage;
-
-       // RecieveDamageVisual();
-        rb.AddForce(impactForce, ForceMode2D.Impulse);
-
-        if (health <= 0) Destroy(gameObject);
-    }
+    PlayerController player;
 
     private void Awake()
     {
-        playerHealth = FindFirstObjectByType<PlayerHealth>();
+        player = FindFirstObjectByType<PlayerController>();
 
     }
 
@@ -36,12 +24,12 @@ public class Enemy : MonoBehaviour , IDamageable
     private void Update()
     {
         agent.transform.localPosition = Vector3.zero;
-        agent.SetDestination(playerHealth.transform.position);
+        agent.SetDestination(player.transform.position);
     }
 
     private void FixedUpdate()
     {
-        if (playerHealth && Vector2.Distance(transform.position, playerHealth.transform.position) > agent.stoppingDistance)
+        if (player && Vector2.Distance(transform.position, player.transform.position) > agent.stoppingDistance)
         {
             rb.AddForce(agent.desiredVelocity * rb.mass * moveSpeed);
         }
