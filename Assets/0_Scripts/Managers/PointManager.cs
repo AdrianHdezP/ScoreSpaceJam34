@@ -6,15 +6,19 @@ public class PointManager : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private TextMeshProUGUI pointTMP;
     [SerializeField] private TextMeshProUGUI timeTMP;
+    [SerializeField] private GameObject timeOutPanel;
 
     [Header("Settings")]
     [SerializeField] private float startTime = 30;
     [SerializeField] private float timeToAdd = 15;
-    private int points = 0;
     private int minutes;
     private int seconds;
     private float timeElapsed;
     private bool timeOut = false;
+
+    public int points { get; private set; } = 0;
+    public int timePoints { get; private set; }
+    public float totalTime { get; private set; }
 
     private void Start()
     {
@@ -23,9 +27,11 @@ public class PointManager : MonoBehaviour
 
     private void Update()
     {
+        totalTime += Time.deltaTime;
+
         UpdatePoints();
         Clock();
-        //TimeOut();
+        TimeOut();
     }
 
     private void UpdatePoints() => pointTMP.text = points.ToString();
@@ -37,7 +43,7 @@ public class PointManager : MonoBehaviour
         timeElapsed -= Time.deltaTime;
         minutes = (int)(timeElapsed / 60f);
         seconds = (int)(timeElapsed - minutes * 60f);
-        timeTMP.text = string.Format("{0}:{1}", minutes, seconds);
+        timeTMP.text = string.Format("{0}:{1}", minutes.ToString("00"), seconds.ToString("00"));
     }
 
     public void AddTime() => timeElapsed += timeToAdd;
@@ -47,7 +53,12 @@ public class PointManager : MonoBehaviour
         if (timeElapsed <= 0 && !timeOut)
         {
             timeOut = true;
-            MainSingletone.inst.sceneControl.FadeOut(1);
+
+            timePoints = Mathf.FloorToInt(totalTime * 10);
+            MainSingletone.inst.score.SetScore(points + timePoints);
+
+            timeOutPanel.SetActive(true);
+            //MainSingletone.inst.sceneControl.FadeOut(1);
         }
     }
 }
