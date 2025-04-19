@@ -1755,7 +1755,7 @@ DistanceJoint2D:
   m_Anchor: {x: -0.00000011945906, y: 9.990799e-10}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.1541541
+  m_Distance: 1.2184418
   m_MaxDistanceOnly: 1
 --- !u!58 &370502565
 CircleCollider2D:
@@ -1791,8 +1791,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.09062659, y: -0.04726453}
-  m_Radius: 0.3778126
+  m_Offset: {x: 0.0032317126, y: -0.0017652559}
+  m_Radius: 0.2924896
 --- !u!233 &370502566
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1808,8 +1808,8 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.106619775, y: 0.31169692}
-  m_ConnectedAnchor: {x: 0.022673437, y: -0.5736188}
+  m_Anchor: {x: -0.000000021217893, y: 0.28500012}
+  m_ConnectedAnchor: {x: 0.05597658, y: -0.5789886}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1890,12 +1890,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -680290946, guid: 5eabe647d9074ad47a6903f8c1ae2a30, type: 3}
+  m_Sprite: {fileID: -298239228, guid: 3a0b6a3f13d2e694d9aaf9c258a5745c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.57, y: 0.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1910,8 +1910,8 @@ Transform:
   m_GameObject: {fileID: 370502562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.000033911318, w: 1}
-  m_LocalPosition: {x: -6.949527, y: -2.4415765, z: 0}
-  m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
+  m_LocalPosition: {x: -7.05, y: -2.511, z: 0}
+  m_LocalScale: {x: 1.323432, y: 1.323432, z: 1.323432}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1924,7 +1924,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370502562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 44c2fd3dbd1154a48b3a9bb3318e3710, type: 2}
   m_CullingMode: 0
@@ -2900,7 +2900,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
