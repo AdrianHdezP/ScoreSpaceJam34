@@ -66,13 +66,8 @@ public class PointManager : MonoBehaviour
             timePoints = Mathf.FloorToInt(totalTime * 10);
             MainSingletone.inst.score.SetScore(points + timePoints);
 
-            playerController.frezze = true;
-
-            foreach (Enemy enemy in enemyManager.ReturnMeleeEnemyList())
-                enemy.frezze = true;
-
-            foreach (EnemyRanged enemyRanged in enemyManager.ReturnEnemyRangedList())
-                enemyRanged.frezze = true;
+            MainSingletone.inst.sceneControl.gM.FreezeGame();
+            MainSingletone.inst.sceneControl.gM.ended = true;
 
             timeOutPanel.SetActive(true);
             //MainSingletone.inst.sceneControl.FadeOut(1);

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
+    float i_moveSpeed;
     [SerializeField] float detectionRange;
     [SerializeField] float aggroTimer;
 
@@ -24,9 +25,7 @@ public class Enemy : MonoBehaviour
 
 
     [HideInInspector] public bool decelerate;
-    [HideInInspector] public bool frezze;
 
-    private float initialMoveSpeed;
     Vector2 chargeStartPos;
     float chargeCooldownT;
     float prechargeT;
@@ -52,6 +51,8 @@ public class Enemy : MonoBehaviour
         manager = FindFirstObjectByType<EnemyManager>();
 
         manager.AddMelee(this);
+
+        i_moveSpeed = moveSpeed;
     }
     private void OnDestroy()
     {
@@ -62,23 +63,21 @@ public class Enemy : MonoBehaviour
     {
       //  agent.updateRotation = false;
       //  agent.updateUpAxis = false;
-
-        initialMoveSpeed = moveSpeed;
     }
     private void Update()
     {
-        if (frezze)
+        if (MainSingletone.inst.sceneControl.gM.paused)
             return;
+
+        if (decelerate)
+            moveSpeed = i_moveSpeed * 0.75f;
+        else
+            moveSpeed = i_moveSpeed;
 
         agent.transform.localPosition = Vector3.zero;
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         directionToPlayer = (player.transform.position - transform.position).normalized;
         moveDirection = rb.linearVelocity.normalized;
-
-        if (decelerate)
-            moveSpeed -= 0.5f;
-        else
-            moveSpeed = initialMoveSpeed;
 
         if (isAggro)
         {
@@ -120,9 +119,9 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (frezze)
+        if (MainSingletone.inst.sceneControl.gM.paused)
         {
-            agent.isStopped = true;
+            //agent.isStopped = true;
             return;
         }
 

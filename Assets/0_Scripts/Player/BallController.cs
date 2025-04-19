@@ -6,11 +6,26 @@ public class BallController : MonoBehaviour
     private PlayerController playerSC;
     private DeliveryManager deliveryManager;
 
+
+
     [Header("Setup")]
+    [SerializeField] Material m_brewMat;
+    [SerializeField] Material m_particleMat;
+    [SerializeField] ParticleSystem smokeParticles;
+
+    [SerializeField, ColorUsage(true, true)] Color noneColor;
+
     [SerializeField] GameObject firePrefab;
+    [SerializeField, ColorUsage(true, true)] Color fireColor;
+
     [SerializeField] GameObject slimePrefab;
+    [SerializeField, ColorUsage(true, true)] Color slimeColor;
+
     [SerializeField] GameObject protectionPrefab;
+    [SerializeField, ColorUsage(true, true)] Color protectionColor;
+
     private DeliveryType currentDeliveryType;
+
 
     [Header("Settings")]
     [SerializeField] private Transform model;
@@ -21,9 +36,10 @@ public class BallController : MonoBehaviour
 
     float horizontalVelocity;
     Vector2? lastPos;
-    Quaternion modelRot; 
+    Quaternion modelRot;
 
-    public int combo { private set; get; }
+    [HideInInspector] public int combo;
+    float comboT;
 
     private void Awake()
     {
@@ -39,25 +55,31 @@ public class BallController : MonoBehaviour
 
         horizontalVelocity = Vector2.Dot(transform.right, rb.linearVelocity);
 
-        if (Mathf.Abs(horizontalVelocity) > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2) lastPos) >= spawnDistance))
+        if (Mathf.Abs(playerSC.GetLateralvelocity()) < speedBoostThreshold)
+        {
+            if (comboT < 0) combo = 0;
+            else comboT -= Time.deltaTime;
+        }
+        VisualControl();
+
+
+        if (currentDeliveryType == DeliveryType.None) return;
+
+        if (Mathf.Abs(horizontalVelocity) > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2)lastPos) >= spawnDistance))
         {
             lastPos = transform.position;
 
             if (currentDeliveryType == DeliveryType.Fire)
                 Instantiate(firePrefab, transform.position, Quaternion.identity);
+
             else if (currentDeliveryType == DeliveryType.Slime)
                 Instantiate(slimePrefab, transform.position, Quaternion.identity);
+
             else if (currentDeliveryType == DeliveryType.Protection)
                 Instantiate(protectionPrefab, transform.position, Quaternion.identity);
         }
-
-        if (Mathf.Abs(horizontalVelocity) < fireEmissionThreshold) 
+        if (Mathf.Abs(horizontalVelocity) < fireEmissionThreshold)
             lastPos = null;
-
-        if (Mathf.Abs(playerSC.GetLateralvelocity()) < speedBoostThreshold)
-            combo = 0;
-
-        VisualControl();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -66,8 +88,11 @@ public class BallController : MonoBehaviour
         {
             damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
 
-            if (Mathf.Abs(playerSC.GetLateralvelocity()) > speedBoostThreshold) 
+            if (Mathf.Abs(playerSC.GetLateralvelocity()) > speedBoostThreshold)
+            {
+                comboT = playerSC.comboTimer;
                 combo++;
+            }          
         }
     }
 
@@ -75,5 +100,35 @@ public class BallController : MonoBehaviour
     {
         float angle = Mathf.Clamp(horizontalVelocity * 15f, -15, 15);
         model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
+
+        if (currentDeliveryType == DeliveryType.None)
+        {
+            m_brewMat.SetColor("_GlowColor", noneColor);
+            smokeParticles.Stop();
+
+            return;
+        }
+        else if (!smokeParticles.isPlaying)
+        {
+            smokeParticles.Play();
+        }
+
+        if (currentDeliveryType == DeliveryType.Fire)
+        {
+            m_brewMat.SetColor("_GlowColor", fireColor);
+            m_particleMat.SetColor("_GlowColor", fireColor);
+        }
+           
+        else if (currentDeliveryType == DeliveryType.Slime)
+        {
+            m_brewMat.SetColor("_GlowColor", slimeColor);
+            m_particleMat.SetColor("_GlowColor", slimeColor);
+        }
+
+        else if (currentDeliveryType == DeliveryType.Protection)
+        {
+            m_brewMat.SetColor("_GlowColor", protectionColor);
+            m_particleMat.SetColor("_GlowColor", protectionColor);
+        }
     }
 }

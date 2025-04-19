@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 public enum State {PickUpPending, InDelivery}
-public enum DeliveryType {Fire, Slime, Protection}
+public enum DeliveryType {None, Fire, Slime, Protection}
 
 public class DeliveryManager : MonoBehaviour
 {
@@ -34,7 +34,9 @@ public class DeliveryManager : MonoBehaviour
     private void Start()
     {
         DisableCostumer();
-        RandomEffect();
+        //RandomEffect();
+
+        currentDeliveryType = DeliveryType.None;
     }
 
     public Vector2 ReturnCurrentObjective() => currentObjective.position;
@@ -70,6 +72,8 @@ public class DeliveryManager : MonoBehaviour
             currentObjective.gameObject.SetActive(false);
             isDeliveryComplete = false;
             pointsManger.AddTime();
+
+            currentDeliveryType = DeliveryType.None;
         }
     }
 

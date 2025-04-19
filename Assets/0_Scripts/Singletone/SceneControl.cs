@@ -12,6 +12,8 @@ public class SceneControl : MonoBehaviour
     [SerializeField] GameObject TVstatic;
     [SerializeField] Animator TVOff;
 
+    public GameMaster gM;
+
     public enum Transitions
     {
         none,
@@ -40,6 +42,8 @@ public class SceneControl : MonoBehaviour
 
         if (current == Transitions.tvOff) TVOffIn();
         else TVOff.gameObject.SetActive(false);
+
+        gM = FindFirstObjectByType<GameMaster>();
     }
 
     void FadeIn()

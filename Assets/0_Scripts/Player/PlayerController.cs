@@ -37,18 +37,19 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private CarSetup carSetup;
     [SerializeField] private CarSetup driftingCarSetup;
-    private Quaternion modelRot;
-    private float maxSpeed;
-    private float acelerationForce;
-    private float steringForce;
-    private float drift;
-    private float rotationAngle;
-    private float velocityVsUp;
-    private bool isBreacking;
-    private float breacckingTime;
+   [SerializeField] private Quaternion modelRot;
+   [SerializeField] public float speedBoost;
+   [SerializeField] public float comboTimer;
+   [SerializeField] private float maxSpeed;
+   [SerializeField] private float acelerationForce;
+   [SerializeField] private float steringForce;
+   [SerializeField] private float drift;
+   [SerializeField] private float rotationAngle;
+   [SerializeField] private float velocityVsUp;
+   [SerializeField] private bool isBreacking;
+   [SerializeField] private float breacckingTime;
 
-    [HideInInspector] public bool decelerate;
-    [HideInInspector] public bool frezze;
+    public bool decelerate;
 
     private void Awake()
     {
@@ -75,23 +76,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (frezze)
+        if (MainSingletone.inst.sceneControl.gM.paused)
             return;
 
         AssignInputs();
-
-        if (decelerate)
-            maxSpeed = maxSpeed / 2;
-
         HandleBrake();
         VisualControl();
     }
 
     private void FixedUpdate()
     {
-        if (frezze)
+        if (MainSingletone.inst.sceneControl.gM.paused)
         {
-            rb.linearVelocity = Vector2.zero;
+            //rb.linearVelocity = Vector2.zero;
             return;
         }
 
@@ -179,8 +176,9 @@ public class PlayerController : MonoBehaviour
         {
             isBreacking = false;
 
-            maxSpeed = maxSpeed + ball.combo * 5f;
-            rb.AddForce(transform.up * rb.mass * ball.combo * 5f , ForceMode2D.Impulse);
+            //maxSpeed = maxSpeed + ball.combo * speedBoost;
+            rb.AddForce(transform.up * rb.mass * ball.combo * speedBoost, ForceMode2D.Impulse);
+            ball.combo = 0;
         }
 
         LerpValues();
@@ -190,14 +188,18 @@ public class PlayerController : MonoBehaviour
     {
         if (isBreacking)
         {
-            maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+            if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed * 0.7f, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+            else maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+
             drift = Mathf.MoveTowards(drift, driftingCarSetup.drifForce, driftingCarSetup.drifForceLerp * Time.deltaTime);
             steringForce = Mathf.MoveTowards(steringForce, driftingCarSetup.steringForce, driftingCarSetup.steringForceLerp * Time.deltaTime);
             acelerationForce = Mathf.MoveTowards(acelerationForce, driftingCarSetup.acelerationForce, driftingCarSetup.acelerationForceLerp * Time.deltaTime);
         }
         else
         {
-            maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed, carSetup.maxSpeedLerp * Time.deltaTime);
+            if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed * 0.7f, carSetup.maxSpeedLerp * Time.deltaTime);
+            else maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed , carSetup.maxSpeedLerp * Time.deltaTime);
+
             drift = Mathf.MoveTowards(drift, carSetup.drifForce, carSetup.drifForceLerp * Time.deltaTime);
             steringForce = Mathf.MoveTowards(steringForce, carSetup.steringForce, carSetup.steringForceLerp * Time.deltaTime);
             acelerationForce = Mathf.MoveTowards(acelerationForce, carSetup.acelerationForce, carSetup.acelerationForceLerp * Time.deltaTime);

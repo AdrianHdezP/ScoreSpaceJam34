@@ -15,8 +15,6 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] Transform arrowSpawnPoint;
     [SerializeField] Arrow arrowPrefab;
 
-    [HideInInspector] public bool frezze;
-
     float fireT;
 
     bool isAggro;
@@ -49,7 +47,7 @@ public class EnemyRanged : MonoBehaviour
     }
     private void Update()
     {
-        if (frezze)
+        if (MainSingletone.inst.sceneControl.gM.paused)
         {
             agent.isStopped = true;
             return;

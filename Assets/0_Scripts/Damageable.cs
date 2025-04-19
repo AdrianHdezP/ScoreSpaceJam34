@@ -1,9 +1,16 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
     private Rigidbody2D rb;
+
+    [SerializeField] ParticleSystem onFireParticles;
+    [SerializeField] Gradient tickColor;
+
+    Renderer[] m_renderers;
+    Material[] materials;
 
     [Header("Setup")]
     public bool destroyOnDeath;
@@ -20,6 +27,14 @@ public class Damageable : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        m_renderers = GetComponentsInChildren<MeshRenderer>();
+        materials = new Material[m_renderers.Length];
+
+        for (int i = 0; i < m_renderers.Length; i++)
+        {
+            materials[i] = m_renderers[i].material;
+        }
     }
 
     private void Update()
@@ -31,6 +46,7 @@ public class Damageable : MonoBehaviour
     {
         health -= damage;
         rb.AddForce(impactForce * rb.mass * knockbackForce, ForceMode2D.Impulse);
+        StartCoroutine(DamageTick(8));
 
         if (health <= 0)
         {
@@ -43,7 +59,6 @@ public class Damageable : MonoBehaviour
     }
 
     #region Fire
-
     public void BurningEffect(float duration)
     {
         if (!burning || t < duration)
@@ -66,6 +81,12 @@ public class Damageable : MonoBehaviour
                 RecieveDamage(1, Vector2.zero, true);
                 tickT = 0;
             }
+
+            if (!onFireParticles.isPlaying) onFireParticles.Play();
+        }
+        else
+        {
+            if (onFireParticles.isPlaying) onFireParticles.Stop();
         }
 
         if (t <= 0 && burning) burning = false;
@@ -73,4 +94,34 @@ public class Damageable : MonoBehaviour
 
     #endregion
 
+    IEnumerator DamageTick(float speed)
+    {
+        float t = 0f;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime * speed;
+
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i].SetColor("_TickColor", tickColor.Evaluate(t) * 3f);
+            }
+
+            yield return null;
+        }
+
+        while (t >= 0)
+        {
+            t -= Time.deltaTime * speed;
+
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i].SetColor("_TickColor", tickColor.Evaluate(t));
+            }
+
+            yield return null;
+        }
+
+    }
 }
+

@@ -24,7 +24,7 @@ public class FinalPointsManager : MonoBehaviour
 
     private IEnumerator LerpPointsValue(float waitTime, float speed)
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSecondsRealtime(waitTime);
 
         int initialPoints = pointsManager.points;
         int finalPoints = pointsManager.points + pointsManager.timePoints;
@@ -36,7 +36,7 @@ public class FinalPointsManager : MonoBehaviour
 
         while (t < 1)
         {
-            t += Time.deltaTime * speed;
+            t += Time.unscaledDeltaTime * speed;
 
             currentPoints = (int)Mathf.Lerp(initialPoints, finalPoints, t);
             poinsTMP.text = currentPoints.ToString();
