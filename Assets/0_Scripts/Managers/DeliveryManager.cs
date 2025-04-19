@@ -42,7 +42,11 @@ public class DeliveryManager : MonoBehaviour
         if (currentState == State.PickUpPending)
         {
             currentObjective = pickUpTransform;
-            //currentObjectiveTMP.text = "";
+
+            if (MainSingletone.inst.language.LanguageId == 1)
+                currentObjectiveTMP.text = "Pick up the Brew";
+            else if (MainSingletone.inst.language.LanguageId == 2)
+                currentObjectiveTMP.text = "Recoge el brebaje";
 
             if (isPickUpComplete)
             {
