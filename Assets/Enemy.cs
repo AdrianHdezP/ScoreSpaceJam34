@@ -45,6 +45,11 @@ public class Enemy : MonoBehaviour
     {
         player = FindFirstObjectByType<PlayerController>();
         manager = FindFirstObjectByType<EnemyManager>();
+
+    }
+    private void OnDestroy()
+    {
+        
     }
 
     private void Start()
@@ -117,7 +122,7 @@ public class Enemy : MonoBehaviour
             isCharging = false;
         }
     }
-
+ 
 
     void ChargeManager()
     {
