@@ -15,6 +15,8 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] Transform arrowSpawnPoint;
     [SerializeField] Arrow arrowPrefab;
 
+    [HideInInspector] public bool frezze;
+
     float fireT;
 
     bool isAggro;
@@ -47,6 +49,12 @@ public class EnemyRanged : MonoBehaviour
     }
     private void Update()
     {
+        if (frezze)
+        {
+            agent.isStopped = true;
+            return;
+        }
+
         agent.transform.localPosition = Vector3.zero;
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         directionToPlayer = (player.transform.position - transform.position).normalized;

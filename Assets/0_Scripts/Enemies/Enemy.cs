@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
 
 
     [HideInInspector] public bool decelerate;
+    [HideInInspector] public bool frezze;
 
     private float initialMoveSpeed;
     Vector2 chargeStartPos;
@@ -66,6 +67,9 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+        if (frezze)
+            return;
+
         agent.transform.localPosition = Vector3.zero;
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         directionToPlayer = (player.transform.position - transform.position).normalized;
@@ -116,6 +120,12 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (frezze)
+        {
+            agent.isStopped = true;
+            return;
+        }
+
         if (player && distanceToPlayer > stoppingDistance && !isCharging && !isPrecharging)
         {
             rb.AddForce(agent.desiredVelocity * rb.mass * moveSpeed);

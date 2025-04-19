@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     private float breacckingTime;
 
     [HideInInspector] public bool decelerate;
+    [HideInInspector] public bool frezze;
 
     private void Awake()
     {
@@ -74,6 +75,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (frezze)
+            return;
+
         AssignInputs();
 
         if (decelerate)
@@ -85,7 +89,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       ApplyEngineForce();
+        if (frezze)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        ApplyEngineForce();
        KillOrthogonalVelocity();
        ApplyStering();
     }

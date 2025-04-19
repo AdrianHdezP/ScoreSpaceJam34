@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PointManager : MonoBehaviour
 {
+    private PlayerController playerController;
+    private EnemyManager enemyManager;
+
     [Header("Setup")]
     [SerializeField] private TextMeshProUGUI pointTMP;
     [SerializeField] private TextMeshProUGUI timeTMP;
@@ -14,11 +17,17 @@ public class PointManager : MonoBehaviour
     private int minutes;
     private int seconds;
     private float timeElapsed;
-    private bool timeOut = false;
 
     public int points { get; private set; } = 0;
     public int timePoints { get; private set; }
     public float totalTime { get; private set; }
+    public bool timeOut { get; private set; }
+
+    private void Awake()
+    {
+        playerController = FindFirstObjectByType<PlayerController>();
+        enemyManager = FindFirstObjectByType<EnemyManager>();
+    }
 
     private void Start()
     {
@@ -56,6 +65,14 @@ public class PointManager : MonoBehaviour
 
             timePoints = Mathf.FloorToInt(totalTime * 10);
             MainSingletone.inst.score.SetScore(points + timePoints);
+
+            playerController.frezze = true;
+
+            foreach (Enemy enemy in enemyManager.ReturnMeleeEnemyList())
+                enemy.frezze = true;
+
+            foreach (EnemyRanged enemyRanged in enemyManager.ReturnEnemyRangedList())
+                enemyRanged.frezze = true;
 
             timeOutPanel.SetActive(true);
             //MainSingletone.inst.sceneControl.FadeOut(1);

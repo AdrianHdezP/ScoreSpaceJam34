@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    private PointManager pointManager;
+
     private List<Enemy> meleeEnemyList = new List<Enemy>();
     private List<EnemyRanged> rangedEnemyList = new List<EnemyRanged>();
 
@@ -22,6 +24,11 @@ public class EnemyManager : MonoBehaviour
 
     private float meleeT;
     private float rangedT;
+
+    private void Awake()
+    {
+        pointManager = FindFirstObjectByType<PointManager>();
+    }
 
     private void Start()
     {
@@ -47,6 +54,9 @@ public class EnemyManager : MonoBehaviour
 
     private void Clock()
     {
+        if (pointManager.timeOut)
+            return;
+
         if (meleeT > 0 && meleeEnemyList.Count < meleeEnemyNumber)
             meleeT -= Time.deltaTime;
 
@@ -106,7 +116,7 @@ public class EnemyManager : MonoBehaviour
 
     #region Return Methods
 
-    public List<Enemy> ReturnEnemyList() => meleeEnemyList;
+    public List<Enemy> ReturnMeleeEnemyList() => meleeEnemyList;
 
     public List<EnemyRanged> ReturnEnemyRangedList() => rangedEnemyList;
 
