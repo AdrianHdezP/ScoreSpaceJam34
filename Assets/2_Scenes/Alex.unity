@@ -16102,7 +16102,7 @@ PrefabInstance:
       objectReference: {fileID: 1898394800}
     - target: {fileID: 8112750136721261097, guid: 2b1b5cbd0e2c2a54a98ba8d6f388081e, type: 3}
       propertyPath: startTime
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8112750136721261097, guid: 2b1b5cbd0e2c2a54a98ba8d6f388081e, type: 3}
       propertyPath: timeOutPanel
