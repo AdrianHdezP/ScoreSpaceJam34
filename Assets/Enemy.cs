@@ -46,10 +46,11 @@ public class Enemy : MonoBehaviour
         player = FindFirstObjectByType<PlayerController>();
         manager = FindFirstObjectByType<EnemyManager>();
 
+        manager.AddMelee(this);
     }
     private void OnDestroy()
     {
-        
+        manager.RemoveMelee(this);
     }
 
     private void Start()
