@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    [Header("Setup")]
     [SerializeField] GameObject firePrefab;
+    [SerializeField] GameObject slimePrefab;
+    [SerializeField] GameObject protectionPrefab;
+
     [SerializeField] Transform model;
     [SerializeField] float fireEmissionThreshold;
     [SerializeField] float speedBoostThreshold;
@@ -48,13 +52,9 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Damageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
         {
-<<<<<<< Updated upstream
             damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
-=======
-            damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude);
 
             if (Mathf.Abs(playerSC.GetLateralvelocity()) > speedBoostThreshold) combo++;
->>>>>>> Stashed changes
         }
     }
 
