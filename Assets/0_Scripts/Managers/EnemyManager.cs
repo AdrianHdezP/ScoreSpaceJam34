@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public List<Enemy> meleeEnemyList;
-    private List<EnemyRanged> rangedEnemyList;
+    public List<Enemy> meleeEnemyList = new List<Enemy>();
+    private List<EnemyRanged> rangedEnemyList = new List<EnemyRanged>();
 
     [Header("Setup")]
     [SerializeField] private int meleeEnemyNumber;
@@ -31,9 +32,6 @@ public class EnemyManager : MonoBehaviour
 
     private void SpawnInitialEnemies()
     {
-        meleeEnemyList = new List<Enemy>();
-        rangedEnemyList = new List<EnemyRanged>();
-
         for (int i = 0; i < meleeEnemyNumber; i++)
             SpawnMelee();
 
@@ -79,13 +77,29 @@ public class EnemyManager : MonoBehaviour
 
     #region Add && Remove To List Mehods
 
-    public void AddMelee(Enemy enemyToAdd) => meleeEnemyList.Add(enemyToAdd);
+    public void AddMelee(Enemy enemyToAdd)
+    {
+        if (!meleeEnemyList.Contains(enemyToAdd))
+            meleeEnemyList.Add(enemyToAdd);
+    }
 
-    public void AddRange(EnemyRanged enemyToAdd) => rangedEnemyList.Add(enemyToAdd);
+    public void AddRange(EnemyRanged enemyToAdd)
+    {
+        if (!rangedEnemyList.Contains(enemyToAdd))
+            rangedEnemyList.Add(enemyToAdd);
+    }
 
-    public void RemoveMelee(Enemy enemyToRemove) => meleeEnemyList.Remove(enemyToRemove);
+    public void RemoveMelee(Enemy enemyToRemove) 
+    {
+        if (meleeEnemyList.Contains(enemyToRemove))
+            meleeEnemyList.Remove(enemyToRemove);
+    } 
 
-    public void RemoveRanged(EnemyRanged enemyToRemove) => rangedEnemyList.Remove(enemyToRemove);
+    public void RemoveRanged(EnemyRanged enemyToRemove)
+    {
+        if (rangedEnemyList.Contains(enemyToRemove))
+            rangedEnemyList.Remove(enemyToRemove);
+    }
 
     #endregion
 
