@@ -5,21 +5,26 @@ public enum State {PickUpPending, InDelivery}
 
 public class DeliveryManager : MonoBehaviour
 {
+    private PointManager pointsManger;
+
     private State currentState;
 
     [Header("Canvas")]
     [SerializeField] private TextMeshProUGUI currentObjectiveTMP;
+    [SerializeField] private string[] costumerNames;
 
     [Header("Setup")]
     [SerializeField] private Transform pickUpTransform;
     [SerializeField] private Transform[] costumers;
-    public Transform currentObjective;
+    private Transform currentObjective;
     private bool isPickUpComplete = false;
     private bool isDeliveryComplete = false;
 
 
     private void Awake()
     {
+        pointsManger = GetComponent<PointManager>();
+
         currentState = State.PickUpPending;
         currentObjective = pickUpTransform;
     }
@@ -61,6 +66,7 @@ public class DeliveryManager : MonoBehaviour
             currentState = State.PickUpPending;
             currentObjective.gameObject.SetActive(false);
             isDeliveryComplete = false;
+            pointsManger.AddTime();
         }
     }
 
@@ -75,9 +81,12 @@ public class DeliveryManager : MonoBehaviour
         Transform nextObjective = ReturnRandomCostumerTransform(costumers);
         nextObjective.gameObject.SetActive(true);
         currentObjective = nextObjective;
+        currentObjectiveTMP.text = ReturnRandomName(costumerNames);
     }
 
     private Transform ReturnRandomCostumerTransform(Transform[] myTransforms) => myTransforms[Random.Range(0,myTransforms.Length)];
+
+    private string ReturnRandomName(string[] myNames) => myNames[Random.Range(0,myNames.Length)];
 
     #endregion
 

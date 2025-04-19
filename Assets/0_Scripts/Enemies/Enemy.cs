@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent(out Damageable damageable))
             {
-                damageable.RecieveDamage(chargeDamage, (collision.transform.position - transform.position).normalized * chargeknockback);
+                damageable.RecieveDamage(chargeDamage, (collision.transform.position - transform.position).normalized * chargeknockback, false);
             }
 
             isCharging = false;

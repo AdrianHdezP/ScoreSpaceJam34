@@ -32,7 +32,7 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Damageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
         {
-            damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude);
+            damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
         }
     }
 }

@@ -46,7 +46,7 @@ public class ExplosiveBarrel : MonoBehaviour
         {
             if (collider.TryGetComponent(out Damageable damageable))
             {
-                damageable.RecieveDamage(10, (collider.transform.position - transform.position).normalized * explosionImpulse);
+                damageable.RecieveDamage(10, (collider.transform.position - transform.position).normalized * explosionImpulse, true);
             }
         }
 

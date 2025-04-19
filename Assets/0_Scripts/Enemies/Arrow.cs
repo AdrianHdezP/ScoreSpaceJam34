@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
         {
             if (collision.TryGetComponent(out Damageable damageable))
             {
-                damageable.RecieveDamage(impactDamage, (collision.transform.position - transform.position).normalized * knockbackForce);
+                damageable.RecieveDamage(impactDamage, (collision.transform.position - transform.position).normalized * knockbackForce, false);
             }
 
             impacted = true;

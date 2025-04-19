@@ -153,8 +153,9 @@ GameObject:
   - component: {fileID: 8443216879666249780}
   - component: {fileID: 1182072284028663074}
   - component: {fileID: 2522608799741455770}
-  - component: {fileID: 3140584933164813550}
   - component: {fileID: 7581153654246640094}
+  - component: {fileID: 4955929969831852731}
+  - component: {fileID: 3140584933164813550}
   m_Layer: 6
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -298,24 +299,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &3140584933164813550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855230804446643787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  burning: 0
-  destroyOnDeath: 1
-  health: 10
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &7581153654246640094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,9 +317,51 @@ MonoBehaviour:
   aggroTimer: 5
   moveSpeed: 1
   stoppingDistance: 15
-  fireTime: 1.5
+  fireTime: 3
   arrowSpawnPoint: {fileID: 5959252387406820426}
   arrowPrefab: {fileID: 7272354370802301242, guid: f2bd9b10140783b468f98bbfc20f6077, type: 3}
+--- !u!114 &4955929969831852731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855230804446643787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fb21a31b56bf044aebea828bebd56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3140584933164813550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855230804446643787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  destroyOnDeath: 1
+  health: 10
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4955929969831852731}
+        m_TargetAssemblyTypeName: PointGiver, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 250
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6428816453567262051
 GameObject:
   m_ObjectHideFlags: 0

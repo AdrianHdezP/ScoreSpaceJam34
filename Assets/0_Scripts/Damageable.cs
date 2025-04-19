@@ -30,22 +30,25 @@ public class Damageable : MonoBehaviour
 
             if (tickT > 0.5f)
             {
-                RecieveDamage(1, Vector2.zero);
+                RecieveDamage(1, Vector2.zero, true);
                 tickT = 0;
             }
         }
 
         if (t <= 0 && burning) burning = false;
     }
-    public void RecieveDamage(int damage, Vector2 impactForce)
+    public void RecieveDamage(int damage, Vector2 impactForce, bool playerInteraction)
     {
         health -= damage;
         rb.AddForce(impactForce * rb.mass, ForceMode2D.Impulse);
 
         if (health <= 0)
         {
-            OnDeath.Invoke();
-            if(destroyOnDeath) Destroy(gameObject);
+            if (playerInteraction)
+                OnDeath.Invoke();
+
+            if (destroyOnDeath) 
+                Destroy(gameObject);
         }
     }
 

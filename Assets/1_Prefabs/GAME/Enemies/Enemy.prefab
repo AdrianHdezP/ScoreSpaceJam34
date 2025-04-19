@@ -97,9 +97,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4580248294825297596}
   - component: {fileID: 8443216879666249780}
-  - component: {fileID: 2866260542668169701}
   - component: {fileID: 1182072284028663074}
   - component: {fileID: 2522608799741455770}
+  - component: {fileID: 2866260542668169701}
+  - component: {fileID: 2577620040236458151}
   - component: {fileID: 3140584933164813550}
   m_Layer: 6
   m_Name: Enemy
@@ -180,33 +181,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2866260542668169701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855230804446643787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 026c7abd926e883458810ec0a2f9b89d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 4808457349092888792}
-  rb: {fileID: 1182072284028663074}
-  moveSpeed: 0.55
-  detectionRange: 9
-  aggroTimer: 10
-  chargeDamage: 5
-  chargeSpeed: 20
-  chargeCooldown: 2
-  chargeDistance: 4
-  prechargeTime: 0.5
-  chargeknockback: 10
-  stoppingDistance: 3.5
-  activationLayer:
-    serializedVersion: 2
-    m_Bits: 769
 --- !u!50 &1182072284028663074
 Rigidbody2D:
   serializedVersion: 5
@@ -270,6 +244,45 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2866260542668169701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855230804446643787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026c7abd926e883458810ec0a2f9b89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 4808457349092888792}
+  rb: {fileID: 1182072284028663074}
+  moveSpeed: 0.55
+  detectionRange: 9
+  aggroTimer: 10
+  chargeDamage: 5
+  chargeSpeed: 20
+  chargeCooldown: 2
+  chargeDistance: 4
+  prechargeTime: 0.5
+  chargeknockback: 10
+  stoppingDistance: 3.5
+  activationLayer:
+    serializedVersion: 2
+    m_Bits: 769
+--- !u!114 &2577620040236458151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855230804446643787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fb21a31b56bf044aebea828bebd56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3140584933164813550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +300,19 @@ MonoBehaviour:
   health: 10
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2577620040236458151}
+        m_TargetAssemblyTypeName: PointGiver, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4886670664654632201
 GameObject:
   m_ObjectHideFlags: 0
