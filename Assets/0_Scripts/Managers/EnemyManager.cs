@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public List<Enemy> meleeEnemyList = new List<Enemy>();
+    private List<Enemy> meleeEnemyList = new List<Enemy>();
     private List<EnemyRanged> rangedEnemyList = new List<EnemyRanged>();
 
     [Header("Setup")]
