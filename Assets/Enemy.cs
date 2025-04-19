@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     float distanceToPlayer;
     Vector2 directionToPlayer;
+    Vector2 moveDirection;
 
     PlayerController player;
     EnemyManager manager;
@@ -51,6 +52,7 @@ public class Enemy : MonoBehaviour
         agent.transform.localPosition = Vector3.zero;
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
         directionToPlayer = (player.transform.position - transform.position).normalized;
+        moveDirection = rb.linearVelocity.normalized;
 
         if (isAggro)
         {
@@ -132,12 +134,12 @@ public class Enemy : MonoBehaviour
 
     void LookAtPlayer()
     {
-        transform.rotation = Quaternion.LookRotation()
+        transform.rotation = Quaternion.LookRotation(directionToPlayer, Vector3.forward);
     }
 
     void LookAtDirection()
     {
-
+        transform.rotation = Quaternion.LookRotation(moveDirection, Vector3.forward);
     }
 
     //  void RecieveDamageVisual()
