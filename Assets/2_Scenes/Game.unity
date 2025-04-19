@@ -3669,7 +3669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interact
+  m_Text: Aceleration
 --- !u!222 &841219383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4919,7 +4919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: E
+  m_Text: S/W
 --- !u!222 &1172113487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5083,8 +5083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11d99b1a6682f4cbc4aba1fcd9ac5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: -7104493755617081962, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
-  m_BindingId: d892bd58-ec86-45f2-92a2-ef6566bd3e43
+  m_Action: {fileID: -8804596032359099750, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  m_BindingId: 5d80cb1e-d2cc-4533-819e-55fae5d44f68
   m_DisplayStringOptions: 0
   m_ActionLabel: {fileID: 1286704693}
   m_BindingText: {fileID: 799838654}
@@ -5842,7 +5842,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1472885153}
   m_HandleRect: {fileID: 1472885152}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6128,7 +6128,7 @@ GameObject:
   - component: {fileID: 1426038108}
   - component: {fileID: 1426038107}
   m_Layer: 5
-  m_Name: B_Rebind_Interact
+  m_Name: B_Rebind_Aceleration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6167,8 +6167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11d99b1a6682f4cbc4aba1fcd9ac5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: -1946564365313720924, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
-  m_BindingId: de604efe-a9ca-4fa6-9d4a-4b0053d61efc
+  m_Action: {fileID: -6396398280585223630, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  m_BindingId: d125b6aa-964a-4ebe-97e0-4b7919aacea9
   m_DisplayStringOptions: 0
   m_ActionLabel: {fileID: 841219382}
   m_BindingText: {fileID: 1172113486}
@@ -6423,7 +6423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move
+  m_Text: Stering
 --- !u!222 &1475251560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8232,7 +8232,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: W/A/S/D
+  m_Text: A/D
 --- !u!222 &2052879629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8255,7 +8255,7 @@ GameObject:
   - component: {fileID: 2055803124}
   - component: {fileID: 2055803123}
   m_Layer: 5
-  m_Name: B_Rebind_Move
+  m_Name: B_Rebind_Stering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8294,8 +8294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11d99b1a6682f4cbc4aba1fcd9ac5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: 4053732215274948253, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
-  m_BindingId: 076f1159-4d00-4240-9bb2-d48719a9446e
+  m_Action: {fileID: -737962710453807491, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  m_BindingId: 6fc51056-0c9f-4867-b5f5-d5429204f8b8
   m_DisplayStringOptions: 0
   m_ActionLabel: {fileID: 1475251559}
   m_BindingText: {fileID: 2052879628}
