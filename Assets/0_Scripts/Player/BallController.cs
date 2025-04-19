@@ -7,6 +7,8 @@ public class BallController : MonoBehaviour
     [SerializeField] float damageThreshold;
     [SerializeField] float spawnDistance;
 
+    [SerializeField] float horizontalVelocity;
+
     Rigidbody2D rb;
     Vector2? lastPos;
 
@@ -16,20 +18,21 @@ public class BallController : MonoBehaviour
     }
     private void Update()
     {
-        if (rb.linearVelocity.magnitude > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2) lastPos) >= spawnDistance))
+        horizontalVelocity = Vector2.Dot(transform.right, rb.linearVelocity);
+
+        if (Mathf.Abs(horizontalVelocity) > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2) lastPos) >= spawnDistance))
         {
             lastPos = transform.position;
             Instantiate(firePrefab, transform.position, Quaternion.identity);
         }
-
-        if (rb.linearVelocity.magnitude < fireEmissionThreshold) lastPos = null;
+        if (Mathf.Abs(horizontalVelocity) < fireEmissionThreshold) lastPos = null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out IDamageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
         {
-            damagable.RecieveDamage(10, -collision.contacts[0].normal);
+            damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude);
         }
     }
 }
