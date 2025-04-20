@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,16 +5,26 @@ using UnityEngine.InputSystem;
 public class CarSetup
 {
     public float maxSpeed;
+    public float maxSpeedLerp;
+    [Space]
     public float acelerationForce;
+    public float acelerationForceLerp;
+    [Space]
     public float steringForce;
+    public float steringForceLerp;
+    [Space]
     public float drifForce;
-
-    [HideInInspector] public float defaultMaxSpeed;
+    public float drifForceLerp;
 }
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private BallController ball;
+
+    [Header("Visuals")]
+    [SerializeField] private Transform model;
+    [SerializeField] private Animator modelAnim;
 
     [Header("Setup")]
     [SerializeField] private InputActionReference acelerationInput;
@@ -28,24 +37,30 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private CarSetup carSetup;
     [SerializeField] private CarSetup driftingCarSetup;
-    private float maxSpeed;
-    private float acelerationForce;
-    private float steringForce;
-    private float drift;
-    private float rotationAngle;
-    private float velocityVsUp;
-    private bool isBracking;
-    private float bracckingTime;
+   [SerializeField] private Quaternion modelRot;
+   [SerializeField] public float speedBoost;
+   [SerializeField] public float comboTimer;
+   [SerializeField] private float maxSpeed;
+   [SerializeField] private float acelerationForce;
+   [SerializeField] private float steringForce;
+   [SerializeField] private float drift;
+   [SerializeField] private float rotationAngle;
+   [SerializeField] private float velocityVsUp;
+   [SerializeField] private bool isBreacking;
+   [SerializeField] private float breacckingTime;
+
+    public bool decelerate;
 
     private void Awake()
     {
-       rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        ball = FindFirstObjectByType<BallController>();
+
+        modelRot = model.localRotation;
     }
 
     private void Start()
     {
-        carSetup.defaultMaxSpeed = carSetup.maxSpeed;
-
         maxSpeed = carSetup.maxSpeed;
         acelerationForce = carSetup.acelerationForce;
         steringForce = carSetup.steringForce;
@@ -61,14 +76,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (MainSingletone.inst.sceneControl.gM.paused)
+            return;
+
         AssignInputs();
         HandleBrake();
-        LerpVelocity();
+        VisualControl();
     }
 
     private void FixedUpdate()
     {
-       ApplyEngineForce();
+        if (MainSingletone.inst.sceneControl.gM.paused)
+        {
+            //rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        ApplyEngineForce();
        KillOrthogonalVelocity();
        ApplyStering();
     }
@@ -98,15 +122,15 @@ public class PlayerController : MonoBehaviour
 
     private void ManageDrag()
     {
-        if (acelerationInputValue == 0)
-            rb.linearDamping = Mathf.Lerp(rb.linearDamping, 3f, Time.fixedDeltaTime * 3);
-        else
-            rb.linearDamping = 0;
+       if (acelerationInputValue == 0)
+           rb.linearDamping = Mathf.Lerp(rb.linearDamping, 3f, Time.fixedDeltaTime * 4.5f);
+       else
+           rb.linearDamping = 0;
     }
 
     private void ApplyStering()
     {
-        float minSpeed = rb.linearVelocity.magnitude / 8;
+        float minSpeed = rb.linearVelocity.magnitude / maxSpeed;
         minSpeed = Mathf.Clamp01(minSpeed);
 
         rotationAngle -= steringInputValue * steringForce * minSpeed;
@@ -121,7 +145,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = forwardVelocity + rightVelocity * drift;
     }
 
-    private float GetLateralvelocity() => Vector2.Dot(transform.right, rb.linearVelocity);
+    public float GetLateralvelocity() => Vector2.Dot(transform.right, rb.linearVelocity);
 
     public bool IsTireScreeching(out float lateralVelocity, out bool isBracking)
     {
@@ -144,35 +168,50 @@ public class PlayerController : MonoBehaviour
 
     private void HandleBrake()
     {
-        if (brakeInputValue > 0 && !isBracking)
+        if (brakeInputValue > 0 && !isBreacking)
         {
-            isBracking = true;
-
-            acelerationForce = driftingCarSetup.acelerationForce;
-            steringForce = driftingCarSetup.steringForce;
-            drift = driftingCarSetup.drifForce;
+            isBreacking = true;
         }
-        else if (brakeInputValue <= 0 && isBracking)
+        else if (brakeInputValue <= 0 && isBreacking)
         {
-            isBracking = false;
+            isBreacking = false;
 
-            carSetup.maxSpeed = 10;
-            rb.linearVelocity = transform.up * 10;
-
-            acelerationForce = carSetup.acelerationForce;
-            steringForce = carSetup.steringForce;
-            drift = carSetup.drifForce;
+            //maxSpeed = maxSpeed + ball.combo * speedBoost;
+            rb.AddForce(transform.up * rb.mass * ball.combo * speedBoost, ForceMode2D.Impulse);
+            ball.combo = 0;
         }
 
-        if (isBracking)
-            maxSpeed = driftingCarSetup.maxSpeed;
-        else
-            maxSpeed = carSetup.maxSpeed;
-
+        LerpValues();
     }
 
-    private void LerpVelocity()
+    private void LerpValues()
     {
-        carSetup.maxSpeed = Mathf.MoveTowards(carSetup.maxSpeed, carSetup.defaultMaxSpeed, 50f * Time.deltaTime);
+        if (isBreacking)
+        {
+            if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed * 0.7f, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+            else maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+
+            drift = Mathf.MoveTowards(drift, driftingCarSetup.drifForce, driftingCarSetup.drifForceLerp * Time.deltaTime);
+            steringForce = Mathf.MoveTowards(steringForce, driftingCarSetup.steringForce, driftingCarSetup.steringForceLerp * Time.deltaTime);
+            acelerationForce = Mathf.MoveTowards(acelerationForce, driftingCarSetup.acelerationForce, driftingCarSetup.acelerationForceLerp * Time.deltaTime);
+        }
+        else
+        {
+            if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed * 0.7f, carSetup.maxSpeedLerp * Time.deltaTime);
+            else maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed , carSetup.maxSpeedLerp * Time.deltaTime);
+
+            drift = Mathf.MoveTowards(drift, carSetup.drifForce, carSetup.drifForceLerp * Time.deltaTime);
+            steringForce = Mathf.MoveTowards(steringForce, carSetup.steringForce, carSetup.steringForceLerp * Time.deltaTime);
+            acelerationForce = Mathf.MoveTowards(acelerationForce, carSetup.acelerationForce, carSetup.acelerationForceLerp * Time.deltaTime);
+        }                 
+    }
+
+    void VisualControl()
+    {
+        float angle = Mathf.Clamp(GetLateralvelocity() * 15f, -35, 35);
+        model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
+
+        if (acelerationInputValue != 0) modelAnim.SetBool("Move", true);
+        else modelAnim.SetBool("Move", false);
     }
 }

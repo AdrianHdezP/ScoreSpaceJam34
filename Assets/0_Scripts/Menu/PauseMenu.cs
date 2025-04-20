@@ -34,11 +34,13 @@ public class PauseMenu : MonoBehaviour
 
     public void ActivatePause()
     {
+        MainSingletone.inst.sceneControl.gM.FreezeGame();
         holder.gameObject.SetActive(true);
         ActivateSection(0);
     }
     public void DeactivatePause()
     {
+        MainSingletone.inst.sceneControl.gM.UnFreezeGame();
         PlayerPrefs.Save();
         holder.gameObject.SetActive(false);
     }
