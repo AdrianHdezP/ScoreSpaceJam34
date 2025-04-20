@@ -5,6 +5,10 @@ public class BallController : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerController playerSC;
     private DeliveryManager deliveryManager;
+    private AudioManager audioManager;
+
+    public AudioSource hitSource;
+    public AudioSource comboSource;
 
     [Header("Combo visuals")]
     [SerializeField] ParticleSystem[] comboTrailsL;
@@ -48,6 +52,7 @@ public class BallController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerSC = FindFirstObjectByType<PlayerController>();
         deliveryManager = FindFirstObjectByType<DeliveryManager>();
+        audioManager = FindFirstObjectByType<AudioManager>();
 
         modelRot = model.localRotation;
     }
@@ -89,7 +94,14 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && playerSC.drifting)
         {
-            if (!collision.gameObject.TryGetComponent(out Enemy enemy) || !enemy.isCharging)
+            if(!hitSource.isPlaying)
+            {
+                float randomPitch = Random.Range(0.75f, 1.25f);
+                hitSource.pitch = randomPitch;
+                hitSource.Play();
+            }
+
+            if (!collision.gameObject.TryGetComponent(out Enemy enemy)|| !enemy.isCharging)
             {
                 damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
 

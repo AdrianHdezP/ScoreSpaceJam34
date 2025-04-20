@@ -31,7 +31,6 @@ public class DeliveryManager : MonoBehaviour
     private void Start()
     {
         DisableCostumer();
-        //RandomEffect();
 
         currentDeliveryType = DeliveryType.None;
     }

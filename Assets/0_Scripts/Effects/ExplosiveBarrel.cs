@@ -1,8 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ExplosiveBarrel : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    [SerializeField] private GameObject barrelVisuals;
     [SerializeField] float detonationTimer;
     [SerializeField] float explosionRange;
     [SerializeField] float explosionImpulse;
@@ -13,6 +17,7 @@ public class ExplosiveBarrel : MonoBehaviour
     [SerializeField] ParticleSystem particlePrefab;
 
     bool activated;
+    bool death;
     float t;
 
     Rigidbody2D rb;
@@ -20,6 +25,7 @@ public class ExplosiveBarrel : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -50,7 +56,19 @@ public class ExplosiveBarrel : MonoBehaviour
             }
         }
 
+        if (!death)
+            StartCoroutine(DeathSecuence());
+    }
+
+    private IEnumerator DeathSecuence()
+    {
+        death = true;
+        audioSource.Play();
+        barrelVisuals.SetActive(false);
         Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(2.5f);
+
         Destroy(gameObject);
     }
 

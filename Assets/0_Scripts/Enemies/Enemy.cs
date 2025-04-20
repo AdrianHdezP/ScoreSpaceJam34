@@ -106,6 +106,7 @@ public class Enemy : MonoBehaviour
         {
             isAggro = true;
             aggroT = aggroTimer;
+            //Sonido
         }
 
         if (isAggro && aggroT < 0)
