@@ -108,12 +108,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BOTON AMARILLO BASE_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 66
+        width: 321
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 56, y: 15, z: 55, w: 14}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5966066e3ef5841bc5695d338c3d13
+      internalID: -1962930473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +144,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BOTON AMARILLO BASE_0: -1962930473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

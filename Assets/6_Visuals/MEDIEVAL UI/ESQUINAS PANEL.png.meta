@@ -108,12 +108,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ESQUINAS PANEL_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 56
+        width: 500
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 168, y: 167, z: 167, w: 158}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a87c49b80d2db408f7df8217beee6e
+      internalID: -1464355139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +144,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ESQUINAS PANEL_0: -1464355139
+      ESQUINAS PANEL_1: 517446354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

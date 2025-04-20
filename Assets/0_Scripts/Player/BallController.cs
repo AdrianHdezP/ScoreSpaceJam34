@@ -27,7 +27,7 @@ public class BallController : MonoBehaviour
     [SerializeField] GameObject protectionPrefab;
     [SerializeField, ColorUsage(true, true)] Color protectionColor;
 
-    private DeliveryType currentDeliveryType;
+    //private DeliveryType currentDeliveryType;
 
 
     [Header("Settings")]
@@ -54,7 +54,7 @@ public class BallController : MonoBehaviour
     }
     private void Update()
     {
-        currentDeliveryType = deliveryManager.currentDeliveryType;
+        //currentDeliveryType = deliveryManager.currentDeliveryType;
 
         horizontalVelocity = Vector2.Dot(transform.right, rb.linearVelocity);
 
@@ -66,19 +66,19 @@ public class BallController : MonoBehaviour
         VisualControl();
 
 
-        if (currentDeliveryType == DeliveryType.None) return;
+        if (deliveryManager.currentDeliveryType == DeliveryType.None) return;
 
         if (Mathf.Abs(horizontalVelocity) > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2)lastPos) >= spawnDistance))
         {
             lastPos = transform.position;
 
-            if (currentDeliveryType == DeliveryType.Fire)
+            if (deliveryManager.currentDeliveryType == DeliveryType.Fire)
                 Instantiate(firePrefab, transform.position, Quaternion.identity);
 
-            else if (currentDeliveryType == DeliveryType.Slime)
+            else if (deliveryManager.currentDeliveryType == DeliveryType.Slime)
                 Instantiate(slimePrefab, transform.position, Quaternion.identity);
 
-            else if (currentDeliveryType == DeliveryType.Protection)
+            else if (deliveryManager.currentDeliveryType == DeliveryType.Protection)
                 Instantiate(protectionPrefab, transform.position, Quaternion.identity);
         }
         if (Mathf.Abs(horizontalVelocity) < fireEmissionThreshold)
@@ -130,7 +130,7 @@ public class BallController : MonoBehaviour
             trailRenderer.enabled = false;
         }
 
-        if (currentDeliveryType == DeliveryType.None)
+        if (deliveryManager.currentDeliveryType == DeliveryType.None)
         {
             m_brewMat.SetColor("_GlowColor", noneColor);
             smokeParticles.Stop();
@@ -142,19 +142,19 @@ public class BallController : MonoBehaviour
             smokeParticles.Play();
         }
 
-        if (currentDeliveryType == DeliveryType.Fire)
+        if (deliveryManager.currentDeliveryType == DeliveryType.Fire)
         {
             m_brewMat.SetColor("_GlowColor", fireColor);
             m_particleMat.SetColor("_GlowColor", fireColor);
         }
            
-        else if (currentDeliveryType == DeliveryType.Slime)
+        else if (deliveryManager.currentDeliveryType == DeliveryType.Slime)
         {
             m_brewMat.SetColor("_GlowColor", slimeColor);
             m_particleMat.SetColor("_GlowColor", slimeColor);
         }
 
-        else if (currentDeliveryType == DeliveryType.Protection)
+        else if (deliveryManager.currentDeliveryType == DeliveryType.Protection)
         {
             m_brewMat.SetColor("_GlowColor", protectionColor);
             m_particleMat.SetColor("_GlowColor", protectionColor);

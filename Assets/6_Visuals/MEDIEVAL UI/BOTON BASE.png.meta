@@ -108,12 +108,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BOTON BASE_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 73
+        width: 301
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 52, y: 14, z: 51, w: 14}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8158bb3bb80cc4c93019819160911c
+      internalID: -1898677545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +144,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BOTON BASE_0: -1898677545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -108,12 +108,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BOTON MARRON_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 85
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 24, y: 21, z: 22, w: 20}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bd088baec4b504fba4e4a0fc00df1f
+      internalID: 1655540028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +144,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BOTON MARRON_0: 1655540028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

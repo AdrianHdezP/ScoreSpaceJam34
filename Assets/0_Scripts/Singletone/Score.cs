@@ -1,13 +1,17 @@
 using Dan.Main;
 using Dan.Models;
+using DG.Tweening;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    [SerializeField] Image errortextHolder;
+    [SerializeField] TextMeshProUGUI errorText;
     public string username { get; private set; } = "(*** USERNAME ERROR ***)";
     public int score { get; private set; } = 0;
 
@@ -55,22 +59,7 @@ public class Score : MonoBehaviour
     void OnErrorGetPersonalEntry(string text)
     {
         Debug.LogError("FAILED: " + text);
-
-        //  Highscore prevData = GetStoredScore();
-        //
-        //  string path = Application.persistentDataPath + "/score.data";
-        //
-        //  BinaryFormatter formatter = new BinaryFormatter();
-        //  FileStream stream = new FileStream(path, FileMode.Create);
-        //
-        //  Highscore data = new Highscore(score, username);
-        //
-        //  if (prevData != null && prevData.score > score) data.score = prevData.score;
-        //
-        //  formatter.Serialize(stream, data);
-        //  stream.Close();
-
-
+        DisplayError();
     }
     public Highscore GetStoredScore()
     {
@@ -145,5 +134,15 @@ public class Score : MonoBehaviour
         }
 
         PlayerPrefs.DeleteAll();
+    }
+
+    void DisplayError()
+    {
+        errortextHolder.gameObject.SetActive(true);
+        errortextHolder.color = Color.white;
+        errortextHolder.DOFade(0, 20).OnComplete(() => errortextHolder.gameObject.SetActive(false));
+
+        errorText.color = Color.red;
+        errorText.DOFade(0, 20);
     }
 }

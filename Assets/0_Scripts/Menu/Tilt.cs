@@ -17,7 +17,7 @@ public class Tilt : MonoBehaviour
         targetRot *= Quaternion.AngleAxis(-maxTilt.y * 0.5f + maxTilt.y * cursorPos.y, Vector3.right);
 
 
-        transform.rotation = targetRot;
+        transform.localRotation = targetRot;
     }
 
 }

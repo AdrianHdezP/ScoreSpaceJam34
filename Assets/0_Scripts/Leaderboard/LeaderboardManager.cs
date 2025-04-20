@@ -14,8 +14,17 @@ public class LeaderboardManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textPrefab;
     [SerializeField] Color ownedColor;
     [SerializeField] Transform holder;
+    [SerializeField] int entriesPerPag;
+    int currentPage;
+    int lastPage;
+    Entry[] entries;
+
 
     [SerializeField] Button refreshButton;
+
+    [SerializeField] Button nextPageButton;
+    [SerializeField] Button prevPageButton;
+    [SerializeField] TextMeshProUGUI currentPageText;
 
     List<TextMeshProUGUI> nameTexts = new();
 
@@ -23,6 +32,7 @@ public class LeaderboardManager : MonoBehaviour
     //LEADERBOARD
     [SerializeField] TextMeshProUGUI usernameMesh;
     [SerializeField] TextMeshProUGUI bestScoreText;
+
     [SerializeField] TextMeshProUGUI errorTextMesh;
 
     //DEBUGGING
@@ -38,6 +48,10 @@ public class LeaderboardManager : MonoBehaviour
         TryStoreScore();
         //GetLeaderboard();
     }
+    private void Update()
+    {
+        SetPageScroller();
+    }
 
     #region LEADERBOARD
     public void GetLeaderboard()
@@ -45,7 +59,23 @@ public class LeaderboardManager : MonoBehaviour
         refreshButton.interactable = false;
         Leaderboards.MyLeaderboard.GetEntries(onEntriesLoaded, onEntriesError);
     }
-    void onEntriesLoaded(Entry[] entries)
+    void onEntriesLoaded(Entry[] entries_)
+    {
+        entries = entries_;
+        currentPage = 0;
+        lastPage = Mathf.FloorToInt(entries.Length / entriesPerPag);
+
+        LoadLeaderboardPage();
+    }
+    void onEntriesError(string error)
+    {
+        Debug.LogError(error);
+
+        errorTextMesh.gameObject.SetActive(true);
+        refreshButton.interactable = true;
+    }
+
+    void LoadLeaderboardPage()
     {
         int loopLength = entries.Length;
 
@@ -57,8 +87,9 @@ public class LeaderboardManager : MonoBehaviour
         }
 
         nameTexts = new List<TextMeshProUGUI>();
+        int elementsLoaded = 0;
 
-        for (int i = 0; i < loopLength; i++)
+        for (int i = currentPage * entriesPerPag; i < loopLength && elementsLoaded < entriesPerPag; i++)
         {
             //Debug.Log("SETTING NAME: " + entries[i].Username + " & SCORE: " + entries[i].Score.ToString("0000"));
             //entry.Rank para coger el ranking
@@ -66,24 +97,22 @@ public class LeaderboardManager : MonoBehaviour
             TextMeshProUGUI text = Instantiate(textPrefab, holder);
             nameTexts.Add(text);
 
-            if (!entries[i].IsMine()) nameTexts[i].text = "(" + entries[i].Rank + ") " + entries[i].Username + "-" + entries[i].Score.ToString("0000") + " Pts";
+            Debug.Log(loopLength);
+
+            if (!entries[i].IsMine()) nameTexts[elementsLoaded].text = "(" + entries[i].Rank + ") " + entries[i].Username + "-" + entries[i].Score.ToString("0000") + " Pts";
             else
             {
-                nameTexts[i].text = "(" + entries[i].Rank + ") " + entries[i].Username + "-" + entries[i].Score.ToString("0000") + " Pts";
-                nameTexts[i].color = ownedColor;
+                nameTexts[elementsLoaded].text = "(" + entries[i].Rank + ") " + entries[i].Username + "-" + entries[i].Score.ToString("0000") + " Pts";
+                nameTexts[elementsLoaded].color = ownedColor;
             }
+
+            elementsLoaded++;
         }
 
         errorTextMesh.gameObject.SetActive(false);
         refreshButton.interactable = true;
     }
-    void onEntriesError(string error)
-    {
-        Debug.LogError(error);
 
-        errorTextMesh.gameObject.SetActive(true);
-        refreshButton.interactable = true;
-    }
     public void SetLeaderBoardEntry(string username, int score)
     {
         Leaderboards.MyLeaderboard.UploadNewEntry(username, score, (msg) =>
@@ -93,6 +122,17 @@ public class LeaderboardManager : MonoBehaviour
         });
     }
     #endregion
+
+    public void LoadNextPage()
+    {
+        currentPage++;
+        LoadLeaderboardPage();
+    }
+    public void LoadPrevPage()
+    {
+        currentPage--;
+        LoadLeaderboardPage();
+    }
 
     #region LOCAL STORAGING 
     public void TryStoreScore()
@@ -125,5 +165,15 @@ public class LeaderboardManager : MonoBehaviour
 
             bestScoreText.gameObject.SetActive(false);
         }
+    }
+    void SetPageScroller()
+    {
+        currentPageText.text = currentPage.ToString() + "/" + lastPage.ToString();
+
+        if (currentPage >= lastPage && entries != null && entries.Length > 0) nextPageButton.interactable = false;
+        else nextPageButton.interactable = true;
+
+        if (currentPage <= 0 && entries != null && entries.Length > 0) prevPageButton.interactable = false;
+        else prevPageButton.interactable = true;
     }
 }
