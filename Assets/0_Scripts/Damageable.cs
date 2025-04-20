@@ -25,6 +25,10 @@ public class Damageable : MonoBehaviour
     private float t;
     private float tickT = 0;
 
+    public bool recentlyImpacted;
+    public float impactedTime = 0.1f;
+    float impactedT;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,10 +45,22 @@ public class Damageable : MonoBehaviour
     private void Update()
     {
         ApplyBurningEffect();
+
+        if (recentlyImpacted)
+        {
+            if (impactedT < impactedTime) impactedT += Time.deltaTime;
+            else
+            {
+                recentlyImpacted = false;
+                impactedT = 0;
+            }
+        } 
     }
 
     public void RecieveDamage(int damage, Vector2 impactForce, bool playerInteraction)
     {
+        recentlyImpacted = true;
+
         health -= damage;
         rb.AddForce(impactForce * rb.mass * knockbackForce, ForceMode2D.Impulse);
         StartCoroutine(DamageTick(8));

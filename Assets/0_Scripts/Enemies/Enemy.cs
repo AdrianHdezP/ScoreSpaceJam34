@@ -230,7 +230,8 @@ public class Enemy : MonoBehaviour
         if (rb.linearVelocity.magnitude >= 0.5f) anim.SetBool("Move", true);
         else anim.SetBool("Move", false);
 
-        anim.SetFloat("Speed", rb.linearVelocity.magnitude * 0.5f);
+        float speed = Mathf.Clamp(Vector2.Dot(transform.up, rb.linearVelocity), 0, 15f);
+        anim.SetFloat("Speed", speed * 0.5f);
     }
 
     public void TriggerDeath()

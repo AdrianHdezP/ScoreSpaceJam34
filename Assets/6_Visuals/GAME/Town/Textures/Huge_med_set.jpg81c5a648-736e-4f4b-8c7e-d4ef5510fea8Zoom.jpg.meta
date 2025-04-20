@@ -1,0 +1,3074 @@
+fileFormatVersion: 2
+guid: d6a07170d37b74e4b91082c9808ad5ed
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66dcdc1ae1fb4164a9a2f9ac8c48cf14
+      internalID: -1254730198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0f8cf3e029a914c842c11be13e754f
+      internalID: -505655457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4de921859ba2d94b9c348d0d8f9f1f4
+      internalID: 239596492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66eb5e94e37d40744817f94f0b0e7981
+      internalID: 612436212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4009e5a2ceb41f34e84fc45b0e32a67a
+      internalID: -1638502882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a43520468aad64ca972d16379b5047
+      internalID: -1159149182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a331fe776ca6d4eb6f6c076ea5c8ec
+      internalID: -317126579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bcf91fb566766499b0e4db829f0f8d
+      internalID: -576301203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b4e1c3cad77ec14e9a5ae93674b849b
+      internalID: -532616850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_9
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8fb513bbffd684c95bf2c178a23baa
+      internalID: 968784571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_10
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8f85630d2bd5c41871c82fcae42ead
+      internalID: 644101185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_11
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dc4147b67a005409da00276fb285ad
+      internalID: 148666673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_12
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35f77c5c75d613419457a6f41ea2865
+      internalID: 1006359524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_13
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5797d7d76df53264a945d9a45a9f5d5a
+      internalID: 1012676808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_14
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffdbb9cbd065804d94fb37c2dedb27d
+      internalID: 1166664005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_15
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d7648156143dc4a9b0b80ef0e9d9b4
+      internalID: 1598503846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6985e382a88d84448b829c809b1ddd41
+      internalID: 78423861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264094b2ab62f1d4b8a47f513f07975f
+      internalID: -161490884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48b435cb07022f458db17357f03a734
+      internalID: -298550309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_19
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cdc5f06695dd747abaccd22cc29d1d
+      internalID: -1891908439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_20
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76601754eb8980849963a72b8cb49761
+      internalID: 502216112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_21
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb42bc267089f3f4fb0831109d45d10b
+      internalID: 1660233897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_22
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ca888476d2ae243b32ff60a248d186
+      internalID: 108094069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_23
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691e010c5cd46b14e88c7026b7ca5a3e
+      internalID: -485349978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_24
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5713c00ba0aa0a3428ca197032abe170
+      internalID: 153701050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_25
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1ba69818070c243b597f3d4a23f24e
+      internalID: -2034603086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_26
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5260390f1c027574f88efcdf3b794360
+      internalID: -1671202352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_27
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ffd89729c42d944b41fd1f94772b37
+      internalID: 1715622141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_28
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0c46fcaff47aa498daa77b2ad97221
+      internalID: 2067079704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_29
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a27991cd6a6a7743aa213e82027f78e
+      internalID: 968562486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_30
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29913f6a27874ce46850761c30dcae5b
+      internalID: 1244639909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_31
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aee64d46b66bd4b96d2f4d634ab46e
+      internalID: 1247657983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57236f91562dea45a68d43a593d9c00
+      internalID: 1700859299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_33
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d812d8cb6e7b5674b97549feb4452d88
+      internalID: 1415965299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_34
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ed52235ce82a74091d6ad95714d3cd
+      internalID: 1829017558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_35
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9d6c212b3792748b2cd709850eefa2
+      internalID: 130647472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_36
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d30f0d0b454a645985967770a7f60c
+      internalID: 94758037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_37
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceee5e22cb513d54a983f16f350e3584
+      internalID: -1924901055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_38
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1663ae44f76e64198533712c454db4
+      internalID: -554718921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_39
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0b21fd48942644c8de0d0cb8c03494
+      internalID: -2056297537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_40
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3f15d71980e9e4998980b8431ec15b
+      internalID: -272418184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_41
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4861aef6b8853447b9d179eab973755
+      internalID: 1314308468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_42
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5cab62db9b01d46be49a883bf89746
+      internalID: 308676946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_43
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4e6758dc4ffdf46a78b0721db96a5b
+      internalID: 367906808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_44
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6494fcaf62cb35a4c8fb976652be31d8
+      internalID: -762279151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_45
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3472cf353fb9c4b9ef9817e537b881
+      internalID: 835938393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_46
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a040dfe4e704b41a029dcb4388f472
+      internalID: -1889001918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_47
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 2560
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225faa56403d1694cacd37f08e136ae6
+      internalID: -1284368790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b4359a0c2e0da428817e8511dd8f66
+      internalID: -682234391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_49
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6f9529d5178194cb0ce5790a92068b
+      internalID: 2065475124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_50
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957d7542f3339c24f90c8149859dc36d
+      internalID: 1727495505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_51
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45c9b2071e98fc40818139933747306
+      internalID: 751260573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_52
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b702720908b18b44faba6ec2ccb3b4d9
+      internalID: -1597842528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_53
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382ccbc7762fcbe4597b17f73b0db727
+      internalID: -2070691870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_54
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481d6d1112dcd6048b0a80d49f1f9e5c
+      internalID: -1222109972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_55
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8808d7dd5e9ec4a4fabf3486c63b4181
+      internalID: -575331166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_56
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3bd3ebd94a95c4dabdde6c7aff40e6
+      internalID: -902188439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_57
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ae4581fa3fda148bbfb155747f43b5
+      internalID: -643998354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_58
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab0888827c8d5c4f8d8242aa351f6e5
+      internalID: 1311362391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_59
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4925c83cdcdb6a1469351c10655f3ca2
+      internalID: -1558580847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_60
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389fad0c371c33244bb3286dabcdeef7
+      internalID: 1342518410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_61
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1407e388000074eb326d944db2f097
+      internalID: -1570000609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_62
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f173730741c3104cb608467457ea615
+      internalID: -406023049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_63
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013787ddc95bd99439c07a1a9e446e85
+      internalID: -699642518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f10567d0511cb43b96375d75728b5e
+      internalID: -1841023147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_65
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9299c71b8c8f1447b990f011097030d
+      internalID: -1814466403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_66
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d43750598da0e545b5f3fa353d64dff
+      internalID: 311153824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_67
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2de0db3cf2578419b59e7872a58e3c
+      internalID: 993673428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_68
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70df6f761162b146b964e916e71dc3a
+      internalID: -22194995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_69
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f802ab006ca28b4b9052c9049059e03
+      internalID: -924005586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_70
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3b8942632ab9b4097a8b5bc19d02fd
+      internalID: -1231135157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_71
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bb267c7b680634491421529ec4f8aa
+      internalID: -691343453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_72
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdd1efe15fc67e4c95979fa302ce616
+      internalID: -778773653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_73
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97898aed0efd4e74a823c3a50b17bf02
+      internalID: -1389946561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_74
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95844564800bbd8489753883ab74029e
+      internalID: -259624761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_75
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa226adc8b3e30345bc35d74671f1198
+      internalID: 41377101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_76
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f4d4fdf7bbf8f4ea7f8ee10f82a92a
+      internalID: 1780872833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_77
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f139f73fb85dc40a8e2cbec27ee6d3
+      internalID: 108365786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_78
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37582c8b9e23f34f8d5a493627130cc
+      internalID: 1450206589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_79
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c3c5af9862d134f8dd4fa6bd3f2096
+      internalID: -1304504009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0485075aed52572468cdbd34e0b88979
+      internalID: 1871391374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_81
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26347dc54b1aae349b692ff73291308c
+      internalID: 1422076576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_82
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64a91a2a75179e459bc9efe65dcdd9c
+      internalID: -868122493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_83
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9914111c6161041a0386e20eb0b844
+      internalID: -1231383771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_84
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108c7e529d45e504489a635901c74b8a
+      internalID: -1847914544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_85
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09ac5a0b104e5847a3574df14ec11f7
+      internalID: -467680169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_86
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2fd6496cae9fc4b9dadb9897bfdd7a
+      internalID: 1981540929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_87
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cafa509cb38914eaad5a6238eb1092
+      internalID: -885076574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_88
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646404b969b63f241a13d68474ee04f6
+      internalID: 1494608386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_89
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff349ce36624676408e973c6a0c4fb30
+      internalID: -1287021481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_90
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b232107711f4d3347b2104ab11c91f79
+      internalID: -1203989428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_91
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1e4cbd9a8f4404386cb4367bdb341b
+      internalID: 1276399128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_92
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53beb72edd7e9f14391168ecb2b8b0b0
+      internalID: -598153976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_93
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a09405054864d408e7cacbd383c18b
+      internalID: -379119719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_94
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9b853e5470d284f847f5b3bfb320c4
+      internalID: -2122849821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_95
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ca0ef0b7e72c944953ad1031e08241
+      internalID: 1513325064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3dbb50866dc0f4396ca8dacb7ca609
+      internalID: -1732606933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_97
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e3b6e47103c32419e7363fefee7ec1
+      internalID: -250188550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_98
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9974429fb85be438e3f2ccd2f6494f
+      internalID: 644830846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_99
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b410be8b19f20b43aeffcede14e53e8
+      internalID: 1012910788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_100
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b375e3ce55bfc84ba7cf3f0e5a0cd3f
+      internalID: 2134310161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_101
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc3bcc35def30240b5d570229ce0803
+      internalID: -1678739326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_102
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009df3fedbe8d3f43bdfc63636dc3a48
+      internalID: -2048953919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_103
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5e59948726e5646926585042b31f27
+      internalID: -574386227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_104
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fab29d57ee0b5645a7ef41671195daf
+      internalID: -996368036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_105
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a87fecc3fdfda4c8901ef3e87e3620
+      internalID: -1860360447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_106
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339a8376766b8e14cac9b48466c0866b
+      internalID: 1507194378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_107
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69916695778075644bc353da5f5da6b1
+      internalID: 728010520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_108
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc37feac5412824468fb492fe432e238
+      internalID: 1272580521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_109
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88f39393312f024aa73c7a51a010091
+      internalID: -878141069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_110
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa49317900e11643afc23672d7ac4a2
+      internalID: 1116116328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_111
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6ff6cc64db4294aaba039e965d3399
+      internalID: -2097741934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc206e3d8e65eb046aec368ba9d0a8a2
+      internalID: 1446183715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_113
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c0288fb90f0894c8e25023acf65af4
+      internalID: 1339363994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_114
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e265a5b79733d458b45f3c644d9b90
+      internalID: -1715069624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_115
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e254ea69ea5a4541922edcda3a66abf
+      internalID: 1804651576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_116
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de61b7ac08e653344aa89d04df902d2a
+      internalID: 789416544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_117
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd3243e6eb5f184683058aca31e770d
+      internalID: -1498084664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_118
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea3c70cae93a65489db532a802998a7
+      internalID: 1716807309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_119
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff133456e7d68f4f9366c9eeec53597
+      internalID: -1555352073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_120
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3527f284d906b8e4789ebaf1f9852c51
+      internalID: -846702210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_121
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42855f07873fef642b76bdffc9d74cfd
+      internalID: 1988448042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_122
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66ab6c86543a664fbcaf8f074a21868
+      internalID: -393408463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_123
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e913043495e9fa24eb82b983b0550c51
+      internalID: 937541506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_124
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15fb7d3d7b27b846b49d0f89207de12
+      internalID: 1581358428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_125
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60afbaad8680ad24e9f60ea1cfd30a72
+      internalID: -673157556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_126
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655f04da1a62f9f46bf492426e3c4ec7
+      internalID: -2009713049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_127
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fed19c9bc51be042bc9f6132907728a
+      internalID: 1917870223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 71db1b4ab7cf71e4eb440a4d1b88251f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_0: -1254730198
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_1: -505655457
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_10: 644101185
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_100: 2134310161
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_101: -1678739326
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_102: -2048953919
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_103: -574386227
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_104: -996368036
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_105: -1860360447
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_106: 1507194378
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_107: 728010520
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_108: 1272580521
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_109: -878141069
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_11: 148666673
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_110: 1116116328
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_111: -2097741934
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_112: 1446183715
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_113: 1339363994
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_114: -1715069624
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_115: 1804651576
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_116: 789416544
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_117: -1498084664
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_118: 1716807309
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_119: -1555352073
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_12: 1006359524
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_120: -846702210
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_121: 1988448042
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_122: -393408463
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_123: 937541506
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_124: 1581358428
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_125: -673157556
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_126: -2009713049
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_127: 1917870223
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_13: 1012676808
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_14: 1166664005
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_15: 1598503846
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_16: 78423861
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_17: -161490884
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_18: -298550309
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_19: -1891908439
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_2: 239596492
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_20: 502216112
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_21: 1660233897
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_22: 108094069
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_23: -485349978
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_24: 153701050
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_25: -2034603086
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_26: -1671202352
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_27: 1715622141
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_28: 2067079704
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_29: 968562486
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_3: 612436212
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_30: 1244639909
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_31: 1247657983
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_32: 1700859299
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_33: 1415965299
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_34: 1829017558
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_35: 130647472
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_36: 94758037
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_37: -1924901055
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_38: -554718921
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_39: -2056297537
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_4: -1638502882
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_40: -272418184
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_41: 1314308468
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_42: 308676946
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_43: 367906808
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_44: -762279151
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_45: 835938393
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_46: -1889001918
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_47: -1284368790
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_48: -682234391
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_49: 2065475124
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_5: -1159149182
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_50: 1727495505
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_51: 751260573
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_52: -1597842528
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_53: -2070691870
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_54: -1222109972
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_55: -575331166
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_56: -902188439
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_57: -643998354
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_58: 1311362391
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_59: -1558580847
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_6: -317126579
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_60: 1342518410
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_61: -1570000609
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_62: -406023049
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_63: -699642518
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_64: -1841023147
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_65: -1814466403
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_66: 311153824
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_67: 993673428
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_68: -22194995
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_69: -924005586
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_7: -576301203
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_70: -1231135157
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_71: -691343453
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_72: -778773653
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_73: -1389946561
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_74: -259624761
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_75: 41377101
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_76: 1780872833
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_77: 108365786
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_78: 1450206589
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_79: -1304504009
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_8: -532616850
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_80: 1871391374
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_81: 1422076576
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_82: -868122493
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_83: -1231383771
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_84: -1847914544
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_85: -467680169
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_86: 1981540929
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_87: -885076574
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_88: 1494608386
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_89: -1287021481
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_9: 968784571
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_90: -1203989428
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_91: 1276399128
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_92: -598153976
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_93: -379119719
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_94: -2122849821
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_95: 1513325064
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_96: -1732606933
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_97: -250188550
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_98: 644830846
+      Huge_med_set.jpg81c5a648-736e-4f4b-8c7e-d4ef5510fea8Zoom_99: 1012910788
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

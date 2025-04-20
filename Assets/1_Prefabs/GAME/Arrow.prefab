@@ -109,7 +109,7 @@ MonoBehaviour:
   impactDamage: 5
   activationLayer:
     serializedVersion: 2
-    m_Bits: 833
+    m_Bits: 841
   particlePrefab: {fileID: 9106159846171946314, guid: b4954a01c2949d54da2760723b12061b, type: 3}
   particlesFollow: {fileID: 2285428214908583107}
   shooter: {fileID: 0}

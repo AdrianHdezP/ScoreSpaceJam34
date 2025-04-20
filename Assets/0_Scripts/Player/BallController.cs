@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
@@ -59,11 +61,8 @@ public class BallController : MonoBehaviour
     }
     private void Update()
     {
-        //currentDeliveryType = deliveryManager.currentDeliveryType;
-
         horizontalVelocity = Vector2.Dot(transform.right, rb.linearVelocity);
-
-        if (Mathf.Abs(horizontalVelocity) < speedBoostThreshold)
+        if (Mathf.Abs(horizontalVelocity) < speedBoostThreshold || !playerSC.drifting)
         {
             if (comboT < 0)
             {
@@ -78,10 +77,9 @@ public class BallController : MonoBehaviour
 
         VisualControl();
 
-
         if (deliveryManager.currentDeliveryType == DeliveryType.None) return;
 
-        if (Mathf.Abs(horizontalVelocity) > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2)lastPos) >= spawnDistance))
+        if (Mathf.Abs(horizontalVelocity) > fireEmissionThreshold && (lastPos == null || Vector2.Distance(transform.position, (Vector2)lastPos) >= spawnDistance) && playerSC.drifting)
         {
             lastPos = transform.position;
 
@@ -94,15 +92,14 @@ public class BallController : MonoBehaviour
             else if (deliveryManager.currentDeliveryType == DeliveryType.Protection)
                 Instantiate(protectionPrefab, transform.position, Quaternion.identity);
         }
-        if (Mathf.Abs(horizontalVelocity) < fireEmissionThreshold)
-            lastPos = null;
+        if (Mathf.Abs(horizontalVelocity) < fireEmissionThreshold) lastPos = null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold)
+        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && !damagable.recentlyImpacted)
         {
-            if(!hitSource.isPlaying)
+            if (!hitSource.isPlaying)
             {
                 float randomPitch = Random.Range(0.75f, 1.25f);
                 hitSource.pitch = randomPitch;
@@ -111,16 +108,16 @@ public class BallController : MonoBehaviour
 
             if (!collision.gameObject.TryGetComponent(out Enemy enemy)|| !enemy.isCharging)
             {
-                damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
+                damagable.RecieveDamage (10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
 
-                comboT = playerSC.comboTimer;
-
-
-                comboSource.pitch = pitch;
-                pitch += 0.05f;
-                comboSource.Play();
-
-                combo++;
+                if (playerSC.drifting)
+                {
+                    comboT = playerSC.comboTimer;
+                    comboSource.pitch = pitch;
+                    pitch += 0.05f;
+                    comboSource.Play();
+                    combo++;
+                }
             }
         }
     }

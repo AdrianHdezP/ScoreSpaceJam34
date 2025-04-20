@@ -307,7 +307,7 @@ MonoBehaviour:
   stoppingDistance: 3.5
   activationLayer:
     serializedVersion: 2
-    m_Bits: 769
+    m_Bits: 777
   decelerate: 0
   isCharging: 0
 --- !u!114 &2577620040236458151
@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
   onFireParticles: {fileID: 2361399224762763541}
   tickColor:
     serializedVersion: 2
@@ -400,6 +399,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  recentlyImpacted: 0
+  impactedTime: 0.1
 --- !u!82 &371858831311231224
 AudioSource:
   m_ObjectHideFlags: 0
