@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     Vector2 chargeStartPos;
     float chargeCooldownT;
     float prechargeT;
-    bool isCharging;
+    public bool isCharging;
     float chargingT;
 
     bool isPrecharging;

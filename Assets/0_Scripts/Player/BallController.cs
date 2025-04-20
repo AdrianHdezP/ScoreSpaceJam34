@@ -89,13 +89,16 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Damageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
         {
-            damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
-
-            if (Mathf.Abs(playerSC.GetLateralvelocity()) > speedBoostThreshold)
+            if (!collision.gameObject.TryGetComponent(out Enemy enemy) || !enemy.isCharging)
             {
-                comboT = playerSC.comboTimer;
-                combo++;
-            }          
+                damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
+
+                if (Mathf.Abs(playerSC.GetLateralvelocity()) > speedBoostThreshold)
+                {
+                    comboT = playerSC.comboTimer;
+                    combo++;
+                }
+            }
         }
     }
 
