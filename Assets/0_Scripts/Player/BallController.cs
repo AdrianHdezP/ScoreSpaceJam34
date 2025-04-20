@@ -45,6 +45,7 @@ public class BallController : MonoBehaviour
     Quaternion modelRot;
 
     [HideInInspector] public int combo;
+    private float pitch = 1f;
     float comboT;
 
     private void Awake()
@@ -64,8 +65,15 @@ public class BallController : MonoBehaviour
 
         if (Mathf.Abs(horizontalVelocity) < speedBoostThreshold)
         {
-            if (comboT < 0) combo = 0;
-            else comboT -= Time.deltaTime;
+            if (comboT < 0)
+            {
+                combo = 0;
+                pitch = 1;
+            }
+            else
+            {
+                comboT -= Time.deltaTime;
+            }
         }
 
         VisualControl();
@@ -106,6 +114,12 @@ public class BallController : MonoBehaviour
                 damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
 
                 comboT = playerSC.comboTimer;
+
+
+                comboSource.pitch = pitch;
+                pitch += 0.05f;
+                comboSource.Play();
+
                 combo++;
             }
         }

@@ -5,8 +5,6 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private AudioManager audioManager;
-    [HideInInspector] public AudioSource audioSource;
 
     [SerializeField] ParticleSystem onFireParticles;
     [SerializeField] Gradient tickColor;
@@ -30,8 +28,6 @@ public class Damageable : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        audioManager = FindFirstObjectByType<AudioManager>();
-        audioSource = GetComponent<AudioSource>();
 
         m_renderers = GetComponentsInChildren<Renderer>();
         materials = new Material[m_renderers.Length];
