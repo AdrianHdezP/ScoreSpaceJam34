@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BallController ball;
+    private PointManager pointManager;
 
     [Header("Visuals")]
     [SerializeField] private Transform model;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ball = FindFirstObjectByType<BallController>();
+        pointManager = FindFirstObjectByType<PointManager>();
 
         modelRot = model.localRotation;
     }
@@ -89,7 +91,9 @@ public class PlayerController : MonoBehaviour
     {
         if (MainSingletone.inst.sceneControl.gM.paused || dead)
         {
-            //rb.linearVelocity = Vector2.zero;
+            if (dead)
+                rb.linearVelocity = Vector2.zero;
+
             return;
         }
 
@@ -248,5 +252,13 @@ public class PlayerController : MonoBehaviour
         modelAnim.SetBool("DriftLeft", false);
         modelAnim.SetBool("Idle", false);
         modelAnim.SetBool("Dead", true);
+    }
+
+    public void FinishGame()
+    {
+        if (dead && !pointManager.timeOut)
+        {
+            pointManager.TimeOut();
+        }
     }
 }

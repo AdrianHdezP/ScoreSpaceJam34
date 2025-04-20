@@ -40,7 +40,9 @@ public class PointManager : MonoBehaviour
 
         UpdatePoints();
         Clock();
-        TimeOut();
+
+        if (timeElapsed <= 0 && !timeOut)
+            TimeOut();
     }
 
     private void UpdatePoints() => pointTMP.text = points.ToString();
@@ -57,20 +59,18 @@ public class PointManager : MonoBehaviour
 
     public void AddTime() => timeElapsed += timeToAdd;
 
-    private void TimeOut()
+    public void TimeOut()
     {
-        if (timeElapsed <= 0 && !timeOut)
-        {
-            timeOut = true;
+        timeOut = true;
 
-            timePoints = Mathf.FloorToInt(totalTime * 10);
-            MainSingletone.inst.score.SetScore(points + timePoints);
+        timePoints = Mathf.FloorToInt(totalTime * 10);
+        MainSingletone.inst.score.SetScore(points + timePoints);
 
-            MainSingletone.inst.sceneControl.gM.FreezeGame();
-            MainSingletone.inst.sceneControl.gM.ended = true;
+        MainSingletone.inst.sceneControl.gM.FreezeGame();
+        MainSingletone.inst.sceneControl.gM.ended = true;
 
-            timeOutPanel.SetActive(true);
-            //MainSingletone.inst.sceneControl.FadeOut(1);
-        }
+        MainSingletone.inst.score.TryStoreScore();
+
+        timeOutPanel.SetActive(true);
     }
 }

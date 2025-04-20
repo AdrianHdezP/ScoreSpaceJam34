@@ -54,6 +54,7 @@ public class SceneControl : MonoBehaviour
     }   
     public void FadeOut(int sceneIndex)
     {
+        Time.timeScale = 1;
         current = Transitions.fade;
 
         fadeImage.gameObject.SetActive(true);
@@ -71,6 +72,7 @@ public class SceneControl : MonoBehaviour
     }
     public void TVStaticOut(int sceneIndex)
     {
+        Time.timeScale = 1;
         current = Transitions.tvStatic;
         TVstatic.SetActive(true);
 
@@ -91,6 +93,7 @@ public class SceneControl : MonoBehaviour
     }
     public void TVOffOut(int sceneIndex)
     {
+        Time.timeScale = 1;
         current = Transitions.tvOff;
 
         TVOff.gameObject.SetActive(true);

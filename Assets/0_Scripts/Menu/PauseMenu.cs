@@ -85,4 +85,10 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.Save();
         MainSingletone.inst.sceneControl.FadeOut(2);
     }
+
+    public void GoToMenu()
+    {
+        PlayerPrefs.Save();
+        MainSingletone.inst.sceneControl.FadeOut(1);
+    }
 }

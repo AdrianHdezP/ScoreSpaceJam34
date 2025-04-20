@@ -11,7 +11,7 @@ public class Costumer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerController player))
+        if (collision.gameObject.TryGetComponent(out BallController player))
             deliveryManager.CompleteDelivery();
     }
 }
