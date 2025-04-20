@@ -7195,7 +7195,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.2
+  m_Time: 0.25
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -7205,21 +7205,21 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.75
-        inSlope: -0.16259244
-        outSlope: -0.16259244
+        value: 0.875
+        inSlope: -1.6628788
+        outSlope: -1.6628788
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.12328902
+        outWeight: 0.07534329
       - serializedVersion: 3
         time: 0.9977112
         value: 0
-        inSlope: -1.7330402
-        outSlope: -1.7330402
+        inSlope: -0.32927638
+        outSlope: -0.32927638
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.13012749
+        inWeight: 0.13697684
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -17230,7 +17230,7 @@ MonoBehaviour:
   steringInput: {fileID: -737962710453807491, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   brakeInput: {fileID: 7956254223724033156, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   carSetup:
-    maxSpeed: 7
+    maxSpeed: 8.5
     maxSpeedLerp: 10
     acelerationForce: 7.5
     acelerationForceLerp: 3
@@ -17239,8 +17239,8 @@ MonoBehaviour:
     drifForce: 0.55
     drifForceLerp: 0.15
   driftingCarSetup:
-    maxSpeed: 12
-    maxSpeedLerp: 10
+    maxSpeed: 13
+    maxSpeedLerp: 8
     acelerationForce: 5
     acelerationForceLerp: 2
     steringForce: 5
