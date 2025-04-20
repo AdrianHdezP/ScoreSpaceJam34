@@ -37,19 +37,20 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private CarSetup carSetup;
     [SerializeField] private CarSetup driftingCarSetup;
-   [SerializeField] private Quaternion modelRot;
-   [SerializeField] public float speedBoost;
-   [SerializeField] public float comboTimer;
-   [SerializeField] private float maxSpeed;
-   [SerializeField] private float acelerationForce;
-   [SerializeField] private float steringForce;
-   [SerializeField] private float drift;
-   [SerializeField] private float rotationAngle;
-   [SerializeField] private float velocityVsUp;
-   [SerializeField] private bool isBreacking;
-   [SerializeField] private float breacckingTime;
+    private Quaternion modelRot;
+    public float speedBoost;
+    public float comboTimer;
+    private float maxSpeed;
+    private float acelerationForce;
+    private float steringForce;
+    private float drift;
+    private float rotationAngle;
+    private float velocityVsUp;
+    private bool isBreacking;
+    private float breacckingTime;
 
     public bool decelerate;
+    public bool dead;
 
     private void Awake()
     {
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (MainSingletone.inst.sceneControl.gM.paused)
+        if (MainSingletone.inst.sceneControl.gM.paused || dead)
             return;
 
         AssignInputs();
@@ -86,15 +87,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (MainSingletone.inst.sceneControl.gM.paused)
+        if (MainSingletone.inst.sceneControl.gM.paused || dead)
         {
             //rb.linearVelocity = Vector2.zero;
             return;
         }
 
         ApplyEngineForce();
-       KillOrthogonalVelocity();
-       ApplyStering();
+        KillOrthogonalVelocity();
+        ApplyStering();
     }
 
     private void ApplyEngineForce()
@@ -211,7 +212,37 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Clamp(GetLateralvelocity() * 15f, -35, 35);
         model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
 
-        if (acelerationInputValue != 0) modelAnim.SetBool("Move", true);
-        else modelAnim.SetBool("Move", false);
+
+        if (acelerationInputValue != 0)
+        {
+            modelAnim.SetBool("Idle", false);
+
+            if (brakeInputValue == 0) modelAnim.SetBool("Move", true);
+            else modelAnim.SetBool("Move", false);
+
+            if (brakeInputValue > 0) modelAnim.SetBool("DriftRight", true);
+            else modelAnim.SetBool("DriftRight", false);
+
+            if (brakeInputValue < 0) modelAnim.SetBool("DriftLeft", true);
+            else modelAnim.SetBool("DriftLeft", false);
+
+        }
+        else
+        {
+            modelAnim.SetBool("Move", false);
+            modelAnim.SetBool("DriftRight", false);
+            modelAnim.SetBool("DriftLeft", false);
+            modelAnim.SetBool("Idle", true);
+        }
+    }
+    public void TriggerDeath()
+    {
+        dead = true;
+
+        modelAnim.SetBool("Move", false);
+        modelAnim.SetBool("DriftRight", false);
+        modelAnim.SetBool("DriftLeft", false);
+        modelAnim.SetBool("Idle", false);
+        modelAnim.SetBool("Dead", true);
     }
 }

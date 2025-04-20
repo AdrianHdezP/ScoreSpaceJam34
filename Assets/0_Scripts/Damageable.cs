@@ -20,6 +20,7 @@ public class Damageable : MonoBehaviour
     public int health;
     public float knockbackForce = 1;
     public UnityEvent OnDeath;
+    public UnityEvent OnPlayerVictim;
 
     private float t;
     private float tickT = 0;
@@ -50,8 +51,9 @@ public class Damageable : MonoBehaviour
 
         if (health <= 0)
         {
-            if (playerInteraction)
-                OnDeath.Invoke();
+            if (playerInteraction) OnPlayerVictim.Invoke();
+
+            OnDeath.Invoke();
 
             if (destroyOnDeath) 
                 Destroy(gameObject);
@@ -78,7 +80,7 @@ public class Damageable : MonoBehaviour
 
             if (tickT > 0.5f)
             {
-                RecieveDamage(1, Vector2.zero, true);
+                RecieveDamage (1, Vector2.zero, true);
                 tickT = 0;
             }
 

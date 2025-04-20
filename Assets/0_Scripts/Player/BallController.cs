@@ -6,12 +6,15 @@ public class BallController : MonoBehaviour
     private PlayerController playerSC;
     private DeliveryManager deliveryManager;
 
-
+    [Header("Combo visuals")]
+    [SerializeField] ParticleSystem[] comboTrailsL;
+    [SerializeField] ParticleSystem[] comboTrailsR;
 
     [Header("Setup")]
     [SerializeField] Material m_brewMat;
     [SerializeField] Material m_particleMat;
     [SerializeField] ParticleSystem smokeParticles;
+    [SerializeField] TrailRenderer trailRenderer;
 
     [SerializeField, ColorUsage(true, true)] Color noneColor;
 
@@ -98,8 +101,31 @@ public class BallController : MonoBehaviour
 
     void VisualControl()
     {
+        for (int i = 0; i < comboTrailsL.Length; i++)
+        {
+            if (combo == i + 1 || (combo >= comboTrailsL.Length && i == comboTrailsL.Length - 1))
+            {
+                comboTrailsL[i].gameObject.SetActive(true);
+                comboTrailsR[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                comboTrailsL[i].gameObject.SetActive(false);
+                comboTrailsR[i].gameObject.SetActive(false);
+            }
+        }
+
         float angle = Mathf.Clamp(horizontalVelocity * 15f, -15, 15);
         model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
+
+        if (Mathf.Abs(horizontalVelocity) > speedBoostThreshold)
+        {
+            trailRenderer.enabled = true;
+        }
+        else
+        {
+            trailRenderer.enabled = false;
+        }
 
         if (currentDeliveryType == DeliveryType.None)
         {
