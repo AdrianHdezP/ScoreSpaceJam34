@@ -226,7 +226,10 @@ public class PlayerController : MonoBehaviour
             if (brakeInputValue < 0) modelAnim.SetBool("DriftLeft", true);
             else modelAnim.SetBool("DriftLeft", false);
 
-             Vector2 forwardVelocity = transform.up * Vector2.Dot(rb.linearVelocity, transform.up);
+            Vector2 forwardVelocity = transform.up * Vector2.Dot(rb.linearVelocity, transform.up);
+
+            float speed = forwardVelocity.magnitude * 0.6f;
+            modelAnim.SetFloat("Speed", speed); 
         }
         else
         {

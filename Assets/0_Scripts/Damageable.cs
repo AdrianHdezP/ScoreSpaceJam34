@@ -29,7 +29,7 @@ public class Damageable : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        m_renderers = GetComponentsInChildren<MeshRenderer>();
+        m_renderers = GetComponentsInChildren<Renderer>();
         materials = new Material[m_renderers.Length];
 
         for (int i = 0; i < m_renderers.Length; i++)

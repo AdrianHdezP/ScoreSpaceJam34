@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
     float i_moveSpeed;
@@ -66,6 +67,8 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+        ControlVisuals();
+
         if (MainSingletone.inst.sceneControl.gM.paused)
             return;
 
@@ -210,4 +213,15 @@ public class Enemy : MonoBehaviour
         }
     }
    
+
+    void ControlVisuals()
+    {
+        if (rb.linearVelocity.magnitude < 0.5f) anim.SetBool("Idle", true);
+        else anim.SetBool("Idle", false);
+
+        if (rb.linearVelocity.magnitude >= 0.5f) anim.SetBool("Move", true);
+        else anim.SetBool("Move", false);
+
+        anim.SetFloat("Speed", rb.linearVelocity.magnitude * 0.5f);
+    }
 }
