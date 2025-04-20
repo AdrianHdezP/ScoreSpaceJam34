@@ -5905,41 +5905,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5187581955308245732, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 1784326575371028081, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5187581955308245732, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187581955308245732, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6197330723602933517, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6197330723602933517, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6197330723602933517, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 7034131092432703612, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7034131092432703612, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954589250173152419, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954589250173152419, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 9060752209143747233, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_Name
@@ -5947,7 +5951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9179067659602240173, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6950,7 +6954,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00014305113, w: 1}
-  m_LocalPosition: {x: -7.1, y: 7.3, z: -10}
+  m_LocalPosition: {x: -8.48, y: 5.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16047,7 +16051,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tab
+  m_Text: Tabulacion
 --- !u!222 &799838655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37375,7 +37379,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d495f2a31df72d4fb04e9ba6a0a860d, type: 2}
+  - {fileID: 2100000, guid: c1163713b7be5ef409bd3e47f5eb403d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -41763,7 +41767,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Space
+  m_Text: Barra Espaciadora
 --- !u!222 &2091884234
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41904,7 +41908,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 523906566}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -41936,7 +41940,7 @@ Transform:
   m_GameObject: {fileID: 2100722750}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.00014305113, w: 1}
-  m_LocalPosition: {x: -7.1, y: 7.3, z: -10}
+  m_LocalPosition: {x: -8.48, y: 5.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
