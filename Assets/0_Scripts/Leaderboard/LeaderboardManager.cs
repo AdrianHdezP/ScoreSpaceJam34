@@ -42,6 +42,7 @@ public class LeaderboardManager : MonoBehaviour
     {
         TryStoreScore();
         SetUserStuff();
+
     }
     private void Start()
     {

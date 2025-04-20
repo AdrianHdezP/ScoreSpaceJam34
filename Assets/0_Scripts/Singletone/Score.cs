@@ -53,6 +53,7 @@ public class Score : MonoBehaviour
         LeaderboardManager leaderboard = FindFirstObjectByType<LeaderboardManager>();
         if (leaderboard != null)
         {
+            leaderboard.GetLeaderboard();
             leaderboard.SetUserStuff();
         }
     }
