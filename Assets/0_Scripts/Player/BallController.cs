@@ -34,7 +34,6 @@ public class BallController : MonoBehaviour
     [SerializeField] private Transform model;
     [SerializeField] private float fireEmissionThreshold;
     [SerializeField] private float speedBoostThreshold;
-    [SerializeField] private float damageThreshold;
     [SerializeField] private float spawnDistance;
 
     float horizontalVelocity;
@@ -58,11 +57,12 @@ public class BallController : MonoBehaviour
 
         horizontalVelocity = Vector2.Dot(transform.right, rb.linearVelocity);
 
-        if (Mathf.Abs(playerSC.GetLateralvelocity()) < speedBoostThreshold)
+        if (Mathf.Abs(horizontalVelocity) < speedBoostThreshold)
         {
             if (comboT < 0) combo = 0;
             else comboT -= Time.deltaTime;
         }
+
         VisualControl();
 
 
@@ -87,17 +87,14 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Damageable damagable) && collision.relativeVelocity.magnitude >= damageThreshold)
+        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && playerSC.drifting)
         {
             if (!collision.gameObject.TryGetComponent(out Enemy enemy) || !enemy.isCharging)
             {
                 damagable.RecieveDamage(10, -collision.contacts[0].normal * collision.relativeVelocity.magnitude, true);
 
-                if (Mathf.Abs(playerSC.GetLateralvelocity()) > speedBoostThreshold)
-                {
-                    comboT = playerSC.comboTimer;
-                    combo++;
-                }
+                comboT = playerSC.comboTimer;
+                combo++;
             }
         }
     }
@@ -121,7 +118,7 @@ public class BallController : MonoBehaviour
         float angle = Mathf.Clamp(horizontalVelocity * 15f, -15, 15);
         model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
 
-        if (Mathf.Abs(horizontalVelocity) > speedBoostThreshold)
+        if (Mathf.Abs(horizontalVelocity) > speedBoostThreshold && playerSC.drifting)
         {
             trailRenderer.enabled = true;
         }

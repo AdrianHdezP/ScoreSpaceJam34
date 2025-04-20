@@ -39,10 +39,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CarSetup carSetup;
     [SerializeField] private CarSetup driftingCarSetup;
     private Quaternion modelRot;
-    public float speedBoost;
+    [SerializeField] float speedBoost;
+    [SerializeField] float driftingThreshold;
     public float comboTimer;
     private float maxSpeed;
-    private float acelerationForce;
+    private float acelerationForce;   
     private float steringForce;
     private float drift;
     private float rotationAngle;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     public bool decelerate;
     public bool dead;
+    public bool drifting;
 
     private void Awake()
     {
@@ -148,6 +150,7 @@ public class PlayerController : MonoBehaviour
         Vector2 rightVelocity = transform.right * Vector2.Dot(rb.linearVelocity, transform.right);
 
         rb.linearVelocity = forwardVelocity + rightVelocity * drift;
+        drifting = rightVelocity.magnitude >= driftingThreshold;
     }
 
     public float GetLateralvelocity() => Vector2.Dot(transform.right, rb.linearVelocity);

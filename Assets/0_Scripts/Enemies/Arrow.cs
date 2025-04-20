@@ -9,6 +9,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] int impactDamage;
     [SerializeField] LayerMask activationLayer;
     [SerializeField] ParticleSystem particlePrefab;
+    [SerializeField] ParticleSystem particlesFollow;
 
     public EnemyRanged shooter;
 
@@ -33,9 +34,15 @@ public class Arrow : MonoBehaviour
             }
 
             impacted = true;
+
+            particlesFollow.transform.SetParent(null);
+            particlesFollow.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            Destroy(particlesFollow.gameObject, 2);
+
             Instantiate(particlePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
+
 
 }
