@@ -5,6 +5,7 @@ public class EnemyRanged : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator anim;
     [SerializeField] float detectionRange;
     [SerializeField] float aggroTimer;
     [SerializeField] float moveSpeed;
@@ -45,8 +46,25 @@ public class EnemyRanged : MonoBehaviour
         //  agent.updateRotation = false;
         //  agent.updateUpAxis = false;
     }
+
+    private void FixedUpdate()
+    {
+        if (MainSingletone.inst.sceneControl.gM.paused)
+        {
+            //agent.isStopped = true;
+            return;
+        }
+
+        if (player && distanceToPlayer > stoppingDistance)
+        {
+            rb.AddForce(agent.desiredVelocity * rb.mass * moveSpeed);
+        }
+    }
+
     private void Update()
     {
+        ControlVisuals();
+
         if (MainSingletone.inst.sceneControl.gM.paused)
         {
             agent.isStopped = true;
@@ -60,6 +78,8 @@ public class EnemyRanged : MonoBehaviour
 
         if (isAggro)
         {
+            agent.SetDestination(player.transform.position);
+
             if (distanceToPlayer > detectionRange)
             {
                 aggroT -= Time.deltaTime;
@@ -93,6 +113,7 @@ public class EnemyRanged : MonoBehaviour
 
         if (isAggro) LookAtPlayer();
         else LookAtDirection();
+
     }
 
     void ControlWeapon()
@@ -131,5 +152,16 @@ public class EnemyRanged : MonoBehaviour
         {
             agent.SetDestination(wayPoint.position);
         }
+    }
+
+    void ControlVisuals()
+    {
+        if (rb.linearVelocity.magnitude < 0.5f) anim.SetBool("Idle", true);
+        else anim.SetBool("Idle", false);
+
+        if (rb.linearVelocity.magnitude >= 0.5f) anim.SetBool("Move", true);
+        else anim.SetBool("Move", false);
+
+        anim.SetFloat("Speed", rb.linearVelocity.magnitude * 0.5f);
     }
 }
