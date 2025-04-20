@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     float chargingT;
 
     bool isPrecharging;
+    bool isDead;
 
     bool isAggro;
     float aggroT;
@@ -69,7 +70,7 @@ public class Enemy : MonoBehaviour
     {
         ControlVisuals();
 
-        if (MainSingletone.inst.sceneControl.gM.paused)
+        if (MainSingletone.inst.sceneControl.gM.paused || isDead)
             return;
 
         if (decelerate)
@@ -123,7 +124,7 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (MainSingletone.inst.sceneControl.gM.paused)
+        if (MainSingletone.inst.sceneControl.gM.paused || isDead)
         {
             //agent.isStopped = true;
             return;
@@ -198,10 +199,12 @@ public class Enemy : MonoBehaviour
     void LookAtPlayer()
     {
         transform.up = directionToPlayer;
+        transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
     }
     void LookAtDirection()
     {
         if (moveDirection != Vector2.zero) transform.up = moveDirection;
+        transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
     }
 
     void MoveToWayPoint()
@@ -224,5 +227,20 @@ public class Enemy : MonoBehaviour
         else anim.SetBool("Move", false);
 
         anim.SetFloat("Speed", rb.linearVelocity.magnitude * 0.5f);
+    }
+
+    public void TriggerDeath()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+            StartCoroutine(Die());
+        }
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

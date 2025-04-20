@@ -3,7 +3,12 @@ guid: 67adcd1ebd2f560489def70bef6e8399
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arcger
+    second: {fileID: 2100000, guid: 6232bfe7049d9764bb0162dddb51ad18, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

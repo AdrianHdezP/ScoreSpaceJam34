@@ -295,7 +295,7 @@ MonoBehaviour:
   agent: {fileID: 4808457349092888792}
   anim: {fileID: 2699728089312025008}
   rb: {fileID: 1182072284028663074}
-  moveSpeed: 2
+  moveSpeed: 2.5
   detectionRange: 9
   aggroTimer: 10
   chargeDamage: 5
@@ -334,10 +334,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   onFireParticles: {fileID: 2361399224762763541}
   tickColor:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0, b: 0, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -365,13 +366,25 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  destroyOnDeath: 1
+  destroyOnDeath: 0
   burning: 0
   health: 15
-  knockbackForce: 1
+  knockbackForce: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2866260542668169701}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: TriggerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPlayerVictim:
     m_PersistentCalls:
       m_Calls:
@@ -548,7 +561,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8351311800601096427, guid: ebc4d097bbb52c74ba5db681f6f8dfd6, type: 3}
+  - {fileID: 2100000, guid: 6f4b5603ee7e26f4b92e58b1e39082bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -800,7 +813,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: ebc4d097bbb52c74ba5db681f6f8dfd6, type: 3}
+  - {fileID: 2100000, guid: 4ccf8164846867349b840cc2d1a9e44a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -848,7 +861,7 @@ Transform:
   m_GameObject: {fileID: 5942383565791382534}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49999982, y: 0.5000001, z: -0.49999967, w: 0.5000004}
-  m_LocalPosition: {x: -1.645, y: -0.64, z: -0.02}
+  m_LocalPosition: {x: -1.52, y: -0.7, z: -0.02}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -943,7 +956,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: ebc4d097bbb52c74ba5db681f6f8dfd6, type: 3}
+  - {fileID: 2100000, guid: 4ccf8164846867349b840cc2d1a9e44a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -56,7 +56,6 @@ public class Damageable : MonoBehaviour
         if (health <= 0)
         {
             if (playerInteraction) OnPlayerVictim.Invoke();
-
             OnDeath.Invoke();
 
             if (destroyOnDeath) 

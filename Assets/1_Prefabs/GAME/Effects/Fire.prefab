@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 6875849675692706314}
   - component: {fileID: 4061678849032007340}
   - component: {fileID: 3346141244539175231}
+  - component: {fileID: 5955221730188212714}
   m_Layer: 2
   m_Name: Fire
   m_TagString: Untagged
@@ -348,3 +349,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeRange: {x: 1, y: 2}
   angleRange: {x: -15, y: 15}
+--- !u!114 &5955221730188212714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423917202764828537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09b525fa4cc23c4aa77d6bbc8a04fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

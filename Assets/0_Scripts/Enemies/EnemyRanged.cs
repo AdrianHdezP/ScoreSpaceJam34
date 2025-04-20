@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,6 +21,8 @@ public class EnemyRanged : MonoBehaviour
 
     bool isAggro;
     float aggroT;
+
+    bool isDead;
 
     float distanceToPlayer;
     Vector2 directionToPlayer;
@@ -138,10 +141,12 @@ public class EnemyRanged : MonoBehaviour
     void LookAtPlayer()
     {
         transform.up = directionToPlayer;
+        transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
     }
     void LookAtDirection()
     {
         if (moveDirection != Vector2.zero) transform.up = moveDirection;
+        transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
     }
 
     void MoveToWayPoint()
@@ -163,5 +168,20 @@ public class EnemyRanged : MonoBehaviour
         else anim.SetBool("Move", false);
 
         anim.SetFloat("Speed", rb.linearVelocity.magnitude * 0.5f);
+    }
+
+    public void TriggerDeath()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+            StartCoroutine(Die());
+        }
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

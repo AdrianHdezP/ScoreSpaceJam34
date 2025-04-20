@@ -187,7 +187,7 @@ MonoBehaviour:
   explosionThreshold: 5
   activationLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   particlePrefab: {fileID: 9106159846171946314, guid: b4954a01c2949d54da2760723b12061b, type: 3}
 --- !u!114 &5886808513487577600
 MonoBehaviour:

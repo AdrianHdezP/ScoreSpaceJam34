@@ -258,10 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   onFireParticles: {fileID: 7702471297183325639}
   tickColor:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0, b: 0, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -291,11 +292,23 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   destroyOnDeath: 1
   burning: 0
-  health: 10
-  knockbackForce: 1
+  health: 15
+  knockbackForce: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7581153654246640094}
+        m_TargetAssemblyTypeName: EnemyRanged, Assembly-CSharp
+        m_MethodName: TriggerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPlayerVictim:
     m_PersistentCalls:
       m_Calls:
@@ -594,7 +607,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4429205980781192861, guid: 67adcd1ebd2f560489def70bef6e8399, type: 3}
+  - {fileID: 2100000, guid: 6232bfe7049d9764bb0162dddb51ad18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -682,7 +695,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4429205980781192861, guid: 67adcd1ebd2f560489def70bef6e8399, type: 3}
+  - {fileID: 2100000, guid: 6232bfe7049d9764bb0162dddb51ad18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

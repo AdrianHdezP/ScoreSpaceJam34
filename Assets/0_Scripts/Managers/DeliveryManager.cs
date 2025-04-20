@@ -17,6 +17,7 @@ public class DeliveryManager : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private Transform pickUpTransform;
+    [SerializeField] private Transform pickUpVisual;
     [SerializeField] private Transform[] costumers;
     private Transform currentObjective;
 
@@ -33,6 +34,7 @@ public class DeliveryManager : MonoBehaviour
         DisableCostumer();
 
         currentDeliveryType = DeliveryType.None;
+        pickUpVisual.gameObject.SetActive(true);
     }
 
     public Vector2 ReturnCurrentObjective() => currentObjective.position;
@@ -50,6 +52,7 @@ public class DeliveryManager : MonoBehaviour
         if (currentState == State.PickUpPending)
         {
             currentState = State.InDelivery;
+            pickUpVisual.gameObject.SetActive(false);
             SetupNextObjective();
         }
     }
@@ -63,6 +66,7 @@ public class DeliveryManager : MonoBehaviour
             pointsManger.AddTime();
 
             currentDeliveryType = DeliveryType.None;
+            pickUpVisual.gameObject.SetActive(true);
             currentObjective = pickUpTransform;
 
             //OBJECTIVE

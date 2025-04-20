@@ -78,7 +78,14 @@ public class EnemyManager : MonoBehaviour
 
     #region Spawn Methods
 
-    private GameObject InstantiateEnemy(GameObject enemyPrefab, Transform spawnPoint) => Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+    private GameObject InstantiateEnemy(GameObject enemyPrefab, Transform spawnPoint)
+    {
+        Vector3 rangedPos = spawnPoint.position;
+        rangedPos.x += Random.Range(-3,3);
+        rangedPos.y += Random.Range(-3,3);
+
+       return Instantiate(enemyPrefab, rangedPos, Quaternion.identity);
+    }
 
     private void SpawnMelee() => InstantiateEnemy(meleeEnemyPrefab, ReturnRandomTransform(meleeSpawnPoints));
 
