@@ -31,11 +31,15 @@ public class EnemyRanged : MonoBehaviour
     PlayerController player;
     EnemyManager manager;
     Transform wayPoint;
+    AudioManager audioManager;
+    AudioSource audioSource;
 
     private void Awake()
     {
         player = FindFirstObjectByType<PlayerController>();
         manager = FindFirstObjectByType<EnemyManager>();
+        audioManager = FindFirstObjectByType<AudioManager>();
+        audioSource = GetComponent<AudioSource>();
 
         manager.AddRange(this);
     }
@@ -103,6 +107,7 @@ public class EnemyRanged : MonoBehaviour
         {
             isAggro = true;
             aggroT = aggroTimer;
+            audioManager.PlayOneShoot(audioSource, audioManager.ReturnRandomAudio(audioManager.aldeano), 0.75f);
         }
 
         if (isAggro && aggroT < 0)

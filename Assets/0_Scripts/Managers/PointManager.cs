@@ -5,6 +5,7 @@ public class PointManager : MonoBehaviour
 {
     private PlayerController playerController;
     private EnemyManager enemyManager;
+    private AudioSource audioSource;
 
     [Header("Setup")]
     [SerializeField] private TextMeshProUGUI pointTMP;
@@ -17,6 +18,7 @@ public class PointManager : MonoBehaviour
     private int minutes;
     private int seconds;
     private float timeElapsed;
+    private bool isPlayingSound;
 
     public int points { get; private set; } = 0;
     public int timePoints { get; private set; }
@@ -27,6 +29,7 @@ public class PointManager : MonoBehaviour
     {
         playerController = FindFirstObjectByType<PlayerController>();
         enemyManager = FindFirstObjectByType<EnemyManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -40,6 +43,17 @@ public class PointManager : MonoBehaviour
 
         UpdatePoints();
         Clock();
+
+        if (timeElapsed <= 10 && !isPlayingSound)
+        {
+            isPlayingSound = true;
+            audioSource.Play();
+        }
+        else if (timeElapsed > 10 && isPlayingSound)
+        {
+            isPlayingSound = false;
+            audioSource.Stop();
+        }
 
         if (timeElapsed <= 0 && !timeOut)
             TimeOut();
