@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource musicSource;
     public AudioSource effectsSource;
 
     [Header("Music")]
@@ -9,13 +10,22 @@ public class AudioManager : MonoBehaviour
 
     [Header("Effects")]
     public AudioClip footSteps;
-    public AudioClip pickUp; //
-    public AudioClip costumer; //
-    public AudioClip bonus; //?//
-    public AudioClip hit; //
-    public AudioClip explosion; //
-    public AudioClip clock; //?//
-    public AudioClip[] aldeano; //?//
+    public AudioClip pickUp; 
+    public AudioClip costumer; 
+    public AudioClip bonus; 
+    public AudioClip hit; 
+    public AudioClip explosion; 
+    public AudioClip clock; 
+    public AudioClip[] aldeano;
+
+    private void Update()
+    {
+        if (!musicSource.isPlaying)
+        {
+            AudioClip newMusic = ReturnRandomAudio(levelMusic);
+            musicSource.PlayOneShot(newMusic);
+        }
+    }
 
     public void PlayOneShoot(AudioSource audioSource, AudioClip newClip, float volume)
     {

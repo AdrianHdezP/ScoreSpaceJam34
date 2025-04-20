@@ -100,7 +100,7 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && playerSC.drifting)
+        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold)
         {
             if(!hitSource.isPlaying)
             {
@@ -144,7 +144,7 @@ public class BallController : MonoBehaviour
         float angle = Mathf.Clamp(horizontalVelocity * 15f, -15, 15);
         model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
 
-        if (Mathf.Abs(horizontalVelocity) > speedBoostThreshold && playerSC.drifting)
+        if (Mathf.Abs(horizontalVelocity) > speedBoostThreshold)
         {
             trailRenderer.enabled = true;
         }
