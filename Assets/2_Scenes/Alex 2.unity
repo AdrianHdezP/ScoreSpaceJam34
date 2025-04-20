@@ -5913,12 +5913,32 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6197330723602933517, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197330723602933517, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197330723602933517, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7034131092432703612, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7034131092432703612, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954589250173152419, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954589250173152419, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9060752209143747233, guid: 686d8beb21edc4d4d85f5edbb717d119, type: 3}
@@ -16027,7 +16047,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tabulacion
+  m_Text: Tab
 --- !u!222 &799838655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27917,7 +27937,7 @@ MonoBehaviour:
   - {fileID: 675973310}
   comboTrailsR:
   - {fileID: 1108365008}
-  m_brewMat: {fileID: 2100000, guid: daa66308285ad224bab9f7fb2a97d985, type: 2}
+  m_brewMat: {fileID: 2100000, guid: 9d495f2a31df72d4fb04e9ba6a0a860d, type: 2}
   m_particleMat: {fileID: 2100000, guid: c1163713b7be5ef409bd3e47f5eb403d, type: 2}
   smokeParticles: {fileID: 1592749933}
   trailRenderer: {fileID: 1140395888}
@@ -29644,7 +29664,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 18fe80cac37e52343840cc8c9c2488a8, type: 2}
-  - {fileID: 2100000, guid: daa66308285ad224bab9f7fb2a97d985, type: 2}
+  - {fileID: 2100000, guid: 9d495f2a31df72d4fb04e9ba6a0a860d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37355,7 +37375,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c1163713b7be5ef409bd3e47f5eb403d, type: 2}
+  - {fileID: 2100000, guid: 9d495f2a31df72d4fb04e9ba6a0a860d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -41743,7 +41763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Barra Espaciadora
+  m_Text: Space
 --- !u!222 &2091884234
 CanvasRenderer:
   m_ObjectHideFlags: 0
