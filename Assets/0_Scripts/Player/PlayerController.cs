@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class CarSetup
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] private Transform model;
     [SerializeField] private Animator modelAnim;
+    [SerializeField] private Image healthFill;
 
     [Header("Setup")]
     [SerializeField] private InputActionReference acelerationInput;
@@ -55,11 +57,17 @@ public class PlayerController : MonoBehaviour
     public bool dead;
     public bool drifting;
 
+    Damageable damageable;
+    int maxHealt;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         ball = FindFirstObjectByType<BallController>();
         pointManager = FindFirstObjectByType<PointManager>();
+
+        damageable = GetComponent<Damageable>();
+        maxHealt = damageable.health;
 
         modelRot = model.localRotation;
     }
@@ -81,12 +89,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (dead) healthFill.gameObject.SetActive(false);
+        else
+        {
+            healthFill.gameObject.SetActive(true);
+            healthFill.fillAmount = (float) damageable.health / maxHealt;
+        }
+
+        VisualControl();
+
         if (MainSingletone.inst.sceneControl.gM.paused || dead)
             return;
 
         AssignInputs();
-        HandleBrake();
-        VisualControl();
+        HandleBrake();   
     }
 
     private void FixedUpdate()
@@ -102,6 +118,13 @@ public class PlayerController : MonoBehaviour
         ApplyEngineForce();
         KillOrthogonalVelocity();
         ApplyStering();
+
+        if (decelerate && rb.linearVelocity.magnitude > maxSpeed * 0.5f)
+        {
+            Vector2 clampedSpeed = rb.linearVelocity.normalized;
+            clampedSpeed *= maxSpeed * 0.5f;
+            rb.linearVelocity = clampedSpeed;   
+        }
     }
 
     private void ApplyEngineForce()
@@ -196,8 +219,10 @@ public class PlayerController : MonoBehaviour
     {
         if (isBreacking)
         {
-            if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed * 0.7f, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
-            else maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+           // if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed * 0.7f, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+           // else maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
+
+            maxSpeed = Mathf.MoveTowards(maxSpeed, driftingCarSetup.maxSpeed, driftingCarSetup.maxSpeedLerp * Time.deltaTime);
 
             drift = Mathf.MoveTowards(drift, driftingCarSetup.drifForce, driftingCarSetup.drifForceLerp * Time.deltaTime);
             steringForce = Mathf.MoveTowards(steringForce, driftingCarSetup.steringForce, driftingCarSetup.steringForceLerp * Time.deltaTime);
@@ -205,8 +230,10 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed * 0.7f, carSetup.maxSpeedLerp * Time.deltaTime);
-            else maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed , carSetup.maxSpeedLerp * Time.deltaTime);
+            // if (decelerate) maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed * 0.7f, carSetup.maxSpeedLerp * Time.deltaTime);
+            // else maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed, carSetup.maxSpeedLerp * Time.deltaTime);
+
+            maxSpeed = Mathf.MoveTowards(maxSpeed, carSetup.maxSpeed , carSetup.maxSpeedLerp * Time.deltaTime);
 
             drift = Mathf.MoveTowards(drift, carSetup.drifForce, carSetup.drifForceLerp * Time.deltaTime);
             steringForce = Mathf.MoveTowards(steringForce, carSetup.steringForce, carSetup.steringForceLerp * Time.deltaTime);
@@ -246,6 +273,8 @@ public class PlayerController : MonoBehaviour
             modelAnim.SetBool("Idle", true);
         }
     }
+
+
     public void TriggerDeath()
     {
         dead = true;
@@ -256,7 +285,6 @@ public class PlayerController : MonoBehaviour
         modelAnim.SetBool("Idle", false);
         modelAnim.SetBool("Dead", true);
     }
-
     public void FinishGame()
     {
         if (dead && !pointManager.timeOut)

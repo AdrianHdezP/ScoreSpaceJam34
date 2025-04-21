@@ -44,7 +44,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.3470871, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -140,7 +140,7 @@ GameObject:
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -296,13 +296,13 @@ MonoBehaviour:
   anim: {fileID: 2699728089312025008}
   rb: {fileID: 1182072284028663074}
   moveSpeed: 2.5
-  detectionRange: 9
+  detectionRange: 12
   aggroTimer: 10
   chargeDamage: 5
-  chargeSpeed: 20
-  chargeCooldown: 2
+  chargeSpeed: 15
+  chargeCooldown: 1.5
   chargeDistance: 4
-  prechargeTime: 0.5
+  prechargeTime: 0.2
   chargeknockback: 10
   stoppingDistance: 3.5
   activationLayer:
@@ -862,8 +862,8 @@ Transform:
   m_GameObject: {fileID: 5942383565791382534}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49999982, y: 0.5000001, z: -0.49999967, w: 0.5000004}
-  m_LocalPosition: {x: -1.52, y: -0.7, z: -0.02}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: -2.02, y: -1.11, z: 0.25}
+  m_LocalScale: {x: 0.97223, y: 0.97223, z: 0.97223}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7212813376194974054}

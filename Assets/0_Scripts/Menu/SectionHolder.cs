@@ -73,6 +73,11 @@ public class SectionHolder : MonoBehaviour
     {
         Application.OpenURL("https://games-for-robots.itch.io/");
     }
+
+    public void OpenURlAdri()
+    {
+        Application.OpenURL(" https://adrianhdez.itch.io/");
+    }
 }
 
 

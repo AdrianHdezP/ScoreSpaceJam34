@@ -110,7 +110,7 @@ MonoBehaviour:
   activationLayer:
     serializedVersion: 2
     m_Bits: 841
-  particlePrefab: {fileID: 9106159846171946314, guid: b4954a01c2949d54da2760723b12061b, type: 3}
+  particlePrefab: {fileID: 9106159846171946314, guid: 915450d82ed41644883fd96a822c9238, type: 3}
   particlesFollow: {fileID: 2285428214908583107}
   shooter: {fileID: 0}
 --- !u!50 &17943583257835659
@@ -486,8 +486,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 1
+      scalar: 1.5
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:

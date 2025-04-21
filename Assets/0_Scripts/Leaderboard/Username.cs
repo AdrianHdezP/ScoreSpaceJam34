@@ -28,7 +28,7 @@ public class Username : MonoBehaviour
     }
     private void Update()
     {
-        if (inputName.text == MainSingletone.inst.score.username)
+        if (inputName.text == MainSingletone.inst.score.username && inputName.text != "")
         {
             continueButton.gameObject.SetActive(true);
             usernameButton.gameObject.SetActive(false);

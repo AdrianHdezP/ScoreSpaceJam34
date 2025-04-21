@@ -29,26 +29,26 @@ public class MainSingletone : MonoBehaviour
 
     private void LoadActionsBindings()
     {
-        Object[] subAssets = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(inputActionAsset));
-        List<InputActionReference> inputActionReferences = new List<InputActionReference>();
-
-        foreach (Object obj in subAssets)
-        {
-            // there are 2 InputActionReference returned for each InputAction in the asset, need to filter to not add the hidden one generated for backward compatibility
-            if (obj is InputActionReference inputActionReference && (inputActionReference.hideFlags & HideFlags.HideInHierarchy) == 0)
-            {
-                inputActionReferences.Add(inputActionReference);
-            }
-        }
-
-        foreach (InputActionReference m_Action in inputActionReferences)
-        {
-            var savedBindings = PlayerPrefs.GetString(m_Action.action.name);
-
-            if (!string.IsNullOrEmpty(savedBindings))
-            {
-                m_Action.action.actionMap.LoadBindingOverridesFromJson(savedBindings);
-            }
-        }
+    //    Object[] subAssets = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(inputActionAsset));
+    //    List<InputActionReference> inputActionReferences = new List<InputActionReference>();
+    //
+    //    foreach (Object obj in subAssets)
+    //    {
+    //        // there are 2 InputActionReference returned for each InputAction in the asset, need to filter to not add the hidden one generated for backward compatibility
+    //        if (obj is InputActionReference inputActionReference && (inputActionReference.hideFlags & HideFlags.HideInHierarchy) == 0)
+    //        {
+    //            inputActionReferences.Add(inputActionReference);
+    //        }
+    //    }
+    //
+    //    foreach (InputActionReference m_Action in inputActionReferences)
+    //    {
+    //        var savedBindings = PlayerPrefs.GetString(m_Action.action.name);
+    //
+    //        if (!string.IsNullOrEmpty(savedBindings))
+    //        {
+    //            m_Action.action.actionMap.LoadBindingOverridesFromJson(savedBindings);
+    //        }
+    //    }
     }
 }

@@ -97,11 +97,11 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && !damagable.recentlyImpacted)
+        if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && !damagable.recentlyImpacted && !collision.rigidbody.GetComponent<PlayerController>())
         {
             if (!hitSource.isPlaying)
             {
-                float randomPitch = Random.Range(0.75f, 1.25f);
+                float randomPitch = Random.Range(0.9f, 1.15f);
                 hitSource.pitch = randomPitch;
                 hitSource.Play();
             }
