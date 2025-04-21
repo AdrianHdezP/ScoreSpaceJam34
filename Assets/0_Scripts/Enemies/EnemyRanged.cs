@@ -14,8 +14,11 @@ public class EnemyRanged : MonoBehaviour
     [Header("ATTACK")]
     [SerializeField] float stoppingDistance;
     [SerializeField] float fireTime;
+    [SerializeField] float fireRange = 9;
     [SerializeField] Transform arrowSpawnPoint;
     [SerializeField] Arrow arrowPrefab;
+    [SerializeField] AudioSource attackAudio;
+    [SerializeField] AudioSource deathAudio;
 
     float fireT;
 
@@ -56,27 +59,27 @@ public class EnemyRanged : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (MainSingletone.inst.sceneControl.gM.paused)
+        if (MainSingletone.inst.sceneControl.gM.paused || isDead)
         {
             //agent.isStopped = true;
             return;
         }
 
-        if (player && distanceToPlayer > stoppingDistance)
+        if (!isAggro || player && distanceToPlayer > stoppingDistance)
         {
             rb.AddForce(agent.desiredVelocity * rb.mass * moveSpeed);
         }
     }
 
     private void Update()
-    {
-        ControlVisuals();
-
-        if (MainSingletone.inst.sceneControl.gM.paused)
+    {      
+        if (MainSingletone.inst.sceneControl.gM.paused || isDead)
         {
             agent.isStopped = true;
             return;
         }
+
+        ControlVisuals();
 
         agent.transform.localPosition = Vector3.zero;
         distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
@@ -128,8 +131,11 @@ public class EnemyRanged : MonoBehaviour
     {
         if (fireT > fireTime)
         {
-            Shoot();
-            fireT = 0;
+            if (distanceToPlayer <= fireRange)
+            {
+                Shoot();
+                fireT = 0;
+            }
         }
         else
         {
@@ -139,6 +145,8 @@ public class EnemyRanged : MonoBehaviour
 
     void Shoot()
     {
+        attackAudio.pitch = Random.Range(0.8f, 1.2f);
+        attackAudio.Play();
         Arrow arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
         arrow.shooter = this;
     }
@@ -175,16 +183,24 @@ public class EnemyRanged : MonoBehaviour
         float speed = Mathf.Clamp(Vector2.Dot(transform.up, rb.linearVelocity), 0, 15f);
         anim.SetFloat("Speed", speed * 0.5f);
     }
-
     public void TriggerDeath()
     {
         if (!isDead)
         {
             isDead = true;
+
+            anim.SetBool("Idle", false);
+            anim.SetBool("Move", false);
+
+            anim.SetBool("Die", true);
+
+
+            deathAudio.pitch = Random.Range(0.8f, 1.2f);
+            deathAudio.Play();
+
             StartCoroutine(Die());
         }
     }
-
     IEnumerator Die()
     {
         yield return new WaitForSeconds(2);

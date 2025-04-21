@@ -29,6 +29,8 @@ public class Damageable : MonoBehaviour
     public float impactedTime = 0.1f;
     float impactedT;
 
+    bool dead;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -65,8 +67,10 @@ public class Damageable : MonoBehaviour
         rb.AddForce(impactForce * rb.mass * knockbackForce, ForceMode2D.Impulse);
         StartCoroutine(DamageTick(8));
 
-        if (health <= 0)
+        if (health <= 0 && !dead)
         {
+            dead = true;
+
             if (playerInteraction) OnPlayerVictim.Invoke();
             OnDeath.Invoke();
 

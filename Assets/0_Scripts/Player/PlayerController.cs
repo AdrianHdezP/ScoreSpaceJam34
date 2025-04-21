@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -28,6 +29,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform model;
     [SerializeField] private Animator modelAnim;
     [SerializeField] private Image healthFill;
+    [SerializeField] private AudioSource deathSound;
+
+    [Header("Camera")]
+    [SerializeField] private CinemachineFollow cameraBehaviour;
+    [SerializeField] private float cameraOffset;
+    [SerializeField] private Vector3 cameraExtraOffset;
+    [SerializeField] private Vector2 cameraMinLimits;
+    [SerializeField] private Vector2 cameraMaxLimits;
 
     [Header("Setup")]
     [SerializeField] private InputActionReference acelerationInput;
@@ -243,9 +252,21 @@ public class PlayerController : MonoBehaviour
 
     void VisualControl()
     {
+        Vector2 forwardVelocity = transform.up * Vector2.Dot(rb.linearVelocity, transform.up);
+        //Vector2 rightVelocity = transform.right * Vector2.Dot(rb.linearVelocity, transform.right);
+        Vector2 normalizedVel = rb.linearVelocity.normalized;
+
+        Vector2 offset = Vector2.up * cameraOffset  * rb.linearVelocity.y;
+        offset += Vector2.right * cameraOffset * rb.linearVelocity.x;
+
+        offset = new Vector2 (Mathf.Clamp(offset.x, cameraMinLimits.x, cameraMaxLimits.x), Mathf.Clamp(offset.y, cameraMinLimits.y, cameraMaxLimits.y));
+
+        cameraBehaviour.FollowOffset = Vector3.Lerp(cameraBehaviour.FollowOffset, new Vector3(offset.x + cameraExtraOffset.x, offset.y + cameraExtraOffset.y, cameraExtraOffset.z), Time.deltaTime * 1);
+        //cameraBehaviour.FollowOffset = new Vector3(offset.x, offset.y, zOffset);
+
+
         float angle = Mathf.Clamp(GetLateralvelocity() * 15f, -35, 35);
         model.localRotation = modelRot * Quaternion.AngleAxis(angle, -Vector3.right);
-
 
         if (acelerationInputValue != 0)
         {
@@ -259,8 +280,6 @@ public class PlayerController : MonoBehaviour
 
             if (brakeInputValue < 0) modelAnim.SetBool("DriftLeft", true);
             else modelAnim.SetBool("DriftLeft", false);
-
-            Vector2 forwardVelocity = transform.up * Vector2.Dot(rb.linearVelocity, transform.up);
 
             float speed = forwardVelocity.magnitude * 0.45f;
             modelAnim.SetFloat("Speed", speed); 
@@ -277,6 +296,7 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerDeath()
     {
+        deathSound.Play();
         dead = true;
 
         modelAnim.SetBool("Move", false);
@@ -287,7 +307,7 @@ public class PlayerController : MonoBehaviour
     }
     public void FinishGame()
     {
-        if (dead && !pointManager.timeOut)
+        if (dead && !pointManager.timeOut && modelAnim.GetCurrentAnimatorStateInfo(0).IsName("Witch_Death"))
         {
             pointManager.TimeOut();
         }

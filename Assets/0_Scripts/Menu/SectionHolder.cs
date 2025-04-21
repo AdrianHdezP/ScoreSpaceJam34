@@ -18,7 +18,7 @@ public class SectionHolder : MonoBehaviour
         if (data != null)
         {
             menuHolder.gameObject.SetActive(true);
-            ActivateSection(3);
+            ActivateSection(6);
         }
         else
         {

@@ -46,23 +46,26 @@ public class ExplosiveBarrel : MonoBehaviour
 
     void Explode()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRange);
-
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.TryGetComponent(out Damageable damageable))
-            {
-                damageable.RecieveDamage(10, (collider.transform.position - transform.position).normalized * explosionImpulse, true);
-            }
-        }
-
         if (!death)
+        {
+            death = true;
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRange);
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.TryGetComponent(out Damageable damageable))
+                {
+                    damageable.RecieveDamage(15, (collider.transform.position - transform.position).normalized * explosionImpulse, true);
+                }
+            }
+
             StartCoroutine(DeathSecuence());
+        }
     }
 
     private IEnumerator DeathSecuence()
-    {
-        death = true;
+    {     
         audioSource.Play();
         barrelVisuals.SetActive(false);
         Instantiate(particlePrefab, transform.position, Quaternion.identity);

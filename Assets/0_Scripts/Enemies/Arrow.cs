@@ -6,6 +6,7 @@ public class Arrow : MonoBehaviour
 
     [SerializeField] float arrowSpeed;
     [SerializeField] float knockbackForce;
+    [SerializeField] float explosionRange = 2.7f;
     [SerializeField] int impactDamage;
     [SerializeField] LayerMask activationLayer;
     [SerializeField] ParticleSystem particlePrefab;
@@ -28,9 +29,15 @@ public class Arrow : MonoBehaviour
     {
         if ((activationLayer & (1 << collision.gameObject.layer)) != 0 && !impacted && (!collision.TryGetComponent(out EnemyRanged enemy) || enemy != shooter))
         {
-            if (collision.TryGetComponent(out Damageable damageable))
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRange);
+
+            foreach (Collider2D collider in colliders)
             {
-                damageable.RecieveDamage(impactDamage, (collision.transform.position - transform.position).normalized * knockbackForce, false);
+                if (collider.TryGetComponent(out Damageable damageable))
+                {
+                    damageable.RecieveDamage(impactDamage, (collider.transform.position - transform.position).normalized * knockbackForce, false);
+                }
             }
 
             impacted = true;

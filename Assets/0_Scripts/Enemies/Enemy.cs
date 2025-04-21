@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float chargeknockback;
     [SerializeField] float stoppingDistance;
     [SerializeField] LayerMask activationLayer;
+    [SerializeField] AudioSource attackAudio;
+    [SerializeField] AudioSource deathAudio;
 
 
     [HideInInspector] public bool decelerate;
@@ -72,10 +74,13 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        ControlVisuals();
-
         if (MainSingletone.inst.sceneControl.gM.paused || isDead)
+        {
+            agent.isStopped = true;
             return;
+        }
+
+        ControlVisuals();
 
         if (decelerate)
             moveSpeed = i_moveSpeed * 0.75f;
@@ -134,7 +139,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (player && distanceToPlayer > stoppingDistance && !isCharging && !isPrecharging)
+        if (!isAggro || player && distanceToPlayer > stoppingDistance && !isCharging && !isPrecharging)
         {
             rb.AddForce(agent.desiredVelocity * rb.mass * moveSpeed);
         }
@@ -194,6 +199,9 @@ public class Enemy : MonoBehaviour
         chargeStartPos = transform.position;
         rb.AddForce(direction * chargeSpeed * rb.mass, ForceMode2D.Impulse);
 
+        attackAudio.pitch = Random.Range(0.8f, 1.2f);
+        attackAudio.Play();
+
         chargeCooldownT = chargeCooldown;
         isCharging = true;
         isPrecharging = false;
@@ -239,6 +247,15 @@ public class Enemy : MonoBehaviour
         if (!isDead)
         {
             isDead = true;
+
+            anim.SetBool("Idle", false);
+            anim.SetBool("Move", false);
+
+            anim.SetBool("Die", true);
+
+            deathAudio.pitch = Random.Range(0.8f, 1.2f);
+            deathAudio.Play();
+
             StartCoroutine(Die());
         }
     }

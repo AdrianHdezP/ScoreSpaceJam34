@@ -99,12 +99,12 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Damageable damagable) && Mathf.Abs(horizontalVelocity) >= speedBoostThreshold && !damagable.recentlyImpacted && !collision.rigidbody.GetComponent<PlayerController>())
         {
-            if (!hitSource.isPlaying)
-            {
+          //  if (!hitSource.isPlaying)
+          //  {
                 float randomPitch = Random.Range(0.9f, 1.15f);
                 hitSource.pitch = randomPitch;
                 hitSource.Play();
-            }
+           // }
 
             if (!collision.gameObject.TryGetComponent(out Enemy enemy)|| !enemy.isCharging)
             {

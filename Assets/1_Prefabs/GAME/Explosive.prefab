@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelVisuals: {fileID: 2958662607348456764}
   detonationTimer: 2
-  explosionRange: 2
+  explosionRange: 3.2
   explosionImpulse: 10
   impulseMultiplier: 20
   explosionThreshold: 5
@@ -201,7 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0e01725ad4ddc4aa064efdf84deddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
   onFireParticles: {fileID: 3146015376323842767}
   tickColor:
     serializedVersion: 2
@@ -255,6 +254,8 @@ MonoBehaviour:
   OnPlayerVictim:
     m_PersistentCalls:
       m_Calls: []
+  recentlyImpacted: 0
+  impactedTime: 0.1
 --- !u!82 &2268493151603697493
 AudioSource:
   m_ObjectHideFlags: 0

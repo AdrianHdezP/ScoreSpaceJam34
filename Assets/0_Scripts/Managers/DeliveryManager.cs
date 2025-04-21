@@ -16,6 +16,7 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private string[] costumerNames;
 
     [Header("Setup")]
+    [SerializeField] private Transform deliverVisualPrefab;
     [SerializeField] private Transform pickUpTransform;
     [SerializeField] private Transform pickUpVisual;
     [SerializeField] private Transform[] costumers;
@@ -61,6 +62,8 @@ public class DeliveryManager : MonoBehaviour
     {
         if (currentState == State.InDelivery)
         {
+            Instantiate (deliverVisualPrefab, currentObjective.transform.position, Quaternion.identity);
+
             currentState = State.PickUpPending;
             currentObjective.gameObject.SetActive(false);
             pointsManger.AddTime();

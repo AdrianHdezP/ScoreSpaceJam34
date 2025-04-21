@@ -11,6 +11,7 @@ public class PointManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pointTMP;
     [SerializeField] private TextMeshProUGUI timeTMP;
     [SerializeField] private GameObject timeOutPanel;
+    [SerializeField] private GameObject HUDpanel;
 
     [Header("Settings")]
     [SerializeField] private float startTime = 30;
@@ -86,5 +87,6 @@ public class PointManager : MonoBehaviour
         MainSingletone.inst.score.TryStoreScore();
 
         timeOutPanel.SetActive(true);
+        HUDpanel.SetActive(false);
     }
 }

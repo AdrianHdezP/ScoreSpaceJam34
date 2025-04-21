@@ -270,7 +270,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 30cf4e555444b9b4eb555ab90a111c7a, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -456,7 +456,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1400183b1709660478f25daf2cd9dff0, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -700,7 +700,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d55f50e04b364d49a0e14ff1e60d4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActionAsset: {fileID: -944628639613478452, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  inputActionReferences:
+  - {fileID: -6396398280585223630, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  - {fileID: 7956254223724033156, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  - {fileID: -8804596032359099750, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+  - {fileID: -737962710453807491, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
 --- !u!1 &7092874604322807877
 GameObject:
   m_ObjectHideFlags: 0
