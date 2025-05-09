@@ -26,4 +26,9 @@ public class GameMaster : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+
+    public void EndGame()
+    {
+
+    }
 }

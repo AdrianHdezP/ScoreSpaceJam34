@@ -17,13 +17,13 @@ public class SectionHolder : MonoBehaviour
 
         if (data != null)
         {
-            menuHolder.gameObject.SetActive(true);
-            ActivateSection(6);
+           // menuHolder.gameObject.SetActive(true);
+           // ActivateSection(2);
         }
         else
         {
-            menuHolder.gameObject.SetActive(false);
-            ActivateSection(0);
+           // menuHolder.gameObject.SetActive(false);
+            ActivateSection(2);
         }
     }
 

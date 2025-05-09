@@ -1,5 +1,3 @@
-using Dan.Main;
-using Dan.Models;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.IO;
@@ -24,62 +22,6 @@ public class Score : MonoBehaviour
     }
 
     #region LOCAL STORAGING 
-    public void TryStoreScore()
-    {
-        StoreScoreLocally();
-        Leaderboards.MyLeaderboard.GetPersonalEntry(OnGetPersonalEntry, OnErrorGetPersonalEntry);
-    }
-    void OnGetPersonalEntry(Entry entry)
-    {
-        Highscore prevData = GetStoredScore();
-
-        string path = Application.persistentDataPath + "/score.data";
-
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        Highscore data = new Highscore(score, username);
-
-        if (prevData != null && prevData.score > score) data.score = prevData.score;
-        if (entry.Score > data.score) data.score = entry.Score;
-
-        //Debug.Log("ENTRY SCORE: " + entry.Score);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-
-        SetLeaderBoardEntry(username, data.score);
-
-        LeaderboardManager leaderboard = FindFirstObjectByType<LeaderboardManager>();
-        if (leaderboard != null)
-        {
-            leaderboard.GetLeaderboard();
-            leaderboard.SetUserStuff();
-        }
-    }
-    void OnErrorGetPersonalEntry(string text)
-    {
-        Debug.LogError("FAILED: " + text);
-        DisplayError();
-    }
-    public Highscore GetStoredScore()
-    {
-        string path = Application.persistentDataPath + "/score.data";
-
-        if (File.Exists(path))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-            Highscore data = formatter.Deserialize(stream) as Highscore;
-            stream.Close();
-
-            return data;
-        }
-        else
-        {
-            return null;
-        }
-    }
     public void StoreScoreLocally()
     {
         Highscore prevData = GetStoredScore();
@@ -98,12 +40,23 @@ public class Score : MonoBehaviour
 
         Debug.Log("(INFO) Score stored locally: " + data.score);
     }
-    #endregion
-
-    #region LEADERBOARD
-    public void SetLeaderBoardEntry(string username, int score)
+    public Highscore GetStoredScore()
     {
-        Leaderboards.MyLeaderboard.UploadNewEntry(username, score);
+        string path = Application.persistentDataPath + "/score.data";
+
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+            Highscore data = formatter.Deserialize(stream) as Highscore;
+            stream.Close();
+
+            return data;
+        }
+        else
+        {
+            return null;
+        }
     }
     #endregion
 
@@ -136,13 +89,13 @@ public class Score : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
     }
-
-    void DisplayError()
+    public void DisplayError(string errorLog)
     {
         errortextHolder.gameObject.SetActive(true);
         errortextHolder.color = Color.white;
         errortextHolder.DOFade(0, 20).OnComplete(() => errortextHolder.gameObject.SetActive(false));
 
+        errorText.text = errorLog;
         errorText.color = Color.red;
         errorText.DOFade(0, 20);
     }

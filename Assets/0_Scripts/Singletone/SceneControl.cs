@@ -9,10 +9,11 @@ using UnityEngine.UI;
 public class SceneControl : MonoBehaviour
 {
     [SerializeField] Image fadeImage;
-    [SerializeField] GameObject TVstatic;
+    [SerializeField] Animator TVstatic;
     [SerializeField] Animator TVOff;
 
     public GameMaster gM;
+    public int selectedScene;
 
     public enum Transitions
     {
@@ -38,7 +39,7 @@ public class SceneControl : MonoBehaviour
         else fadeImage.gameObject.SetActive(false);
 
         if (current == Transitions.tvStatic) TVStaticIn();
-        else TVstatic.SetActive(false);
+        else TVstatic.gameObject.SetActive(false);
 
         if (current == Transitions.tvOff) TVOffIn();
         else TVOff.gameObject.SetActive(false);
@@ -62,71 +63,92 @@ public class SceneControl : MonoBehaviour
         fadeImage.DOFade(1, 2).SetEase(Ease.InOutQuad).OnComplete(()=>SceneManager.LoadScene(sceneIndex));
     }
 
+    //
     void TVStaticIn()
     {
-        TVstatic.SetActive(true);
-
-        UnityEvent _event = new UnityEvent();
-        _event.AddListener(() => TVstatic.SetActive(false));
-        TVOff.GetComponent<AnimationEventDispatcher>().OnAnimationComplete = _event;
+        TVstatic.gameObject.SetActive(true);     
+        StartCoroutine(WaitForFrame(() => TVstatic.SetTrigger("StaticIn")));
     }
     public void TVStaticOut(int sceneIndex)
     {
+        selectedScene = sceneIndex;
+
         Time.timeScale = 1;
         current = Transitions.tvStatic;
-        TVstatic.SetActive(true);
+        TVstatic.gameObject.SetActive(true);
 
-        UnityEvent _event = new UnityEvent();
-        _event.AddListener(() => SceneManager.LoadScene(sceneIndex));
-        TVOff.GetComponent<AnimationEventDispatcher>().OnAnimationComplete = _event;
+        TVstatic.SetTrigger("StaticOut");
     }
 
+    //
     void TVOffIn()
     {
+        Debug.Log("ENTERING");
         TVOff.gameObject.SetActive(true);
-
-        TVOff.SetTrigger("TVON");
-
-        UnityEvent _event = new UnityEvent();
-        _event.AddListener(() => TVOff.gameObject.SetActive(false));
-        TVOff.GetComponent<AnimationEventDispatcher>().OnAnimationComplete = _event;
+        StartCoroutine(WaitForFrame(() => TVOff.SetTrigger("TVON")));
     }
     public void TVOffOut(int sceneIndex)
     {
+        selectedScene = sceneIndex;
+
         Time.timeScale = 1;
         current = Transitions.tvOff;
 
         TVOff.gameObject.SetActive(true);
-        TVOff.SetTrigger("TVOFF");
-
-        UnityEvent _event = new UnityEvent();
-        _event.AddListener(() => SceneManager.LoadScene(sceneIndex));
-        TVOff.GetComponent<AnimationEventDispatcher>().OnAnimationComplete = _event;
+        TVOff.SetTrigger("TVOFF");      
     }
 
+    //
+ //   public void EndAnimationsEvents()
+ //   {
+ //       if (TVOff.GetCurrentAnimatorStateInfo(0).IsName("TV_ON"))
+ //       {
+ //           TVOff.gameObject.SetActive(false);
+ //           
+ //       }
+ //       else if (TVOff.GetCurrentAnimatorStateInfo(0).IsName("TV_OFF"))
+ //       {
+ //           SceneManager.LoadScene(selecetedScene);
+ //       }
+ //       else if (TVstatic.GetCurrentAnimatorStateInfo(0).IsName("STATIC_OUT"))
+ //       {
+ //           SceneManager.LoadScene(selecetedScene);
+ //       }
+ //       else if (TVstatic.GetCurrentAnimatorStateInfo(0).IsName("STATIC_IN"))
+ //       {
+ //           TVstatic.gameObject.SetActive(false);
+ //       }
+ //   }
 
-    IEnumerator SceneTimer(float time, int sceneIndex)
-    {
-        float t = 0;
 
-        while(t < time)
-        {
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        SceneManager.LoadScene(sceneIndex);
-    }
+   // IEnumerator SceneTimer(float time, int sceneIndex)
+   // {
+   //     float t = 0;
+   //
+   //     while(t < time)
+   //     {
+   //         t += Time.deltaTime;
+   //         yield return null;
+   //     }
+   //
+   //     SceneManager.LoadScene(sceneIndex);
+   // }
     IEnumerator Timer(float time, Action action)
     {
         float t = 0;
-
+   
         while (t < time)
         {
             t += Time.deltaTime;
             yield return null;
         }
+   
+        action();
+    }
 
+    IEnumerator WaitForFrame(Action action)
+    {
+        yield return new WaitForEndOfFrame();
         action();
     }
 }

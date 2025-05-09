@@ -9,9 +9,9 @@ public class AudioController : MonoBehaviour
     private void Start()
     {
         //AÑADE CATEGORIAS DE SONIDOS
-        if (!PlayerPrefs.HasKey("MasterVolume")) PlayerPrefs.SetFloat("MasterVolume", volumeDefault);
-        if (!PlayerPrefs.HasKey("MusicVolume")) PlayerPrefs.SetFloat("MusicVolume", 1);
-        if (!PlayerPrefs.HasKey("EffectsVolume")) PlayerPrefs.SetFloat("EffectsVolume", 1);
+        if (!PlayerPrefs.HasKey("MasterVolume")) PlayerPrefs.SetFloat("MasterVolume", 1);
+        if (!PlayerPrefs.HasKey("MusicVolume")) PlayerPrefs.SetFloat("MusicVolume", volumeDefault);
+        if (!PlayerPrefs.HasKey("EffectsVolume")) PlayerPrefs.SetFloat("EffectsVolume", volumeDefault);
 
         //SETEA AL ULTIMO VALOR GUARDADO
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(PlayerPrefs.GetFloat("MasterVolume")) * 20);

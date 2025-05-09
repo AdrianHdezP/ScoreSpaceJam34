@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5014641321187103274}
   - component: {fileID: 3924874308377919501}
   - component: {fileID: 229490907969718670}
-  - component: {fileID: 6041773451829123526}
+  - component: {fileID: 5243689591559111640}
   m_Layer: 0
   m_Name: Static
   m_TagString: Untagged
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -293,7 +293,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3723d84107dd29a47b11f87e67e66c94, type: 3}
   m_Resource: {fileID: 8300000, guid: 3723d84107dd29a47b11f87e67e66c94, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.332
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -377,7 +377,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6041773451829123526
+--- !u!114 &5243689591559111640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -386,15 +386,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3267800639137801609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc85d8a9e24835488a7263e40c26cab, type: 3}
+  m_Script: {fileID: 11500000, guid: a0335780edd8c694f8c774fe95c2b814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnAnimationStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAnimationComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  controller: {fileID: 474805527969380727}
 --- !u!1 &5664698154465473481
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +402,7 @@ GameObject:
   - component: {fileID: 2953821800514772074}
   - component: {fileID: 8202221538085185748}
   - component: {fileID: 3182318423179844579}
-  - component: {fileID: 4328821618847699335}
+  - component: {fileID: 9208785194528151720}
   m_Layer: 0
   m_Name: TV TURN
   m_TagString: Untagged
@@ -479,7 +474,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: e7b980f97ddb6ab489cc7043a3104833, type: 3}
   m_Resource: {fileID: 8300000, guid: e7b980f97ddb6ab489cc7043a3104833, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.725
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -563,7 +558,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4328821618847699335
+--- !u!114 &9208785194528151720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -572,15 +567,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5664698154465473481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc85d8a9e24835488a7263e40c26cab, type: 3}
+  m_Script: {fileID: 11500000, guid: a0335780edd8c694f8c774fe95c2b814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnAnimationStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAnimationComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  controller: {fileID: 474805527969380727}
 --- !u!1 &6618775566412464284
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,9 +583,9 @@ GameObject:
   - component: {fileID: 5553303481473531145}
   - component: {fileID: 474805527969380727}
   - component: {fileID: 8590381630773838414}
-  - component: {fileID: 7187374475749980160}
   - component: {fileID: 7161129009425703287}
   - component: {fileID: 7883527435885556004}
+  - component: {fileID: 7187374475749980160}
   m_Layer: 0
   m_Name: Settings (Dont Destroy)
   m_TagString: Untagged
@@ -646,10 +636,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 5519410514084257057}
-  TVstatic: {fileID: 3267800639137801609}
+  TVstatic: {fileID: 3924874308377919501}
   TVOff: {fileID: 8202221538085185748}
   gM: {fileID: 0}
-  current: 0
+  selectedScene: 0
+  current: 1
 --- !u!114 &8590381630773838414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,18 +655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   errortextHolder: {fileID: 6426512302432698533}
   errorText: {fileID: 344264599236610134}
---- !u!114 &7187374475749980160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6618775566412464284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f57c08938e956047bc55b61c0d45151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7161129009425703287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +684,18 @@ MonoBehaviour:
   - {fileID: 7956254223724033156, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   - {fileID: -8804596032359099750, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
   - {fileID: -737962710453807491, guid: 7dead05c54ca85b4681351aafd8bd03a, type: 3}
+--- !u!114 &7187374475749980160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618775566412464284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f57c08938e956047bc55b61c0d45151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7092874604322807877
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -840,7 +831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

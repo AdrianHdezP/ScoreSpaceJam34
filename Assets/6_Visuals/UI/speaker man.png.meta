@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5626a058cf775b04da9c3b4cae3993f2
+guid: 5ac401b7d47b794478f18a3d39eba516
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,100 +108,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: UI Test_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 612
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 8, z: 9, w: 9}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 366b4b91ebe238942acf9066a6431c27
-      internalID: 1307735537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Test_1
-      rect:
-        serializedVersion: 2
-        x: 681
-        y: 68
-        width: 46
-        height: 107
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 15, y: 18, z: 13, w: 15}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba0caa2c5fca3734886b369e6ae59198
-      internalID: -1424248460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Test_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 14
-        width: 611
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 9, y: 7, z: 7, w: 8}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04ff49500ffa4604493b8c0171180654
-      internalID: -1158649853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Test_Black_0
-      rect:
-        serializedVersion: 2
-        x: 652
-        y: 3
-        width: 99
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bc739d7e1fe1a54fae52d7056d82d43
-      internalID: -411078343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 73dbeff7a4a84f149840462a39bf3dda
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -210,11 +122,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI Test_0: 1307735537
-      UI Test_1: -1424248460
-      UI Test_2: -1158649853
-      UI Test_Black_0: -411078343
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

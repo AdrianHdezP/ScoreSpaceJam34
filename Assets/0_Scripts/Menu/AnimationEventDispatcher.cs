@@ -43,4 +43,5 @@ public class AnimationEventDispatcher : MonoBehaviour
         Debug.Log($"{name} animation complete.");
         OnAnimationComplete.Invoke();
     }
+
 }
