@@ -403,7 +403,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
                 if (binding.effectivePath == newBinding.effectivePath)
                 {
-                    Debug.Log("DUPLICATE BINDING DETECTED: " + newBinding.effectivePath);
+                    Debug.Log("DUPLICATE BINDING DETECTED: " + newBinding.effectivePath);                  
                     return true;
                 }
             }
