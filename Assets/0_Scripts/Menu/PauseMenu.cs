@@ -19,6 +19,8 @@ public class PauseMenu : MonoBehaviour
     int? currentSection;
     Animator animator;
     [SerializeField] Animator[] menuButtons;
+    [SerializeField] GameObject rebindOverlay;
+
 
     private void Awake()
     {
@@ -60,9 +62,15 @@ public class PauseMenu : MonoBehaviour
     }
     public void DeactivatePause()
     {
-        MainSingletone.inst.sceneControl.gM.UnFreezeGame();
-        PlayerPrefs.Save();
-        holder.gameObject.SetActive(false);
+        if (!rebindOverlay.activeSelf)
+        {
+            animator.SetInteger("Settings", 0);
+            StartCoroutine(OffsetMenuButtons(0));
+
+            MainSingletone.inst.sceneControl.gM.UnFreezeGame();
+            PlayerPrefs.Save();
+            holder.gameObject.SetActive(false);
+        }
     }
 
     public void ActivateSection(int index)

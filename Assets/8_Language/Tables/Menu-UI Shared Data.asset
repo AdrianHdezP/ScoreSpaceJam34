@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Menu-UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Menu-UI
+  m_TableCollectionNameGuidString: c17a3cc1c672d5f429b5136b0c7684de
+  m_Entries:
+  - m_Id: 41171570688
+    m_Key: 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39125965361152
+    m_Key: HowToDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39529889419264
+    m_Key: LanguageDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39842885160960
+    m_Key: ControllerSchemeDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40032740331520
+    m_Key: KeyBoardSchemeDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40221286879232
+    m_Key: AudioDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40452804071424
+    m_Key: AjustesController
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40600313548800
+    m_Key: AjustesTeclado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40783516553216
+    m_Key: Slider Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40969508769792
+    m_Key: Ajustes Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41094738104320
+    m_Key: Slider General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41264888434688
+    m_Key: Slider Musica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41640232505344
+    m_Key: Ajustes Como Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41745589227520
+    m_Key: Ajustes Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41837767446528
+    m_Key: Texto Como Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42256153464832
+    m_Key: Play Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42361854119936
+    m_Key: Boton Mando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42454099447808
+    m_Key: Boton Teclado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42531668905984
+    m_Key: Boton Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42618713296896
+    m_Key: Boton Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42694680530944
+    m_Key: Idioma Ingles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42904693526528
+    m_Key: "Idioma Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43052836343808
+    m_Key: Bton Como Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43124676382720
+    m_Key: Boton Empezar Partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43561391509504
+    m_Key: Boton Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43653666197504
+    m_Key: Boton Salir Juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43785732247552
+    m_Key: Boton Despausar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44001487245312
+    m_Key: Boton Listo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44116679610368
+    m_Key: Tab Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44192047058944
+    m_Key: Tab Keyboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44281637392384
+    m_Key: Tab Mando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44365754159104
+    m_Key: Tab Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47090814439424
+    m_Key: Button Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48841781170176
+    m_Key: Boton Reset All
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3922731165993140582
+  references:
+    version: 2
+    RefIds:
+    - rid: 3922731165993140582
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1746863739877

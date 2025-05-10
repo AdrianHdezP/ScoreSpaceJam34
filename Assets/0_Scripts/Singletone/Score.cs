@@ -89,14 +89,16 @@ public class Score : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
     }
-    public void DisplayError(string errorLog)
+
+
+    public void DisplayText(string errorLog)
     {
         errortextHolder.gameObject.SetActive(true);
-        errortextHolder.color = Color.white;
-        errortextHolder.DOFade(0, 20).OnComplete(() => errortextHolder.gameObject.SetActive(false));
+        errortextHolder.color = new Color(1,1,1,0);
+        errortextHolder.DOFade(1, 2).OnComplete(() => errortextHolder.DOFade(0, 3).SetDelay(5).OnComplete(() => errortextHolder.gameObject.SetActive(false)));
 
         errorText.text = errorLog;
-        errorText.color = Color.red;
-        errorText.DOFade(0, 20);
+        errorText.color = new Color(1,1,1,0);
+        errorText.DOFade(1, 2).OnComplete(()=> errorText.DOFade(0, 3).SetDelay(5));
     }
 }

@@ -13,8 +13,12 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     [CustomEditor(typeof(RebindActionUI))]
     public class RebindActionUIEditor : UnityEditor.Editor
     {
+        RebindActionUI m_RebindActionUI;
+
         protected void OnEnable()
         {
+            m_RebindActionUI = (RebindActionUI)target;
+
             m_ActionProperty = serializedObject.FindProperty("m_Action");
             m_BindingIdProperty = serializedObject.FindProperty("m_BindingId");
             m_ActionLabelProperty = serializedObject.FindProperty("m_ActionLabel");
@@ -25,6 +29,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindStartEventProperty = serializedObject.FindProperty("m_RebindStartEvent");
             m_RebindStopEventProperty = serializedObject.FindProperty("m_RebindStopEvent");
             m_DisplayStringOptionsProperty = serializedObject.FindProperty("m_DisplayStringOptions");
+            m_ActionOverrideStringProperty = serializedObject.FindProperty("m_ActionLabelString");
+            m_ActionOverrideProperty = serializedObject.FindProperty("m_OverrideActionLabel");
 
             RefreshBindingOptions();
         }
@@ -62,6 +68,16 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 EditorGUILayout.PropertyField(m_BindingTextProperty);
                 EditorGUILayout.PropertyField(m_RebindOverlayProperty);
                 EditorGUILayout.PropertyField(m_RebindTextProperty);
+            }
+
+            //CUSTOMIZE UI
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField(m_CustomizeUILabel, Styles.boldLabel);
+            using (new EditorGUI.IndentLevelScope())
+            {
+
+                EditorGUILayout.PropertyField(m_ActionOverrideProperty);
+                if (m_RebindActionUI.m_OverrideActionLabel) EditorGUILayout.PropertyField(m_ActionOverrideStringProperty);
             }
 
             // Events section.
@@ -159,10 +175,13 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         private SerializedProperty m_RebindStopEventProperty;
         private SerializedProperty m_UpdateBindingUIEventProperty;
         private SerializedProperty m_DisplayStringOptionsProperty;
+        private SerializedProperty m_ActionOverrideProperty;
+        private SerializedProperty m_ActionOverrideStringProperty;
 
         private GUIContent m_BindingLabel = new GUIContent("Binding");
         private GUIContent m_DisplayOptionsLabel = new GUIContent("Display Options");
         private GUIContent m_UILabel = new GUIContent("UI");
+        private GUIContent m_CustomizeUILabel = new GUIContent("Customize UI");
         private GUIContent m_EventsLabel = new GUIContent("Events");
         private GUIContent[] m_BindingOptions;
         private string[] m_BindingOptionValues;

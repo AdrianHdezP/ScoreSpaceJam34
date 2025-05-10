@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Menu-UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c17a3cc1c672d5f429b5136b0c7684de, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 41171570688
+    m_Localized: '*TEXT NOT SET*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39125965361152
+    m_Localized: Blessed Knowledge!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39529889419264
+    m_Localized: Select the game lenguage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39842885160960
+    m_Localized: Modify controller scheme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40032740331520
+    m_Localized: Modify keyboard and mouse scheme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40221286879232
+    m_Localized: Adjust audio settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40452804071424
+    m_Localized: CONTROLLER SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40600313548800
+    m_Localized: KEYBOARD SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40783516553216
+    m_Localized: '[Effect Volume]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40969508769792
+    m_Localized: LANGUAGE SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41094738104320
+    m_Localized: '[Main Volume]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41264888434688
+    m_Localized: '[Music Volume]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41640232505344
+    m_Localized: HOW TO PLAY!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41745589227520
+    m_Localized: AUDIO SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41837767446528
+    m_Localized: EXPLICATIONAL TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42256153464832
+    m_Localized: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42361854119936
+    m_Localized: CONTROLLER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42454099447808
+    m_Localized: KEYBOARD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42531668905984
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42618713296896
+    m_Localized: AUDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42694680530944
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42904693526528
+    m_Localized: Spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43052836343808
+    m_Localized: HOW TO PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43124676382720
+    m_Localized: START GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43561391509504
+    m_Localized: OPEN SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43653666197504
+    m_Localized: QUIT GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43785732247552
+    m_Localized: UNPAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44001487245312
+    m_Localized: DONE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44116679610368
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44192047058944
+    m_Localized: Keyboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44281637392384
+    m_Localized: Gamepad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44365754159104
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47090814439424
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48841781170176
+    m_Localized: RESET ALL
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
