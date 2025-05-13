@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SectionHolder : MonoBehaviour
 {
-    public Transform[] sections;
+    public Tab[] sections;
     int? currentSection;
 
     [SerializeField] Transform menuHolder;
@@ -11,52 +11,35 @@ public class SectionHolder : MonoBehaviour
     [SerializeField] Vector3 activatePoint;
     [SerializeField] Vector3 deactivatePoint;
 
-    private void Start()
-    {
-        Highscore data = MainSingletone.inst.score.GetStoredScore();
-
-        if (data != null)
-        {
-           // menuHolder.gameObject.SetActive(true);
-           // ActivateSection(2);
-        }
-        else
-        {
-           // menuHolder.gameObject.SetActive(false);
-            ActivateSection(2);
-        }
-    }
+   // private void Start()
+   // {
+   //     Highscore data = MainSingletone.inst.score.GetStoredScore();
+   //
+   //     if (data != null)
+   //     {
+   //        // menuHolder.gameObject.SetActive(true);
+   //        // ActivateSection(2);
+   //     }
+   //     else
+   //     {
+   //        // menuHolder.gameObject.SetActive(false);
+   //         ActivateSection(2);
+   //     }
+   // }
 
     public void ActivateSection(int index)
     {
-        if (index == currentSection) return;
-
         foreach (var section in sections)
         {
-            section.DOComplete();
+            if (section != null)
+            {
+                if (section == sections[index]) section.ToogleMaximize();
+                //if (section != sections[index]) section.Minimize();
 
-            if (currentSection != null && section == sections[(int)currentSection])
-            {
-                section.DOLocalMove(deactivatePoint, 0.8f).SetEase(Ease.InBack).OnComplete(() => section.gameObject.SetActive(false));
-            }
-            else
-            {
-                section.gameObject.SetActive(false);
+                currentSection = index;
             }
         }
-
-        if (index < sections.Length)
-        {
-            sections[index].localPosition = activatePoint;
-            sections[index].gameObject.SetActive(true);
-            sections[index].DOLocalMove(centerPoint, 2f).SetEase(Ease.OutBounce);
-            currentSection = index;
-        }
-        else
-        {
-            MainSingletone.inst.sceneControl.FadeOut(2);
-        }
-    }
+    } 
     public void GoToNextSection()
     {
         PlayerPrefs.Save();
@@ -73,7 +56,6 @@ public class SectionHolder : MonoBehaviour
     {
         Application.OpenURL("https://games-for-robots.itch.io/");
     }
-
     public void OpenURlAdri()
     {
         Application.OpenURL(" https://adrianhdez.itch.io/");
