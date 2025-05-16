@@ -151,6 +151,10 @@ MonoBehaviour:
     m_Key: Boton Reset All
     m_Metadata:
       m_Items: []
+  - m_Id: 2288885153681408
+    m_Key: BindExit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

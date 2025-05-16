@@ -56,7 +56,7 @@ public class SegmentedSlider : MonoBehaviour
     }
     public void SetValue(float amount)
     {
-        slider.value = amount;
+        if(slider) slider.value = amount;
 
         float step = (slider.maxValue - slider.minValue) / segmentCount;
         currentActive = Mathf.FloorToInt(amount / step);

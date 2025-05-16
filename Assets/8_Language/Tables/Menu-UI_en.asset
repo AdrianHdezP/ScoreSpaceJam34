@@ -154,6 +154,10 @@ MonoBehaviour:
     m_Localized: RESET ALL
     m_Metadata:
       m_Items: []
+  - m_Id: 2288885153681408
+    m_Localized: PRESS ESC TO CANCEL BINDING
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
