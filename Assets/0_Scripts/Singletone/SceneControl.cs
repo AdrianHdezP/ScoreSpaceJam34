@@ -51,7 +51,7 @@ public class SceneControl : MonoBehaviour
     {
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
-        fadeImage.DOFade(0, 2).SetEase(Ease.InOutQuad).OnComplete(() => fadeImage.gameObject.SetActive(false));
+        fadeImage.DOFade(0, 2).SetEase(Ease.InOutQuad).SetUpdate(true).OnComplete(() => fadeImage.gameObject.SetActive(false));
     }   
     public void FadeOut(int sceneIndex)
     {
@@ -60,7 +60,7 @@ public class SceneControl : MonoBehaviour
 
         fadeImage.gameObject.SetActive(true);
         fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
-        fadeImage.DOFade(1, 2).SetEase(Ease.InOutQuad).OnComplete(()=>SceneManager.LoadScene(sceneIndex));
+        fadeImage.DOFade(1, 2).SetEase(Ease.InOutQuad).SetUpdate(true).OnComplete(()=>SceneManager.LoadScene(sceneIndex));
     }
 
     //

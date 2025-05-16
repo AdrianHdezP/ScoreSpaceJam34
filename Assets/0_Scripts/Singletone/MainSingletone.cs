@@ -31,11 +31,12 @@ public class MainSingletone : MonoBehaviour
     {
        foreach (InputActionReference m_Action in inputActionReferences)
        {
-           var savedBindings = PlayerPrefs.GetString(m_Action.action.name);
+           string savedBindings = PlayerPrefs.GetString(m_Action.action.name);
    
            if (!string.IsNullOrEmpty(savedBindings))
            {
                m_Action.action.actionMap.LoadBindingOverridesFromJson(savedBindings);
+                Debug.Log("Binging Loaded: " + m_Action.action.name);
            }
        }
     }

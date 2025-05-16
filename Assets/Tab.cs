@@ -183,7 +183,7 @@ public class Tab : MonoBehaviour
         transform.position = position;
     }
 
-    void BringToFront()
+    public void BringToFront()
     {
         transform.SetSiblingIndex(transform.parent.childCount - 1);
     }

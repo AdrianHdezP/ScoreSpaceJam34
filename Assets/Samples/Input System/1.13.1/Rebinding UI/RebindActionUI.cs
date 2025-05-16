@@ -21,8 +21,10 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
         private void SaveActionBinding()
         {
-            var currentBindings = actionReference.action.actionMap.SaveBindingOverridesAsJson();
+            string currentBindings = actionReference.action.actionMap.SaveBindingOverridesAsJson();
             PlayerPrefs.SetString(m_Action.action.name, currentBindings);
+
+            Debug.Log ("Binding Saved: " + m_Action.action.name);
         }
         private void LoadActionBinding()
         {
@@ -263,6 +265,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             action.RemoveBindingOverride(bindingIndex);
 
+            string currentBindings = action.actionMap.SaveBindingOverridesAsJson();
+            PlayerPrefs.SetString(action.name, currentBindings);
+
             foreach (InputAction otherAction in action.actionMap.actions)
             {
                 if (otherAction == action)
@@ -277,6 +282,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                     if (binding.overridePath == newBinding.path)
                     {
                         otherAction.ApplyBindingOverride(i, oldOverridePath);
+
+                        string otherBindings = otherAction.actionMap.SaveBindingOverridesAsJson();
+                        PlayerPrefs.SetString(otherAction.name, otherBindings);
                     }
                 }
             }
