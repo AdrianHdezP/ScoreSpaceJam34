@@ -2085,7 +2085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
-      value: X
+      value: E
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_fontSize
@@ -4207,7 +4207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
-      value: LT/RT
+      value: LMB/RMB
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_fontSize
@@ -4325,6 +4325,22 @@ PrefabInstance:
       propertyPath: m_RebindOverlay
       value: 
       objectReference: {fileID: 1616478409}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: m_OverrideActionLabel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: m_ignoredInputs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[0]'
+      value: <Keyboard>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[1]'
+      value: <Mouse>
+      objectReference: {fileID: 0}
     - target: {fileID: 8263321334710863516, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
       value: LT/RT
@@ -4365,7 +4381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
-      value: LT/RT
+      value: S/W
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_fontSize
@@ -4641,6 +4657,18 @@ PrefabInstance:
       propertyPath: m_RebindOverlay
       value: 
       objectReference: {fileID: 1616478409}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: m_ignoredInputs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[0]'
+      value: <Keyboard>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[1]'
+      value: <Mouse>
+      objectReference: {fileID: 0}
     - target: {fileID: 8263321334710863516, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
       value: Start
@@ -5257,7 +5285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
-      value: LS/Left/LS/Right
+      value: A/D
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_fontSize
@@ -6716,6 +6744,18 @@ PrefabInstance:
       propertyPath: m_RebindOverlay
       value: 
       objectReference: {fileID: 1616478409}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: m_ignoredInputs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[0]'
+      value: <Keyboard>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[1]'
+      value: <Mouse>
+      objectReference: {fileID: 0}
     - target: {fileID: 8263321334710863516, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
       value: LS/Left/LS/Right
@@ -6882,7 +6922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
-      value: Start
+      value: Tabulacion
       objectReference: {fileID: 0}
     - target: {fileID: 4382441277822720539, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_fontSize
@@ -9262,6 +9302,18 @@ PrefabInstance:
       propertyPath: m_RebindOverlay
       value: 
       objectReference: {fileID: 1616478409}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: m_ignoredInputs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[0]'
+      value: <Keyboard>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193124358438582222, guid: caef92484654581498cbd05f457c6e91, type: 3}
+      propertyPath: 'm_ignoredInputs.Array.data[1]'
+      value: <Mouse>
+      objectReference: {fileID: 0}
     - target: {fileID: 8263321334710863516, guid: caef92484654581498cbd05f457c6e91, type: 3}
       propertyPath: m_text
       value: X

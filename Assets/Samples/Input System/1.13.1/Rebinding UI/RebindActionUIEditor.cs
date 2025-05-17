@@ -31,6 +31,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_DisplayStringOptionsProperty = serializedObject.FindProperty("m_DisplayStringOptions");
             m_ActionOverrideStringProperty = serializedObject.FindProperty("m_ActionLabelString");
             m_ActionOverrideProperty = serializedObject.FindProperty("m_OverrideActionLabel");
+            m_ignoredInputsProperty = serializedObject.FindProperty("m_ignoredInputs");
 
             RefreshBindingOptions();
         }
@@ -76,6 +77,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             using (new EditorGUI.IndentLevelScope())
             {
 
+                EditorGUILayout.PropertyField(m_ignoredInputsProperty);
                 EditorGUILayout.PropertyField(m_ActionOverrideProperty);
                 if (m_RebindActionUI.m_OverrideActionLabel) EditorGUILayout.PropertyField(m_ActionOverrideStringProperty);
             }
@@ -177,6 +179,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         private SerializedProperty m_DisplayStringOptionsProperty;
         private SerializedProperty m_ActionOverrideProperty;
         private SerializedProperty m_ActionOverrideStringProperty;
+        private SerializedProperty m_ignoredInputsProperty;
 
         private GUIContent m_BindingLabel = new GUIContent("Binding");
         private GUIContent m_DisplayOptionsLabel = new GUIContent("Display Options");

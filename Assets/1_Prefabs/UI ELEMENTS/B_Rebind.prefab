@@ -59,6 +59,8 @@ MonoBehaviour:
   m_ActionLabelString: 
   m_BindingText: {fileID: 4382441277822720539}
   m_RebindOverlay: {fileID: 0}
+  m_ignoredInputs:
+  - <Gamepad>
   m_RebindText: {fileID: 0}
   m_UpdateBindingUIEvent:
     m_PersistentCalls:

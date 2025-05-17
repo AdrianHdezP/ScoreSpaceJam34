@@ -333,6 +333,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             // Configure the rebind.
             m_RebindOperation = action.PerformInteractiveRebinding(bindingIndex)
                 .WithCancelingThrough("<Keyboard>/escape")
+                .WithControlsExcluding(m_ignoredInputs)
                 .OnCancel(
                     operation =>
                     {
@@ -510,6 +511,10 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         [Tooltip("Optional UI that will be shown while a rebind is in progress.")]
         [SerializeField]
         private GameObject m_RebindOverlay;
+
+        [Tooltip("String that determiantes which controls will not be detected by the rebinding process")]
+        [SerializeField]
+        public string[] m_ignoredInputs;
 
         [Tooltip("Optional text label that will be updated with prompt for user input.")]
         [SerializeField]
