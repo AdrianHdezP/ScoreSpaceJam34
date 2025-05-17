@@ -4,6 +4,6 @@ public class LanguageMenu : MonoBehaviour
 {
     public void SetLenguage(int index)
     {
-        MainSingletone.inst.language.SetLanguage(index);
+        GameST.inst.language.SetLanguage(index);
     }
 }

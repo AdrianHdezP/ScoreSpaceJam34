@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class StorageControl : MonoBehaviour
 {
     [SerializeField] Image errortextHolder;
     [SerializeField] TextMeshProUGUI errorText;

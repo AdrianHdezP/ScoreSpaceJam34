@@ -6089,9 +6089,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1374116215}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
+        - m_Target: {fileID: 2007761656}
+          m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+          m_MethodName: PlaySoundClip
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

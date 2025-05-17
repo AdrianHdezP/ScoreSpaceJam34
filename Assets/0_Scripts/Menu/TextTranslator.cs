@@ -29,7 +29,7 @@ public class TextTranslator : MonoBehaviour
     {
         if (textMesh == null) textMesh = GetComponent<TextMeshProUGUI>();
 
-        if (MainSingletone.inst.language.LanguageId == 1) textMesh.text = textsEnglish;
-        else if (MainSingletone.inst.language.LanguageId == 2) textMesh.text = textsSpanish;
+        if (GameST.inst.language.LanguageId == 1) textMesh.text = textsEnglish;
+        else if (GameST.inst.language.LanguageId == 2) textMesh.text = textsSpanish;
     }
 }

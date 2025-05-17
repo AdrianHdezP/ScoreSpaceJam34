@@ -49,7 +49,7 @@ public class SectionHolder : MonoBehaviour
     public void GoToGame()
     {
         PlayerPrefs.Save();
-        MainSingletone.inst.sceneControl.FadeOut(2);
+        GameST.inst.sceneControl.FadeOut(2);
     }
 
     public void OpenURl()

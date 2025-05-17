@@ -55,7 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ActivatePause()
     {
-        MainSingletone.inst.sceneControl.gM.FreezeGame();
+        GameST.inst.sceneControl.gM.FreezeGame();
         holder.gameObject.SetActive(true);
 
         StartCoroutine(OffsetMenuButtons(1));
@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
             animator.SetInteger("Settings", 0);
             StartCoroutine(OffsetMenuButtons(0));
 
-            MainSingletone.inst.sceneControl.gM.UnFreezeGame();
+            GameST.inst.sceneControl.gM.UnFreezeGame();
             PlayerPrefs.Save();
             holder.gameObject.SetActive(false);
         }
@@ -112,12 +112,12 @@ public class PauseMenu : MonoBehaviour
     public void GoToGame()
     {
         PlayerPrefs.Save();
-        MainSingletone.inst.sceneControl.TVStaticOut(2);
+        GameST.inst.sceneControl.TVStaticOut(2);
     }
     public void GoToMenu()
     {
         PlayerPrefs.Save();
-        MainSingletone.inst.sceneControl.TVStaticOut(1);
+        GameST.inst.sceneControl.TVStaticOut(1);
     }
 
     IEnumerator OffsetMenuButtons(int animIndex)

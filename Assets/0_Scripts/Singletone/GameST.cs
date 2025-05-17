@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-public class MainSingletone : MonoBehaviour
+public class GameST : MonoBehaviour
 {
-    public static MainSingletone inst { get; private set; }
-    public Score score { get; private set; }
+    public static GameST inst { get; private set; }
+    public StorageControl storageControl { get; private set; }
     public LanguageControl language { get; private set; }
-    public AudioController audioControl { get; private set; }
+    public AudioControl audioControl { get; private set; }
+    public AudioClipControl audioClips { get; private set; }
     public SceneControl sceneControl { get; private set; }
 
     [SerializeField] InputActionReference[] inputActionReferences;
@@ -19,9 +20,10 @@ public class MainSingletone : MonoBehaviour
         if (inst == null) inst = this;
         else Destroy(this.gameObject);
 
-        score = GetComponent<Score>();
+        storageControl = GetComponent<StorageControl>();
         language = GetComponent<LanguageControl>();
-        audioControl = GetComponent<AudioController>();
+        audioControl = GetComponent<AudioControl>();
+        audioClips = GetComponent<AudioClipControl>();
         sceneControl = GetComponent<SceneControl>();
 
         LoadActionsBindings();

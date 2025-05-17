@@ -13,19 +13,21 @@ public class AudioMenu : MonoBehaviour
         SetValues();
     }
 
+    public void PlaySoundClip() => GameST.inst.audioControl.PlaySoundClip(GameST.inst.audioClips.cursorClick, transform.position);
+
     public void SetMainVolume(float sliderValue)
     {
-        MainSingletone.inst.audioControl.audioMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);
+        GameST.inst.audioControl.audioMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MasterVolume", sliderValue);
     }
     public void SetMusicVolume(float sliderValue)
     {
-        MainSingletone.inst.audioControl.audioMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+        GameST.inst.audioControl.audioMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVolume", sliderValue);
     }
     public void SetEffectsVolume(float sliderValue)
     {
-        MainSingletone.inst.audioControl.audioMixer.SetFloat("EffectsVolume", Mathf.Log10(sliderValue) * 20);
+        GameST.inst.audioControl.audioMixer.SetFloat("EffectsVolume", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("EffectsVolume", sliderValue);
     }
 

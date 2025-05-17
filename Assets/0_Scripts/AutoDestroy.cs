@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AutoDestroy : MonoBehaviour
 {
-    [SerializeField] float time;
+    public float time;
     float t;
 
     private void Update()
