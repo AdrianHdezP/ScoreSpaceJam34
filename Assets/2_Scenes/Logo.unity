@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8057513026118587511, guid: 4d7a6c97c18d8e84c95ddfe0d21634db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 214.98999
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 8057513026118587511, guid: 4d7a6c97c18d8e84c95ddfe0d21634db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1467,7 +1467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 82}
+  m_AnchoredPosition: {x: 0, y: 122}
   m_SizeDelta: {x: 783.1706, y: 783.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1615759218
@@ -2202,6 +2202,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 06381084f52970c4f985fc26d6c88759, type: 2}
   volumeDefault: 0.55
+  cursorClick:
+    audioClip: []
+    audioVolume: 1
+    randomPitch: 0
+    minPitch: 0.85
+    maxPitch: 1.15
+    mixer: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

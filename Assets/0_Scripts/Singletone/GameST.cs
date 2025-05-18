@@ -10,7 +10,6 @@ public class GameST : MonoBehaviour
     public StorageControl storageControl { get; private set; }
     public LanguageControl language { get; private set; }
     public AudioControl audioControl { get; private set; }
-    public AudioClipControl audioClips { get; private set; }
     public SceneControl sceneControl { get; private set; }
 
     [SerializeField] InputActionReference[] inputActionReferences;
@@ -23,7 +22,6 @@ public class GameST : MonoBehaviour
         storageControl = GetComponent<StorageControl>();
         language = GetComponent<LanguageControl>();
         audioControl = GetComponent<AudioControl>();
-        audioClips = GetComponent<AudioClipControl>();
         sceneControl = GetComponent<SceneControl>();
 
         LoadActionsBindings();

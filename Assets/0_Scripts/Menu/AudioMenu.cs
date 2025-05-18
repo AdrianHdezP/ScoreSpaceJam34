@@ -13,8 +13,6 @@ public class AudioMenu : MonoBehaviour
         SetValues();
     }
 
-    public void PlaySoundClip() => GameST.inst.audioControl.PlaySoundClip(GameST.inst.audioClips.cursorClick, transform.position);
-
     public void SetMainVolume(float sliderValue)
     {
         GameST.inst.audioControl.audioMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);

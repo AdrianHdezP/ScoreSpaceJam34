@@ -1,10 +1,27 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
+
+[Serializable]
+public class AudioData
+{
+    public AudioClip[] audioClip;
+    public float audioVolume = 1f;
+    [Space]
+    public bool randomPitch;
+    public float minPitch = 0.85f;
+    public float maxPitch = 1.15f;
+    [Space]
+    public AudioMixerGroup mixer;
+}
 
 public class AudioControl : MonoBehaviour
 {
     public AudioMixer audioMixer;
     [SerializeField] float volumeDefault = 0.55f;
+
+    [Header("UI")]
+    public AudioData cursorClick;
 
     private void Start()
     {
@@ -31,6 +48,8 @@ public class AudioControl : MonoBehaviour
         audioMixer.SetFloat("EffectsVolume", Mathf.Log10(PlayerPrefs.GetFloat("EffectsVolume")) * 20);
     }
 
+    //USE FOR EXTERNAL FUNCTION CALLS
+    //public void PlaySoundClip() => GameST.inst.audioControl.PlaySoundClip(GameST.inst.audioClips.cursorClick, transform.position);
     public void PlaySoundClip(AudioData _audioData, Vector3 spawnPosition)
     {
         GameObject audioGameobject = new GameObject();
@@ -39,14 +58,14 @@ public class AudioControl : MonoBehaviour
 
         audioSource.outputAudioMixerGroup = _audioData.mixer;
 
-        int randomChoice = Random.Range(0, _audioData.audioClip.Length);
+        int randomChoice = UnityEngine.Random.Range(0, _audioData.audioClip.Length);
 
         audioSource.clip = _audioData.audioClip[randomChoice];
         audioSource.volume = _audioData.audioVolume;
 
         if (_audioData.randomPitch)
         {
-            float myRandomPitch = Random.Range(_audioData.minPitch, _audioData.maxPitch);
+            float myRandomPitch = UnityEngine.Random.Range(_audioData.minPitch, _audioData.maxPitch);
             audioSource.pitch = myRandomPitch;
         }
 
